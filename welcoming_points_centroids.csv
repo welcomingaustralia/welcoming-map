@@ -1,0 +1,70 @@
+name,type,address,postcode,state,lat,lon,precision
+La Trobe University,uni,,3086,VIC,-37.7229498,145.047012,postcode_centroid
+La Trobe University,uni,,3083,VIC,-37.6987006,145.056223,postcode_centroid
+La Trobe University,uni,,2000,NSW,-33.8638,151.2015802,postcode_centroid
+La Trobe University,uni,,3550,VIC,-36.7570157,144.285267,postcode_centroid
+La Trobe University,uni,,3630,VIC,-36.4616,145.403176,postcode_centroid
+La Trobe University,uni,,3250,VIC,-38.3410186,143.584742,postcode_centroid
+La Trobe University,uni,,3500,VIC,-34.2151229,142.154161,postcode_centroid
+University of the Sunshine Coast,uni,,4556,QLD,-26.685,153.049784,postcode_centroid
+University of the Sunshine Coast,uni,,4510,QLD,-27.0797,152.960273,postcode_centroid
+University of the Sunshine Coast,uni,,4655,QLD,-25.353889,152.78368,postcode_centroid
+University of the Sunshine Coast,uni,,4570,QLD,-26.3486,152.616943,postcode_centroid
+University of the Sunshine Coast,uni,,4502,QLD,-27.2583,152.966813,postcode_centroid
+University of the Sunshine Coast,uni,,4101,QLD,-27.487,153.009661,postcode_centroid
+University of the Sunshine Coast,uni,,4575,QLD,-26.743,153.119478,postcode_centroid
+University of Melbourne,uni,,3006,VIC,-37.825,144.9520744,postcode_centroid
+University of Melbourne,uni,,3121,VIC,-37.8296728,145.001788,postcode_centroid
+University of Melbourne,uni,,3363,VIC,-37.4241222,143.88637,postcode_centroid
+University of Melbourne,uni,,3647,VIC,-36.3969441,145.704473,postcode_centroid
+University of Melbourne,uni,,3030,VIC,-37.7935,144.64209,postcode_centroid
+University of Melbourne,uni,,3630,VIC,-36.4616,145.403176,postcode_centroid
+UNSW,uni,,2052,NSW,-33.917347,151.234417,postcode_centroid
+UNSW,uni,,2021,NSW,-33.8943,151.227236,postcode_centroid
+UNSW,uni,,2600,ACT,-35.307778,149.201072,postcode_centroid
+UNSW,uni,,2033,NSW,-33.9096151,151.218435,postcode_centroid
+UTS,uni,,2007,NSW,-33.8842554,151.19665,postcode_centroid
+UTS,uni,,2000,NSW,-33.8638,151.2015802,postcode_centroid
+Western Sydney University,uni,,2170,NSW,-33.9503864,150.921448,postcode_centroid
+Western Sydney University,uni,,2150,NSW,-33.8219453,151.006506,postcode_centroid
+Western Sydney University,uni,,2751,NSW,-33.7506759,151.280352,postcode_centroid
+Western Sydney University,uni,,2116,NSW,-33.8124093,151.036941,postcode_centroid
+Western Sydney University,uni,,2199,NSW,-33.9050378,151.023171,postcode_centroid
+Western Sydney University,uni,,2753,NSW,-33.61529,150.646053,postcode_centroid
+Western Sydney University,uni,,2145,NSW,-33.7945,150.9751544,postcode_centroid
+Western Sydney University,uni,,2790,NSW,-33.239963,150.356874,postcode_centroid
+University of Tasmania,uni,,7320,TAS,-41.07007,145.862079,postcode_centroid
+University of Tasmania,uni,,7005,TAS,-42.901111,147.3368,postcode_centroid
+University of Tasmania,uni,,7000,TAS,-42.8811,147.308002,postcode_centroid
+University of Tasmania,uni,,7001,TAS,-42.8821377,146.356055,postcode_centroid
+University of Tasmania,uni,,7004,TAS,-42.892778,147.328928,postcode_centroid
+University of Tasmania,uni,,7053,TAS,-42.971944,147.334695,postcode_centroid
+University of Tasmania,uni,,2039,NSW,-33.8661553,151.171915,postcode_centroid
+University of Tasmania,uni,,7250,TAS,-41.46,147.077589,postcode_centroid
+Victoria University,uni,,3011,VIC,-37.7988987,144.907953,postcode_centroid
+Victoria University,uni,,3021,VIC,-37.746,144.796693,postcode_centroid
+Victoria University,uni,,3022,VIC,-37.7776716,144.793961,postcode_centroid
+Victoria University,uni,,3030,VIC,-37.7935,144.64209,postcode_centroid
+Victoria University,uni,,4006,QLD,-27.4432,153.175242,postcode_centroid
+Victoria University,uni,,3000,VIC,-37.8152065,144.9825846,postcode_centroid
+Curtin University,uni,,6845,WA,-31.9505269,115.763228,postcode_centroid
+Curtin University,uni,,6102,WA,-32.0041058,115.904425,postcode_centroid
+Curtin University,uni,,6000,WA,-31.955,115.859912,postcode_centroid
+Flinders University,uni,,5042,SA,-35.021,138.575023,postcode_centroid
+Flinders University,uni,,5000,SA,-34.9328294,138.600746,postcode_centroid
+Flinders University,uni,,5355,SA,-34.4733985,139.007886,postcode_centroid
+Flinders University,uni,,5253,SA,-35.0900807,139.273641,postcode_centroid
+Flinders University,uni,,5211,SA,-35.5412823,138.627975,postcode_centroid
+University of Adelaide,uni,,5001,SA,-34.9219463,138.600746,postcode_centroid
+University of Adelaide,uni,,5371,SA,-34.4153843,138.7560699,postcode_centroid
+University of Adelaide,uni,,5005,SA,-34.920603,138.60351,postcode_centroid
+Bond University,uni,,4226,QLD,-28.042,153.40282,postcode_centroid
+Bond University,uni,,4000,QLD,-27.4660994,153.022126,postcode_centroid
+Charles Darwin University,uni,,815,NT,-12.3718,130.869,postcode_centroid
+Charles Darwin University,uni,,830,NT,-12.5164,130.9580765,postcode_centroid
+Charles Darwin University,uni,,871,NT,-23.698042,131.298809,postcode_centroid
+Charles Darwin University,uni,,850,NT,-14.5052,132.1721041,postcode_centroid
+Charles Darwin University,uni,,2000,NSW,-33.8638,151.2015802,postcode_centroid
+JBS Foods Riverina,workplace,"2 Regulator Rd, Yanco NSW 2703",2703,NSW,-34.6034853,146.370827,postcode_centroid
+BLU by adcorp,workplace,"Level 3, 2 Gardner Cl, Milton QLD 4064",4064,QLD,-27.4662,152.999039,postcode_centroid
+Museums Victoria,workplace,"GPO Box 666, Melbourne VIC 3001",3001,VIC,-37.8136276,144.9825846,postcode_centroid
