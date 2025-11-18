@@ -1,3 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Welcoming Map – Auto-updating</title>
+
+  <!-- Leaflet core -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- MarkerCluster (optional, can remove if you don't want clustering) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+  />
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+  <!-- Font Awesome (for icons in markers + legend) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+
+  <!-- Leaflet Awesome Markers (for FA marker icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.awesome-markers/2.0.4/leaflet.awesome-markers.css"
+  />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.awesome-markers/2.0.4/leaflet.awesome-markers.js"></script>
+
+  <!-- PapaParse for CSV loading -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+    .legend {
+      background-color: white;
+      padding: 15px;
+      border: 2px solid #bbb;
+      border-radius: 8px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .legend i {
+      min-width: 18px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+
 <script>
   // ---------------------------------------------------
   // 1. DATA SOURCES (GitHub raw file URLs)
@@ -129,3 +197,5 @@
       });
   }
 </script>
+</body>
+</html>
