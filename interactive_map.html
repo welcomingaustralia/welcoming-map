@@ -263,6 +263,53 @@ Promise.all([
   });
 
 });
+
+   // -----------------------------
+    // 8. Add Legend
+    // -----------------------------
+    const legend = L.control({ position: "bottomright" });
+
+    legend.onAdd = function () {
+      const div = L.DomUtil.create("div", "legend");
+
+      div.innerHTML = `
+        <b>Legend</b><br>
+        <div style="margin-top:8px;">
+          <i style="background:#66b2ff; width:18px; height:18px;
+                    float:left; margin-right:6px; border:1px solid #004c99;"></i>
+          Welcoming Cities LGAs<br>
+        </div>
+
+        <div style="margin-top:8px; clear:both;">
+          <i class="fa fa-university" style="color:#0066cc; margin-right:6px;"></i>
+          University<br>
+        </div>
+
+        <div style="margin-top:8px;">
+          <i class="fa fa-building" style="color:#2E8B57; margin-right:6px;"></i>
+          Workplace<br>
+        </div>
+
+        <div style="margin-top:8px;">
+          <i class="fa fa-flag" style="color:#800080; margin-right:6px;"></i>
+          Club<br>
+        </div>
+
+        <div style="margin-top:8px;">
+          <i class="fa fa-users" style="color:#ff8800; margin-right:6px;"></i>
+          CoP Member<br>
+        </div>
+      `;
+      return div;
+    };
+
+    legend.addTo(map);
+
+  })
+  .catch(err => {
+    console.error("Error loading data:", err);
+  });
+
 </script>
 
 </body>
