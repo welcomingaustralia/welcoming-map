@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Welcoming Map – Auto-updating</title>
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+
+  <!-- PapaParse for CSV parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      height: 100%;
+      width: 100%;
+    }
+    .legend {
+      background-color: white;
+      padding: 15px;
+      border: 2px solid #bbb;
+      border-radius: 8px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .legend i {
+      min-width: 18px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+<script>
+  // -----------------------------
+  // 1. DATA SOURCES (GitHub raw)
+  // -----------------------------
+  const GEOJSON_URL =
+    "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/LGA_2025_AUST_GDA2020.min.json";
+  const POINTS_URL =
+    "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/welcoming_points_centroids.csv";
+  const WELC_LGAS_URL =
+    "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/welcoming_lgas.csv";
+
+  // -----------------------------
+  // 2. MAP SETUP
+  // -----------------------------
+  const map = L.map("map").setView([-25.0, 134.0], 4);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18,
+    attribution: "&copy; OpenStreetMap contributors"
+  }).addTo(map);
+
+  // -----------------------------
+  // 3. Helpers
+  // -----------------------------
+  function stripBOM(text) {
+    // Remove invisible BOM if present (GitHub sometimes adds it)
+    return text.replace(/^\uFEFF/, "");
+  }
+
+  function loadCSV(url) {
+    return fetch(url)
+      .then(resp => resp.text())
+      .then(text => {
+        text = stripBOM(text);
+        const parsed = Papa.parse(text, {
+          header: true,
+          skipEmptyLines: true
+        });
+        return parsed.data;
+      });
+  }
+
+  // -----------------------------
+  // 4. Load all data
+  // -----------------------------
+  Promise.all([
+    loadCSV(WELC_LGAS_URL),                 // 0: welcoming LGAs
+    fetch(GEOJSON_URL).then(r => r.json()), // 1: GeoJSON
+    loadCSV(POINTS_URL)                     // 2: points (unis, workplaces, clubs, cop)
+  ])
+  .then(([welcLgasRows, geojsonData, pointRows]) => {
+
+    // Build set of welcoming LGA names from CSV
+    const welcomingLGAs = new Set();
+    welcLgasRows.forEach(row => {
+      if (row.lga_name) {
+        welcomingLGAs.add(row.lga_name.trim());
+      }
+    });
+
+    // -----------------------------
+    // 4a. Draw LGAs with styles
+    // -----------------------------
+    function lgaStyle(feature) {
+      const name = feature.properties && feature.properties.LGA_NAME25;
+      if (welcomingLGAs.has(name)) {
+        return {
+          fillColor: "#66b2ff",     // blue highlight
+          color: "#004c99",         // darker border
+          weight: 1,
+          fillOpacity: 0.45
+        };
+      } else {
+        return {
+          fillColor: "#e0e0e0",     // light grey
+          color: "#999999",
+          weight: 0.3,
+          fillOpacity: 0.10
+        };
+      }
+    }
+
+    L.geoJSON(geojsonData, {
+      style: lgaStyle,
+      onEachFeature: (feature, layer) => {
+        const name = feature.properties && feature.properties.LGA_NAME25;
+        if (name) {
+          layer.bindTooltip("LGA: " + name, { sticky: true });
+        }
+      }
+    }).addTo(map);
+
+    // -----------------------------
+    // 4b. Add point markers
+    // -----------------------------
+    pointRows.forEach(row => {
+      const lat = parseFloat(row.lat);
+      const lon = parseFloat(row.lon);
+      if (isNaN(lat) || isNaN(lon)) return;
+
+      const type = (row.type || "").trim().toLowerCase();
+
+      // Map CSV 'type' to FA icon + color
+      const iconConfig = {
+        uni:       { icon: "fa-university", color: "#0066cc" },
+        workplace: { icon: "fa-building",   color: "#2E8B57" },
+        club:      { icon: "fa-flag",       color: "#800080" },
+        cop:       { icon: "fa-users",      color: "#ff8800" }
+      };
+
+      const cfg = iconConfig[type] || { icon: "fa-map-marker", color: "#555555" };
+
+      const iconHtml =
+        `<i class="fa ${cfg.icon}" style="color:${cfg.color}; font-size:20px;"></i>`;
+
+      const marker = L.marker([lat, lon], {
+        icon: L.divIcon({
+          className: "custom-fa-marker",
+          html: iconHtml,
+          iconSize: [20, 20],
+          iconAnchor: [10, 10]
+        })
+      });
+
+      const popupHtml =
+        `<b>${row.name || ""}</b><br>` +
+        `${row.address || ""}<br>` +
+        `${row.state || ""} ${row.postcode || ""}`;
+
+      marker.bindPopup(popupHtml);
+      marker.bindTooltip(row.name || "", { direction: "top", offset: [0, -10] });
+
+      marker.addTo(map);
+    });
+
+    // -----------------------------
+    // 4c. Add Legend
+    // -----------------------------
+    const legend = L.control({ position: "bottomright" });
+
+    legend.onAdd = function () {
+      const div = L.DomUtil.create("div", "legend");
+
+      div.innerHTML = `
+        <b>Legend</b><br>
+        <div style="margin-top:8px;">
+          <i style="background:#66b2ff; width:18px; height:18px;
+                    float:left; margin-right:6px; border:1px solid #004c99;"></i>
+          Welcoming Cities LGAs<br>
+        </div>
+
+        <div style="margin-top:8px; clear:both;">
+          <i class="fa fa-university" style="color:#0066cc; margin-right:6px;"></i>
+          University<br>
+        </div>
+
+        <div style="margin-top:8px;">
+          <i class="fa fa-building" style="color:#2E8B57; margin-right:6px;"></i>
+          Workplace<br>
+        </div>
+
+        <div style="margin-top:8px;">
+          <i class="fa fa-flag" style="color:#800080; margin-right:6px;"></i>
+          Club<br>
+        </div>
+
+        <div style="margin-top:8px;">
+          <i class="fa fa-users" style="color:#ff8800; margin-right:6px;"></i>
+          CoP Member<br>
+        </div>
+      `;
+      return div;
+    };
+
+    legend.addTo(map);
+
+  })
+  .catch(err => {
+    console.error("Error loading data:", err);
+  });
+</script>
+
+</body>
+</html>
