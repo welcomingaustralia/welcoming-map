@@ -1,329 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8" />
-  <title>Welcoming Map – Auto-updating</title>
+<meta charset="utf-8" />
+<title>Welcoming Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Leaflet core -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <!-- MarkerCluster for decluttering markers -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
-  />
-  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<!-- MarkerCluster -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
-  <!-- Font Awesome for icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
+<!-- PapaParse -->
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
-  <!-- PapaParse for CSV parsing -->
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<style>
+  body, html { margin: 0; padding: 0; height: 100%; }
+  #map { width: 100%; height: 100%; }
 
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    #map {
-      height: 100%;
-      width: 100%;
-    }
+  #searchBox {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    background: white;
+    padding: 6px;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+  }
 
-    /* LGA search box */
-    #lgaSearchBox {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 9999;
-      background: white;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      padding: 6px 8px;
-      font-size: 14px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.3);
-    }
-    #lgaSearchBox input {
-      border: none;
-      outline: none;
-      width: 220px;
-      font-size: 14px;
-    }
+  #filters {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    z-index: 9999;
+    background: white;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+  }
 
-    .legend {
-      background-color: white;
-      padding: 15px;
-      border: 2px solid #bbb;
-      border-radius: 8px;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      font-size: 14px;
-      line-height: 1.4;
-    }
-    .legend i {
-      min-width: 18px;
-      text-align: center;
-    }
-  </style>
+  .filter-btn {
+    margin: 3px;
+    padding: 4px 6px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #eee;
+  }
+
+  .filter-btn.active {
+    background: #ccc;
+  }
+</style>
 </head>
+
 <body>
 
-  <!-- LGA search UI -->
-  <div id="lgaSearchBox">
-    <input id="lgaSearch" type="text" placeholder="Search LGA (min 3 letters)…">
-  </div>
+<div id="searchBox">
+  <input id="lgaSearch" type="text" placeholder="Search LGA…" style="width:220px;">
+  <button onclick="searchLGA()">Search</button>
+</div>
 
-  <div id="map"></div>
+<div id="filters">
+  <button class="filter-btn active" data-type="all">All</button>
+  <button class="filter-btn" data-type="workplace">Workplaces</button>
+  <button class="filter-btn" data-type="club">Clubs</button>
+  <button class="filter-btn" data-type="council">Councils</button>
+  <button class="filter-btn" data-type="university">Universities</button>
+</div>
+
+<div id="map"></div>
 
 <script>
-  // -----------------------------------
-  // 1. DATA SOURCES (GitHub raw URLs)
-  // -----------------------------------
-  const GEOJSON_URL =
-    "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/LGA_2025_AUST_GDA2020.min.json";
-  const POINTS_URL =
-    "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/welcoming_points_centroids.csv";
-  const WELC_LGAS_URL =
-    "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/welcoming_lgas.csv";
+/////////////////////////////
+// MAP SETUP
+/////////////////////////////
 
-  // -----------------------------------
-  // 2. MAP SETUP
-  // -----------------------------------
-  const map = L.map("map").setView([-25.0, 134.0], 4);
+var map = L.map('map').setView([-25.5, 134], 4.5);
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 18,
-    attribution: "&copy; OpenStreetMap contributors"
-  }).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap'
+}).addTo(map);
 
-  // Marker clusters per category
-  const uniCluster       = L.markerClusterGroup();
-  const workplaceCluster = L.markerClusterGroup();
-  const clubCluster      = L.markerClusterGroup();
-  const copCluster       = L.markerClusterGroup();
+/////////////////////////////
+// COLOURS PER CATEGORY
+/////////////////////////////
 
-  // We'll use this to search LGAs
-  const lgaLayers = {};   // name(lowercase) -> layer
+const colours = {
+  workplace: "#0074D9",
+  club: "#2ECC40",
+  council: "#FF851B",
+  university: "#C44444"   // your chosen uni colour
+};
 
-  // -----------------------------------
-  // 3. HELPERS
-  // -----------------------------------
-  function stripBOM(text) {
-    return text.replace(/^\uFEFF/, "");
-  }
+/////////////////////////////
+// MARKER CLUSTER (neutral)
+/////////////////////////////
 
-  function loadCSV(url) {
-    return fetch(url)
-      .then(resp => resp.text())
-      .then(text => {
-        text = stripBOM(text);
-        const parsed = Papa.parse(text, {
-          header: true,
-          skipEmptyLines: true
-        });
-        return parsed.data;
-      });
-  }
-
-  // -----------------------------------
-  // 4. LOAD ALL DATA
-  // -----------------------------------
-  Promise.all([
-    loadCSV(WELC_LGAS_URL),                 // 0: welcoming LGAs
-    fetch(GEOJSON_URL).then(r => r.json()), // 1: LGA GeoJSON
-    loadCSV(POINTS_URL)                     // 2: points
-  ])
-  .then(([welcLgaRows, geojsonData, pointRows]) => {
-
-    // 4a. Build set of welcoming LGA names
-    const welcomingLGAs = new Set();
-    welcLgaRows.forEach(row => {
-      if (row.lga_name) {
-        welcomingLGAs.add(row.lga_name.trim());
-      }
+var clusterGroup = L.markerClusterGroup({
+  iconCreateFunction: function (cluster) {
+    return new L.DivIcon({
+      html: '<div style="background:#888;color:white;border-radius:50%;width:35px;height:35px;display:flex;align-items:center;justify-content:center;">' + cluster.getChildCount() + '</div>',
+      className: 'neutral-cluster',
+      iconSize: [35,35]
     });
+  }
+});
+map.addLayer(clusterGroup);
 
-    // 4b. Add LGA polygons, shading welcoming members
-    function lgaStyle(feature) {
-      const name = feature.properties && feature.properties.LGA_NAME25;
-      if (welcomingLGAs.has(name)) {
-        return {
-          fillColor: "#66b2ff",     // blue highlight
-          color: "#004c99",         // darker border
-          weight: 1,
-          fillOpacity: 0.45
-        };
-      } else {
-        return {
-          fillColor: "#e0e0e0",     // light grey
-          color: "#999999",
-          weight: 0.3,
-          fillOpacity: 0.10
-        };
-      }
-    }
+/////////////////////////////
+// LOAD LGA POLYGONS
+/////////////////////////////
 
-    L.geoJSON(geojsonData, {
-      style: lgaStyle,
-      onEachFeature: (feature, layer) => {
-        const name = (feature.properties && feature.properties.LGA_NAME25) || "";
-        const key = name.toLowerCase().trim();
-        if (key) {
-          lgaLayers[key] = layer;
-        }
-        if (name) {
-          layer.bindTooltip("LGA: " + name, { sticky: true });
-        }
+var lgaLayer;
+var lgaLookup = {};
+
+fetch("https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/refs/heads/main/LGA_2025_AUST_GDA2020.min.json")
+  .then(res => res.json())
+  .then(data => {
+    lgaLayer = L.geoJSON(data, {
+      style: { color: "#666", weight: 1, fillOpacity: 0.05 },
+      onEachFeature: function (feature, layer) {
+        const name = feature.properties.LGA_NAME || "";
+        if (name) lgaLookup[name.toLowerCase()] = layer;
       }
     }).addTo(map);
-
-    // 4c. Add point markers by category into cluster groups
-    pointRows.forEach(row => {
-      const lat = parseFloat(row.lat);
-      const lon = parseFloat(row.lon);
-      if (isNaN(lat) || isNaN(lon)) return;
-
-      const type = (row.type || "").trim().toLowerCase();
-
-      // Icons + colours by type
-      const iconConfig = {
-        uni:       { icon: "fa-university", color: "#f1c40f" }, // yellow
-        workplace: { icon: "fa-building",   color: "#2E8B57" }, // green
-        club:      { icon: "fa-flag",       color: "#800080" }, // purple
-        cop:       { icon: "fa-users",      color: "#ff8800" }  // orange
-      };
-
-      const cfg = iconConfig[type] || { icon: "fa-map-marker", color: "#555555" };
-
-      const iconHtml =
-        `<i class="fa ${cfg.icon}" style="color:${cfg.color}; font-size:20px;"></i>`;
-
-      const marker = L.marker([lat, lon], {
-        icon: L.divIcon({
-          className: "custom-fa-marker",
-          html: iconHtml,
-          iconSize: [20, 20],
-          iconAnchor: [10, 10]
-        })
-      });
-
-      const popupHtml =
-        `<b>${row.name || ""}</b><br>` +
-        `${row.address || ""}<br>` +
-        `${row.state || ""} ${row.postcode || ""}`;
-
-      marker.bindPopup(popupHtml);
-      marker.bindTooltip(row.name || "", { direction: "top", offset: [0, -10] });
-
-      // Add to appropriate cluster group
-      if (type === "uni") {
-        uniCluster.addLayer(marker);
-      } else if (type === "workplace") {
-        workplaceCluster.addLayer(marker);
-      } else if (type === "club") {
-        clubCluster.addLayer(marker);
-      } else if (type === "cop") {
-        copCluster.addLayer(marker);
-      }
-    });
-
-    // Add clusters to map (all on by default)
-    uniCluster.addTo(map);
-    workplaceCluster.addTo(map);
-    clubCluster.addTo(map);
-    copCluster.addTo(map);
-
-    // -----------------------------------
-    // 5. FILTER CONTROL (toggle layers)
-    // -----------------------------------
-    const overlays = {
-      "Universities": uniCluster,
-      "Workplaces": workplaceCluster,
-      "Clubs": clubCluster,
-      "CoP Members": copCluster
-    };
-
-    L.control.layers(null, overlays, { collapsed: false }).addTo(map);
-
-    // -----------------------------------
-    // 6. LGA SEARCH (simple search, zoom to match)
-    // -----------------------------------
-    const searchInput = document.getElementById("lgaSearch");
-
-    searchInput.addEventListener("keyup", function (e) {
-      const q = searchInput.value.toLowerCase().trim();
-      if (q.length < 3) return;  // wait for at least 3 characters
-
-      const matches = Object.keys(lgaLayers).filter(name =>
-        name.includes(q)
-      );
-
-      // If only one match, or user presses Enter, zoom to first match
-      if ((matches.length === 1) ||
-          (e.key === "Enter" && matches.length > 0)) {
-        const layer = lgaLayers[matches[0]];
-        if (layer) {
-          map.fitBounds(layer.getBounds(), { maxZoom: 11 });
-        }
-      }
-    });
-
-    // -----------------------------------
-    // 7. LEGEND
-    // -----------------------------------
-    const legend = L.control({ position: "bottomright" });
-
-    legend.onAdd = function () {
-      const div = L.DomUtil.create("div", "legend");
-
-      div.innerHTML = `
-        <b>Legend</b><br>
-        <div style="margin-top:8px;">
-          <i style="background:#66b2ff; width:18px; height:18px;
-                    float:left; margin-right:6px; border:1px solid #004c99;"></i>
-          Welcoming Cities LGAs<br>
-        </div>
-
-        <div style="margin-top:8px; clear:both;">
-          <i class="fa fa-university" style="color:#f1c40f; margin-right:6px;"></i>
-          University<br>
-        </div>
-
-        <div style="margin-top:8px;">
-          <i class="fa fa-building" style="color:#2E8B57; margin-right:6px;"></i>
-          Workplace<br>
-        </div>
-
-        <div style="margin-top:8px;">
-          <i class="fa fa-flag" style="color:#800080; margin-right:6px;"></i>
-          Club<br>
-        </div>
-
-        <div style="margin-top:8px;">
-          <i class="fa fa-users" style="color:#ff8800; margin-right:6px;"></i>
-          CoP Member<br>
-        </div>
-      `;
-      return div;
-    };
-
-    legend.addTo(map);
-  })
-  .catch(err => {
-    console.error("Error loading data:", err);
   });
-</script>
 
+function searchLGA() {
+  const input = document.getElementById("lgaSearch").value.trim().toLowerCase();
+  if (lgaLookup[input]) {
+    map.fitBounds(lgaLookup[input].getBounds());
+  } else {
+    alert("LGA not found.");
+  }
+}
+
+/////////////////////////////
+// LOAD POINTS & FILTER LOGIC
+/////////////////////////////
+
+let allMarkers = [];
+
+Papa.parse("https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/refs/heads/main/welcoming_points_centroids.csv", {
+  download: true,
+  header: true,
+  complete: function (results) {
+    results.data.forEach(row => {
+      if (!row.lat || !row.lon) return;
+
+      const type = row.type ? row.type.toLowerCase() : "workplace";
+      const color = colours[type] || "#888";
+
+      const marker = L.circleMarker([parseFloat(row.lat), parseFloat(row.lon)], {
+        radius: 7,
+        fillColor: color,
+        color: "#000",
+        weight: 1,
+        fillOpacity: 0.9
+      }).bindPopup(`<b>${row.name}</b><br>${row.address}<br>${row.type}`);
+
+      marker.category = type;
+      allMarkers.push(marker);
+      clusterGroup.addLayer(marker);
+    });
+  }
+});
+
+/////////////////////////////
+// FILTER BUTTONS
+/////////////////////////////
+
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filterType = btn.dataset.type;
+
+    clusterGroup.clearLayers();
+
+    if (filterType === "all") {
+      allMarkers.forEach(m => clusterGroup.addLayer(m));
+    } else {
+      allMarkers
+        .filter(m => m.category === filterType)
+        .forEach(m => clusterGroup.addLayer(m));
+    }
+  });
+});
+
+</script>
 </body>
 </html>
