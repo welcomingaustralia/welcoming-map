@@ -116,30 +116,10 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 // Cluster tuning: decluster earlier
-const clusterOptions = {
-  maxClusterRadius: 40,
-  disableClusteringAtZoom: 9
-};
-
-const uniCluster = L.markerClusterGroup({
-  spiderfyOnEveryZoom: true,
-  spiderfyDistanceMultiplier: 2
-});
-
-const workplaceCluster = L.markerClusterGroup({
-  spiderfyOnEveryZoom: true,
-  spiderfyDistanceMultiplier: 2
-});
-
-const clubCluster = L.markerClusterGroup({
-  spiderfyOnEveryZoom: true,
-  spiderfyDistanceMultiplier: 2
-});
-
-const copCluster = L.markerClusterGroup({
-  spiderfyOnEveryZoom: true,
-  spiderfyDistanceMultiplier: 2
-});
+const uniCluster = L.markerClusterGroup();
+const workplaceCluster = L.markerClusterGroup();
+const clubCluster = L.markerClusterGroup();
+const copCluster = L.markerClusterGroup();
 
 // Neutral grey colour cluster CSS (no random colours)
 document.head.insertAdjacentHTML("beforeend", `
@@ -220,41 +200,49 @@ Promise.all([
     club:      { icon: "fa-flag",       color: "#800080" },
     cop:       { icon: "fa-users",      color: "#ff8800" }
   };
-
+//thats what i reaplced for markers 
   points.forEach(r => {
-    if (!r.lat || !r.lon) return;
+  if (!r.lat || !r.lon) return;
 
-    const type = r.type?.trim().toLowerCase();
-    const cfg = iconMap[type] || { icon: "fa-map-marker", color: "#444" };
+  const type = r.type?.trim().toLowerCase();
+  const cfg = iconMap[type] || { icon: "fa-map-marker", color: "#444" };
 
-    const marker = L.marker([+r.lat, +r.lon], {
-      icon: L.divIcon({
-        className: "fa-icon",
-        html: `<i class="fa ${cfg.icon}" style="color:${cfg.color}; font-size:20px;"></i>`,
-        iconSize: [20, 20]
-      })
-    });
+  // ---- JITTER FIX FOR IDENTICAL COORDINATES ----
+  // Tiny random offset: ~20–30 meters
+  const jitter = (Math.random() - 0.5) * 0.0003;
+  const lat = +r.lat + jitter;
+  const lon = +r.lon + jitter;
+  // ---------------------------------------------
 
-    // Tooltip on hover (name only)
-marker.bindTooltip(r.name, {
-  direction: "top",
-  offset: [0, -10],
-  opacity: 0.9
-});
-
-// Popup on click (full details)
-marker.bindPopup(`
-  <b>${r.name}</b><br>
-  ${r.address}<br>
-  ${r.postcode}
-`);
-
-    if (type === "uni")       uniCluster.addLayer(marker);
-    if (type === "workplace") workplaceCluster.addLayer(marker);
-    if (type === "club")      clubCluster.addLayer(marker);
-    if (type === "cop")       copCluster.addLayer(marker);
+  const marker = L.marker([lat, lon], {
+    icon: L.divIcon({
+      className: "fa-icon",
+      html: `<i class="fa ${cfg.icon}" style="color:${cfg.color}; font-size:20px;"></i>`,
+      iconSize: [20, 20]
+    })
   });
 
+  // Tooltip on hover (name only)
+  marker.bindTooltip(r.name, {
+    direction: "top",
+    offset: [0, -10],
+    opacity: 0.9
+  });
+
+  // Popup on click (full details)
+  marker.bindPopup(`
+    <b>${r.name}</b><br>
+    ${r.address}<br>
+    ${r.postcode}
+  `);
+
+  if (type === "uni")       uniCluster.addLayer(marker);
+  if (type === "workplace") workplaceCluster.addLayer(marker);
+  if (type === "club")      clubCluster.addLayer(marker);
+  if (type === "cop")       copCluster.addLayer(marker);
+});
+
+//finished replacement 
   uniCluster.addTo(map);
   workplaceCluster.addTo(map);
   clubCluster.addTo(map);
