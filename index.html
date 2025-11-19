@@ -21,7 +21,24 @@
     href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
   />
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+// ---- AUTO-SPIDERFY ON ZOOM PATCH ----
+// Makes clusters automatically expand into individual markers when you zoom in.
+L.MarkerClusterGroup.include({
+  spiderfyOnEveryZoom: false,
 
+  _zoomEnd: function () {
+    // Call original behavior
+    L.MarkerClusterGroup.prototype._zoomEnd.call(this);
+
+    // If enabled, auto-spiderfy on every zoom
+    if (this.options.spiderfyOnEveryZoom) {
+      this._unspiderfy();
+      this.spiderfy();
+    }
+  }
+});
+</script>
   <!-- Font Awesome for icons -->
   <link
     rel="stylesheet"
@@ -103,7 +120,9 @@ const POINTS_URL =
 const WELC_LGAS_URL =
   "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/welcoming_lgas.csv";
 
-// -----------------------------------
+
+  
+  // -----------------------------------
 // 2. MAP SETUP
 // -----------------------------------
 const map = L.map("map").setView([-25.0, 134.0], 5);
@@ -116,10 +135,17 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 // Cluster tuning: decluster earlier
-const uniCluster = L.markerClusterGroup();
-const workplaceCluster = L.markerClusterGroup();
-const clubCluster = L.markerClusterGroup();
-const copCluster = L.markerClusterGroup();
+const clusterOptions = {
+  spiderfyOnMaxZoom: true,
+  zoomToBoundsOnClick: false,   // prevents auto-zoom
+  spiderfyOnEveryZoom: true,    // ⭐ custom setting
+  maxClusterRadius: 30,         // expand earlier
+};
+
+const uniCluster       = L.markerClusterGroup(clusterOptions);
+const workplaceCluster = L.markerClusterGroup(clusterOptions);
+const clubCluster      = L.markerClusterGroup(clusterOptions);
+const copCluster       = L.markerClusterGroup(clusterOptions);
 
 // Neutral grey colour cluster CSS (no random colours)
 document.head.insertAdjacentHTML("beforeend", `
