@@ -22,34 +22,28 @@
   />
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
+// AUTO-SPIDERFY PATCH
 L.MarkerClusterGroup.include({
-
   spiderfyOnEveryZoom: false,
 
   _zoomEnd: function () {
-    // call original
+    // Run original behavior
     L.MarkerClusterGroup.prototype._zoomEnd.call(this);
 
-    // run spiderfy after zoom completes
+    // Auto-spiderfy on zoom if enabled
     if (this.options.spiderfyOnEveryZoom) {
-
-      // find clusters currently visible
-      this._topClusterLevel.getAllChildMarkers().forEach(marker => {
-        if (marker.__parent && marker.__parent._group && marker.__parent._group._zoom === this._map.getZoom()) {
-          // do nothing – this cluster is already split
-        }
-      });
-
-      // unspiderfy any active
+      // Unspiderfy old cluster before spiderfying again
       this._unspiderfy();
-
-      // spiderfy ALL clusters currently visible
-      this._featureGroup.eachLayer(layer => {
-        if (layer instanceof L.MarkerCluster) {
-          layer.spiderfy();
-        }
-      });
+      this._spiderfyClusters();  // key: spiderfy groups, not itself
     }
+  },
+
+  _spiderfyClusters: function () {
+    this._topClusterLevel.getAllChildClusters().forEach(c => {
+      if (c._childCount > 1) {
+        c.spiderfy();
+      }
+    });
   }
 });
 </script>
