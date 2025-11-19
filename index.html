@@ -121,10 +121,25 @@ const clusterOptions = {
   disableClusteringAtZoom: 9
 };
 
-const uniCluster       = L.markerClusterGroup(clusterOptions);
-const workplaceCluster = L.markerClusterGroup(clusterOptions);
-const clubCluster      = L.markerClusterGroup(clusterOptions);
-const copCluster       = L.markerClusterGroup(clusterOptions);
+const uniCluster = L.markerClusterGroup({
+  spiderfyOnEveryZoom: true,
+  spiderfyDistanceMultiplier: 2
+});
+
+const workplaceCluster = L.markerClusterGroup({
+  spiderfyOnEveryZoom: true,
+  spiderfyDistanceMultiplier: 2
+});
+
+const clubCluster = L.markerClusterGroup({
+  spiderfyOnEveryZoom: true,
+  spiderfyDistanceMultiplier: 2
+});
+
+const copCluster = L.markerClusterGroup({
+  spiderfyOnEveryZoom: true,
+  spiderfyDistanceMultiplier: 2
+});
 
 // Neutral grey colour cluster CSS (no random colours)
 document.head.insertAdjacentHTML("beforeend", `
