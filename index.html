@@ -120,8 +120,9 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 // Cluster tuning: decluster earlier
 const clusterOptions = {
   spiderfyOnMaxZoom: true,
-  zoomToBoundsOnClick: false,   // prevents auto-zoom
-  maxClusterRadius: 20,         // expand earlier
+  zoomToBoundsOnClick: true,   // prevents auto-zoom
+  maxClusterRadius: 15, 
+  disableClusteringAtZoom: 8,// expand earlier
 };
 
 const uniCluster       = L.markerClusterGroup(clusterOptions);
