@@ -1,31 +1,4 @@
 ﻿name,type,address,postcode,state,lat,lon,precision
-Australian National Chinese Women's Federation,cop,,4215,QLD,-27.967134,153.397952,postcode_centroid
-The Federation of Indian Communities of Queensland,cop,,4000,QLD,-27.468391,153.022126,postcode_centroid
-Arise Women Support Association,cop,,4051,QLD,-27.427508,153.000297,postcode_centroid
-Arise Women Support Association,cop,,4350,QLD,-27.576308,151.852689,postcode_centroid
-Women's Power of Inspiration,cop,,4215,QLD,-27.967134,153.397952,postcode_centroid
-Women's Power of Inspiration,cop,,4131,QLD,-27.669913,153.136072,postcode_centroid
-Bangle Foundation,cop,,4000,QLD,-27.468391,153.022126,postcode_centroid
-Hillcrest Community Centre,cop,,4118,QLD,-27.673806,153.027323,postcode_centroid
-Vedic Education Arts and Culture,cop,,4350,QLD,-27.576308,151.852689,postcode_centroid
-Middle Eastern Communities Council of S.A.,cop,,5453,SA,-33.802932,138.582681,postcode_centroid
-Slava Ukrainian Cultural Centre,cop,,5011,SA,-34.87089128,138.5353265,postcode_centroid
-Afghan United Association of South Australia,cop,,5114,SA,-34.718681,138.754254,postcode_centroid
-Adelaide Eid Festival,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid
-Pashtun Association of SA,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid
-Pashtun Association of SA,cop,,5012,SA,-34.86303,138.541637,postcode_centroid
-Pashtun Association of SA,cop,,5043,SA,-35.005492,138.553853,postcode_centroid
-Pashtun Association of SA,cop,,5067,SA,-34.919985,138.630575,postcode_centroid
-Pashtun Association of SA,cop,,5015,SA,-34.808422,138.531567,postcode_centroid
-Pashtun Association of SA,cop,,5082,SA,-34.886018,138.587083,postcode_centroid
-Pashtun Association of SA,cop,,5108,SA,-34.761553,138.61884,postcode_centroid
-Pashtun Association of SA,cop,,5061,SA,-34.957195,138.60648,postcode_centroid
-Pashtun Association of SA,cop,,5031,SA,-34.936926,138.570873,postcode_centroid
-St. Elias Antiochian Orthodox Parish Association Incorporated,cop,,5012,SA,-34.86303,138.541637,postcode_centroid
-Associazione Sinopolese Del Sud Australia Maria SS Di Tutte Le Grazie Incorporated,cop,,5012,SA,-34.86303,138.541637,postcode_centroid
-Ceylon Tamil Association of South Australia,cop,,5066,SA,-34.940962,138.66029,postcode_centroid
-Ceylon Tamil Association of South Australia,cop,,5074,SA,-34.884233,138.669275,postcode_centroid
-Ceylon Tamil Association of South Australia,cop,,5091,SA,-34.822615,138.735572,postcode_centroid
 Circle of Friends Australia,cop,,5152,SA,-34.998401,138.703957,postcode_centroid
 Hispanic Women's Association of South Australia,cop,,5043,SA,-35.005492,138.553853,postcode_centroid
 Hispanic Women's Association of South Australia,,,5108,SA,-34.761553,138.61884,postcode_centroid
@@ -174,6 +147,7 @@ Organisation of African Communities in Western Australia,cop,,6065,WA,-31.69444,
 Rajasthani Kutumb - Australia,cop,,6155,WA,-32.061501,115.890779,postcode_centroid
 
 Rajasthani Kutumb - Australia,cop,,6110,WA,-32.078535,116.008603,postcode_centroid
+
 
 
 
