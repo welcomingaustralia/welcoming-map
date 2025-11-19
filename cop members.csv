@@ -1,23 +1,4 @@
 ﻿name,type,address,postcode,state,lat,lon,precision
-Circle of Friends Australia,cop,,5152,SA,-34.998401,138.703957,postcode_centroid
-Hispanic Women's Association of South Australia,cop,,5043,SA,-35.005492,138.553853,postcode_centroid
-Hispanic Women's Association of South Australia,,,5108,SA,-34.761553,138.61884,postcode_centroid
-Afghan Culture Association,cop,,5114,SA,-34.718681,138.754254,postcode_centroid
-Afghan Culture Association,cop,,5082,SA,-34.886018,138.587083,postcode_centroid
-Afghan Culture Association,cop,,5108,SA,-34.761553,138.61884,postcode_centroid
-Telugu Association of South Australia,cop,,5011,SA,-34.87089128,138.5353265,postcode_centroid
-Telugu Association of South Australia,cop,,5043,SA,-35.005492,138.553853,postcode_centroid
-Telugu Association of South Australia,cop,,5015,SA,-34.808422,138.531567,postcode_centroid
-Telugu Association of South Australia,cop,,5108,SA,-34.761553,138.61884,postcode_centroid
-Telugu Association of South Australia,cop,,5031,SA,-34.936926,138.570873,postcode_centroid
-Cyprus Community of South Australia,cop,,5011,SA,-34.87089128,138.5353265,postcode_centroid
-Hong Kong Cultural Association of South Australia,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid
-Hong Kong Cultural Association of South Australia,cop,,5061,SA,-34.957195,138.60648,postcode_centroid
-Hong Kong Cultural Association of South Australia,cop,,5031,SA,-34.936926,138.570873,postcode_centroid
-Farda Group,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid
-Farda Group,cop,,5108,SA,-34.761553,138.61884,postcode_centroid
-Akaal Sikh Society Launceston,cop,,7277,TAS,-41.366416,146.996977,postcode_centroid
-Akaal Sikh Society Launceston,cop,,7304,TAS,-41.710417,146.165998,postcode_centroid
 Shia Association of Ahl-E-Bayt Tasmania,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
 The Non-resident Nepali Association Australia,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
 Association of Colombians in Tasmania (ASSOCOLTAS),cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
@@ -147,6 +128,7 @@ Organisation of African Communities in Western Australia,cop,,6065,WA,-31.69444,
 Rajasthani Kutumb - Australia,cop,,6155,WA,-32.061501,115.890779,postcode_centroid
 
 Rajasthani Kutumb - Australia,cop,,6110,WA,-32.078535,116.008603,postcode_centroid
+
 
 
 
