@@ -22,19 +22,33 @@
   />
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
-// ---- AUTO-SPIDERFY ON ZOOM PATCH ----
-// Makes clusters automatically expand into individual markers when you zoom in.
 L.MarkerClusterGroup.include({
+
   spiderfyOnEveryZoom: false,
 
   _zoomEnd: function () {
-    // Call original behavior
+    // call original
     L.MarkerClusterGroup.prototype._zoomEnd.call(this);
 
-    // If enabled, auto-spiderfy on every zoom
+    // run spiderfy after zoom completes
     if (this.options.spiderfyOnEveryZoom) {
+
+      // find clusters currently visible
+      this._topClusterLevel.getAllChildMarkers().forEach(marker => {
+        if (marker.__parent && marker.__parent._group && marker.__parent._group._zoom === this._map.getZoom()) {
+          // do nothing – this cluster is already split
+        }
+      });
+
+      // unspiderfy any active
       this._unspiderfy();
-      this.spiderfy();
+
+      // spiderfy ALL clusters currently visible
+      this._featureGroup.eachLayer(layer => {
+        if (layer instanceof L.MarkerCluster) {
+          layer.spiderfy();
+        }
+      });
     }
   }
 });
