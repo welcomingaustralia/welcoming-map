@@ -1,17 +1,4 @@
 ﻿name,type,address,postcode,state,lat,lon,precision
-Somali Australian Community Association of NSW (SACA),cop,,2144,NSW,-33.851868,151.026756,postcode_centroid
-Somali Australian Community Association of NSW (SACA),cop,,2200,NSW,-33.926559,151.014937,postcode_centroid
-Somali Australian Community Association of NSW (SACA),cop,,2193,NSW,-33.910308,151.12086,postcode_centroid
-Somali Australian Community Association of NSW (SACA),cop,,2165,NSW,-33.872435,150.947496,postcode_centroid
-Somali Australian Community Association of NSW (SACA),cop,,2160,NSW,-33.835883,150.976594,postcode_centroid
-Australian Meff Consortium,cop,,2165,NSW,-33.872435,150.947496,postcode_centroid
-Khmer Community of New South Wales,cop,,2144,NSW,-33.851868,151.026756,postcode_centroid
-Khmer Community of New South Wales,cop,,2200,NSW,-33.926559,151.014937,postcode_centroid
-Khmer Community of New South Wales,cop,,2148,NSW,-33.783751,150.900547,postcode_centroid
-Khmer Community of New South Wales,cop,,2165,NSW,-33.872435,150.947496,postcode_centroid
-Khmer Community of New South Wales,cop,,2170,NSW,-33.928392,150.921448,postcode_centroid
-Khmer Community of New South Wales,cop,,2160,NSW,-33.835883,150.976594,postcode_centroid
-Khmer Community of New South Wales,cop,,2150,NSW,-33.814463,151.006506,postcode_centroid
 Association of Community Language Schools,cop,,2560,NSW,-34.194216,150.768408,postcode_centroid
 Association of Community Language Schools,cop,,2500,NSW,-34.423171,150.874294,postcode_centroid
 Australian Druze Community,cop,,2160,NSW,-33.835883,150.976594,postcode_centroid
@@ -254,3 +241,4 @@ Organisation of African Communities in Western Australia,cop,,6065,WA,-31.69444,
 Rajasthani Kutumb - Australia,cop,,6155,WA,-32.061501,115.890779,postcode_centroid
 
 Rajasthani Kutumb - Australia,cop,,6110,WA,-32.078535,116.008603,postcode_centroid
+
