@@ -75,6 +75,12 @@
       min-width: 18px;
       text-align: center;
     }
+
+    /* Always show layer control as a box (no hover-only behaviour) */
+    .leaflet-control-layers {
+      box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+      background: white;
+    }
   </style>
 </head>
 <body>
@@ -102,6 +108,9 @@ const WELC_LGAS_URL =
 // -----------------------------------
 const map = L.map("map").setView([-25.0, 134.0], 5);
 
+// MOVE ZOOM CONTROL TO BOTTOM-LEFT
+map.zoomControl.setPosition("bottomleft");
+
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 18
 }).addTo(map);
@@ -117,20 +126,19 @@ const workplaceCluster = L.markerClusterGroup(clusterOptions);
 const clubCluster      = L.markerClusterGroup(clusterOptions);
 const copCluster       = L.markerClusterGroup(clusterOptions);
 
-// Neutral colour cluster CSS
+// Neutral grey colour cluster CSS (no random colours)
 document.head.insertAdjacentHTML("beforeend", `
 <style>
-.marker-cluster-small {
-  background: #9bbad1;
-  color: white;
-}
-.marker-cluster-medium {
-  background: #7896b5;
-  color: white;
-}
+.marker-cluster-small,
+.marker-cluster-medium,
 .marker-cluster-large {
-  background: #4f6d8a;
-  color: white;
+  background: #b0b0b0;
+  color: #000000;
+}
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+  background: rgba(255,255,255,0.6);
 }
 </style>`);
 
@@ -143,7 +151,16 @@ function loadCSV(url) {
     .then(t => Papa.parse(t, { header: true, skipEmptyLines: true }).data);
 }
 
-// LGA storage for search
+// helper: Title Case
+function toTitleCase(str) {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map(word => word ? word[0].toUpperCase() + word.slice(1) : "")
+    .join(" ");
+}
+
+// LGA storage for search (store both layer + displayName)
 const lgaLayers = {};
 
 Promise.all([
@@ -169,9 +186,15 @@ Promise.all([
   L.geoJSON(geojson, {
     style: lgaStyle,
     onEachFeature: (feature, layer) => {
-      const name = feature.properties.LGA_NAME25;
-      lgaLayers[name.toLowerCase()] = layer;
-      layer.bindTooltip(name);
+      const rawName = feature.properties.LGA_NAME25 || "";
+      const key = rawName.toLowerCase();
+      const displayName = toTitleCase(rawName);
+
+      // store layer + display name for search
+      lgaLayers[key] = { layer, displayName };
+
+      // tooltip shown on hover in Title Case
+      layer.bindTooltip(displayName);
     }
   }).addTo(map);
 
@@ -210,13 +233,17 @@ Promise.all([
   clubCluster.addTo(map);
   copCluster.addTo(map);
 
-  // 6. FILTER CONTROL
-  L.control.layers(null, {
-    "Universities": uniCluster,
-    "Workplaces": workplaceCluster,
-    "Clubs": clubCluster,
-    "CoP Members": copCluster
-  }).addTo(map);
+  // 6. FILTER CONTROL – ALWAYS VISIBLE (NOT ON HOVER)
+  L.control.layers(
+    null,
+    {
+      "Universities": uniCluster,
+      "Workplaces": workplaceCluster,
+      "Clubs": clubCluster,
+      "CoP Members": copCluster
+    },
+    { collapsed: false }           // <-- key bit so tickboxes always show
+  ).addTo(map);
 
   // -----------------------------------
   // 7. LGA SEARCH WITH DROPDOWN
@@ -246,15 +273,19 @@ Promise.all([
 
     const matches = Object.keys(lgaLayers).filter(name => name.includes(q));
 
-    matches.forEach(name => {
+    matches.forEach(nameKey => {
+      const info = lgaLayers[nameKey];
       const item = document.createElement("div");
       item.style.padding = "5px";
       item.style.cursor = "pointer";
-      item.innerText = name;
+
+      // SHOW TITLE CASE NAME IN DROPDOWN
+      item.innerText = info.displayName;
+
       item.onclick = () => {
-        input.value = name;
+        input.value = info.displayName;
         dropdown.style.display = "none";
-        map.fitBounds(lgaLayers[name].getBounds(), { maxZoom: 10 });
+        map.fitBounds(info.layer.getBounds(), { maxZoom: 10 });
       };
       dropdown.appendChild(item);
     });
@@ -263,7 +294,6 @@ Promise.all([
   });
 
 });
-
 </script>
 
 </body>
