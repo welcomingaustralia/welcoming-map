@@ -21,32 +21,7 @@
     href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
   />
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-<script>
-// AUTO-SPIDERFY PATCH
-L.MarkerClusterGroup.include({
-  spiderfyOnEveryZoom: false,
-
-  _zoomEnd: function () {
-    // Run original behavior
-    L.MarkerClusterGroup.prototype._zoomEnd.call(this);
-
-    // Auto-spiderfy on zoom if enabled
-    if (this.options.spiderfyOnEveryZoom) {
-      // Unspiderfy old cluster before spiderfying again
-      this._unspiderfy();
-      this._spiderfyClusters();  // key: spiderfy groups, not itself
-    }
-  },
-
-  _spiderfyClusters: function () {
-    this._topClusterLevel.getAllChildClusters().forEach(c => {
-      if (c._childCount > 1) {
-        c.spiderfy();
-      }
-    });
-  }
-});
-</script>
+  
   <!-- Font Awesome for icons -->
   <link
     rel="stylesheet"
@@ -146,7 +121,6 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 const clusterOptions = {
   spiderfyOnMaxZoom: true,
   zoomToBoundsOnClick: false,   // prevents auto-zoom
-  spiderfyOnEveryZoom: true,    // ⭐ custom setting
   maxClusterRadius: 30,         // expand earlier
 };
 
