@@ -257,6 +257,40 @@ Promise.all([
   clubCluster.addTo(map);
   copCluster.addTo(map);
 
+
+// jitter code
+// ---- JITTER ON ZOOM (spread icons apart when clustering turns off) ----
+function applyJitterToMarkers(clusterGroup) {
+  clusterGroup.eachLayer(marker => {
+
+    // Save original location once
+    if (!marker.originalLatLng) {
+      marker.originalLatLng = marker.getLatLng();
+    }
+
+    // When clusters are disabled, jitter markers apart slightly
+    if (map.getZoom() >= clusterGroup.options.disableClusteringAtZoom) {
+      const jitter = (Math.random() - 0.5) * 0.0006; // ~50–60m
+      marker.setLatLng([
+        marker.originalLatLng.lat + jitter,
+        marker.originalLatLng.lng + jitter
+      ]);
+    } else {
+      // Reset to real coordinates
+      marker.setLatLng(marker.originalLatLng);
+    }
+  });
+}
+
+// Re-jitter whenever user finishes zooming
+map.on("zoomend", () => {
+  applyJitterToMarkers(uniCluster);
+  applyJitterToMarkers(workplaceCluster);
+  applyJitterToMarkers(clubCluster);
+  applyJitterToMarkers(copCluster);
+});
+
+  
   // 6. FILTER CONTROL – ALWAYS VISIBLE (NOT ON HOVER)
   L.control.layers(
     null,
