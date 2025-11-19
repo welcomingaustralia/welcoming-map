@@ -1,29 +1,4 @@
 ﻿name,type,address,postcode,state,lat,lon,precision
-Shia Association of Ahl-E-Bayt Tasmania,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
-The Non-resident Nepali Association Australia,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
-Association of Colombians in Tasmania (ASSOCOLTAS),cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
-Australian Italian Club,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
-Be Hers,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
-Multicultural Womens Council of Tasmania,cop,,7010,TAS,-42.85913,147.212366,postcode_centroid
-Multicultural Womens Council of Tasmania,cop,,7015,TAS,-42.83903,147.360174,postcode_centroid
-Multicultural Womens Council of Tasmania,cop,,7005,TAS,-42.916204,147.3368,postcode_centroid
-Multicultural Womens Council of Tasmania,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
-Australian Professionals of Colour (APOC),cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Sufi Festival,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Cypher Culture (Vic),cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Somali Community,cop,,3040,VIC,-37.751845,144.902556,postcode_centroid
-Somali Community,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Somali Community,cop,,3030,VIC,-37.91624,144.64209,postcode_centroid
-Yarra Ethnic Arts Exchange Association,cop,,3067,VIC,-37.803515,144.998203,postcode_centroid
-Somali Elders Group in Victoria,cop,,3084,VIC,-37.744406,145.082685,postcode_centroid
-Walker Close & Brooklyn Hall Association,cop,,3015,VIC,-37.838242,144.880556,postcode_centroid
-Multicultural Women Victoria,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Australia-Korea Business Council,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-The Federation of Chinese Associations (VIC),cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Malayalee Association of Victoria,cop,,3810,VIC,-38.04658,145.472514,postcode_centroid
-Malayalee Association of Victoria,cop,,3805,VIC,-38.037026,145.304198,postcode_centroid
-Malayalee Association of Victoria,cop,,3977,VIC,-38.1466398,145.2695101,postcode_centroid
-Malayalee Association of Victoria,cop,,3175,VIC,-38.016114,145.208504,postcode_centroid
 Astha Nepali Hindu Society of Victoria Shree Pashupatinath Temple,cop,,3977,VIC,-38.1466398,145.2695101,postcode_centroid
 Filipino Australian Seniors Association,cop,,3192,VIC,-37.965655,145.0623,postcode_centroid
 Diwali & Holi in West,cop,,3337,VIC,-37.65724033,144.5462424,postcode_centroid
@@ -128,6 +103,7 @@ Organisation of African Communities in Western Australia,cop,,6065,WA,-31.69444,
 Rajasthani Kutumb - Australia,cop,,6155,WA,-32.061501,115.890779,postcode_centroid
 
 Rajasthani Kutumb - Australia,cop,,6110,WA,-32.078535,116.008603,postcode_centroid
+
 
 
 
