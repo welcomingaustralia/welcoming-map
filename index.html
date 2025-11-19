@@ -220,7 +220,19 @@ Promise.all([
       })
     });
 
-    marker.bindPopup(`<b>${r.name}</b><br>${r.address}<br>${r.state} ${r.postcode}`);
+    // Tooltip on hover (name only)
+marker.bindTooltip(r.name, {
+  direction: "top",
+  offset: [0, -10],
+  opacity: 0.9
+});
+
+// Popup on click (full details)
+marker.bindPopup(`
+  <b>${r.name}</b><br>
+  ${r.address}<br>
+  ${r.state} ${r.postcode}
+`);
 
     if (type === "uni")       uniCluster.addLayer(marker);
     if (type === "workplace") workplaceCluster.addLayer(marker);
