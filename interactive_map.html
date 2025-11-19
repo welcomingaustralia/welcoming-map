@@ -87,242 +87,182 @@
   <div id="map"></div>
 
 <script>
-  // -----------------------------------
-  // 1. DATA SOURCES (GitHub raw URLs)
-  // -----------------------------------
-  const GEOJSON_URL =
-    "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/LGA_2025_AUST_GDA2020.min.json";
-  const POINTS_URL =
-    "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/welcoming_points_centroids.csv";
-  const WELC_LGAS_URL =
-    "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/welcoming_lgas.csv";
+// -----------------------------------
+// 1. DATA SOURCES
+// -----------------------------------
+const GEOJSON_URL =
+  "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/LGA_2025_AUST_GDA2020.min.json";
+const POINTS_URL =
+  "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/welcoming_points_centroids.csv";
+const WELC_LGAS_URL =
+  "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/welcoming_lgas.csv";
 
-  // -----------------------------------
-  // 2. MAP SETUP
-  // -----------------------------------
-  const map = L.map("map").setView([-25.0, 134.0], 4);
+// -----------------------------------
+// 2. MAP SETUP
+// -----------------------------------
+const map = L.map("map").setView([-25.0, 134.0], 5);
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 18,
-    attribution: "&copy; OpenStreetMap contributors"
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 18
+}).addTo(map);
+
+// Cluster tuning: decluster earlier
+const clusterOptions = {
+  maxClusterRadius: 40,
+  disableClusteringAtZoom: 9
+};
+
+const uniCluster       = L.markerClusterGroup(clusterOptions);
+const workplaceCluster = L.markerClusterGroup(clusterOptions);
+const clubCluster      = L.markerClusterGroup(clusterOptions);
+const copCluster       = L.markerClusterGroup(clusterOptions);
+
+// Neutral colour cluster CSS
+document.head.insertAdjacentHTML("beforeend", `
+<style>
+.marker-cluster-small {
+  background: #9bbad1;
+  color: white;
+}
+.marker-cluster-medium {
+  background: #7896b5;
+  color: white;
+}
+.marker-cluster-large {
+  background: #4f6d8a;
+  color: white;
+}
+</style>`);
+
+// -----------------------------------
+// CSV helper
+// -----------------------------------
+function loadCSV(url) {
+  return fetch(url)
+    .then(r => r.text())
+    .then(t => Papa.parse(t, { header: true, skipEmptyLines: true }).data);
+}
+
+// LGA storage for search
+const lgaLayers = {};
+
+Promise.all([
+  loadCSV(WELC_LGAS_URL),
+  fetch(GEOJSON_URL).then(r => r.json()),
+  loadCSV(POINTS_URL)
+])
+.then(([welcList, geojson, points]) => {
+
+  // 3. Welcoming LGAs
+  const welcomingLGAs = new Set(
+    welcList.map(r => r.lga_name?.trim()).filter(Boolean)
+  );
+
+  // 4. LGA polygons
+  function lgaStyle(feature) {
+    const name = feature.properties.LGA_NAME25;
+    return welcomingLGAs.has(name)
+      ? { fillColor: "#66b2ff", color: "#004c99", weight: 1, fillOpacity: 0.45 }
+      : { fillColor: "#e0e0e0", color: "#999", weight: 0.3, fillOpacity: 0.1 };
+  }
+
+  L.geoJSON(geojson, {
+    style: lgaStyle,
+    onEachFeature: (feature, layer) => {
+      const name = feature.properties.LGA_NAME25;
+      lgaLayers[name.toLowerCase()] = layer;
+      layer.bindTooltip(name);
+    }
   }).addTo(map);
 
-  // Marker clusters per category
-  const uniCluster       = L.markerClusterGroup();
-  const workplaceCluster = L.markerClusterGroup();
-  const clubCluster      = L.markerClusterGroup();
-  const copCluster       = L.markerClusterGroup();
+  // 5. POINT MARKERS
+  const iconMap = {
+    uni:       { icon: "fa-university", color: "#C44444" },
+    workplace: { icon: "fa-building",   color: "#2E8B57" },
+    club:      { icon: "fa-flag",       color: "#800080" },
+    cop:       { icon: "fa-users",      color: "#ff8800" }
+  };
 
-  // We'll use this to search LGAs
-  const lgaLayers = {};   // name(lowercase) -> layer
+  points.forEach(r => {
+    if (!r.lat || !r.lon) return;
 
-  // -----------------------------------
-  // 3. HELPERS
-  // -----------------------------------
-  function stripBOM(text) {
-    return text.replace(/^\uFEFF/, "");
-  }
+    const type = r.type?.trim().toLowerCase();
+    const cfg = iconMap[type] || { icon: "fa-map-marker", color: "#444" };
 
-  function loadCSV(url) {
-    return fetch(url)
-      .then(resp => resp.text())
-      .then(text => {
-        text = stripBOM(text);
-        const parsed = Papa.parse(text, {
-          header: true,
-          skipEmptyLines: true
-        });
-        return parsed.data;
-      });
-  }
-
-  // -----------------------------------
-  // 4. LOAD ALL DATA
-  // -----------------------------------
-  Promise.all([
-    loadCSV(WELC_LGAS_URL),                 // 0: welcoming LGAs
-    fetch(GEOJSON_URL).then(r => r.json()), // 1: LGA GeoJSON
-    loadCSV(POINTS_URL)                     // 2: points
-  ])
-  .then(([welcLgaRows, geojsonData, pointRows]) => {
-
-    // 4a. Build set of welcoming LGA names
-    const welcomingLGAs = new Set();
-    welcLgaRows.forEach(row => {
-      if (row.lga_name) {
-        welcomingLGAs.add(row.lga_name.trim());
-      }
+    const marker = L.marker([+r.lat, +r.lon], {
+      icon: L.divIcon({
+        className: "fa-icon",
+        html: `<i class="fa ${cfg.icon}" style="color:${cfg.color}; font-size:20px;"></i>`,
+        iconSize: [20, 20]
+      })
     });
 
-    // 4b. Add LGA polygons, shading welcoming members
-    function lgaStyle(feature) {
-      const name = feature.properties && feature.properties.LGA_NAME25;
-      if (welcomingLGAs.has(name)) {
-        return {
-          fillColor: "#66b2ff",     // blue highlight
-          color: "#004c99",         // darker border
-          weight: 1,
-          fillOpacity: 0.45
-        };
-      } else {
-        return {
-          fillColor: "#e0e0e0",     // light grey
-          color: "#999999",
-          weight: 0.3,
-          fillOpacity: 0.10
-        };
-      }
+    marker.bindPopup(`<b>${r.name}</b><br>${r.address}<br>${r.state} ${r.postcode}`);
+
+    if (type === "uni")       uniCluster.addLayer(marker);
+    if (type === "workplace") workplaceCluster.addLayer(marker);
+    if (type === "club")      clubCluster.addLayer(marker);
+    if (type === "cop")       copCluster.addLayer(marker);
+  });
+
+  uniCluster.addTo(map);
+  workplaceCluster.addTo(map);
+  clubCluster.addTo(map);
+  copCluster.addTo(map);
+
+  // 6. FILTER CONTROL
+  L.control.layers(null, {
+    "Universities": uniCluster,
+    "Workplaces": workplaceCluster,
+    "Clubs": clubCluster,
+    "CoP Members": copCluster
+  }).addTo(map);
+
+  // -----------------------------------
+  // 7. LGA SEARCH WITH DROPDOWN
+  // -----------------------------------
+  const input = document.getElementById("lgaSearch");
+
+  // Create dropdown container
+  const dropdown = document.createElement("div");
+  dropdown.style.position = "absolute";
+  dropdown.style.background = "white";
+  dropdown.style.border = "1px solid #ccc";
+  dropdown.style.width = "220px";
+  dropdown.style.maxHeight = "200px";
+  dropdown.style.overflowY = "auto";
+  dropdown.style.display = "none";
+  dropdown.style.zIndex = 99999;
+  input.parentNode.appendChild(dropdown);
+
+  input.addEventListener("input", () => {
+    const q = input.value.toLowerCase().trim();
+    dropdown.innerHTML = "";
+
+    if (q.length < 2) {
+      dropdown.style.display = "none";
+      return;
     }
 
-    L.geoJSON(geojsonData, {
-      style: lgaStyle,
-      onEachFeature: (feature, layer) => {
-        const name = (feature.properties && feature.properties.LGA_NAME25) || "";
-        const key = name.toLowerCase().trim();
-        if (key) {
-          lgaLayers[key] = layer;
-        }
-        if (name) {
-          layer.bindTooltip("LGA: " + name, { sticky: true });
-        }
-      }
-    }).addTo(map);
+    const matches = Object.keys(lgaLayers).filter(name => name.includes(q));
 
-    // 4c. Add point markers by category into cluster groups
-    pointRows.forEach(row => {
-      const lat = parseFloat(row.lat);
-      const lon = parseFloat(row.lon);
-      if (isNaN(lat) || isNaN(lon)) return;
-
-      const type = (row.type || "").trim().toLowerCase();
-
-      // Icons + colours by type
-      const iconConfig = {
-        uni:       { icon: "fa-university", color: "#c44444" }, // red-ish
-        workplace: { icon: "fa-building",   color: "#2E8B57" }, // green
-        club:      { icon: "fa-flag",       color: "#800080" }, // purple
-        cop:       { icon: "fa-users",      color: "#ff8800" }  // orange
+    matches.forEach(name => {
+      const item = document.createElement("div");
+      item.style.padding = "5px";
+      item.style.cursor = "pointer";
+      item.innerText = name;
+      item.onclick = () => {
+        input.value = name;
+        dropdown.style.display = "none";
+        map.fitBounds(lgaLayers[name].getBounds(), { maxZoom: 10 });
       };
-
-      const cfg = iconConfig[type] || { icon: "fa-map-marker", color: "#555555" };
-
-      const iconHtml =
-        `<i class="fa ${cfg.icon}" style="color:${cfg.color}; font-size:20px;"></i>`;
-
-      const marker = L.marker([lat, lon], {
-        icon: L.divIcon({
-          className: "custom-fa-marker",
-          html: iconHtml,
-          iconSize: [20, 20],
-          iconAnchor: [10, 10]
-        })
-      });
-
-      const popupHtml =
-        `<b>${row.name || ""}</b><br>` +
-        `${row.address || ""}<br>` +
-        `${row.state || ""} ${row.postcode || ""}`;
-
-      marker.bindPopup(popupHtml);
-      marker.bindTooltip(row.name || "", { direction: "top", offset: [0, -10] });
-
-      // Add to appropriate cluster group
-      if (type === "uni") {
-        uniCluster.addLayer(marker);
-      } else if (type === "workplace") {
-        workplaceCluster.addLayer(marker);
-      } else if (type === "club") {
-        clubCluster.addLayer(marker);
-      } else if (type === "cop") {
-        copCluster.addLayer(marker);
-      }
+      dropdown.appendChild(item);
     });
 
-    // Add clusters to map (all on by default)
-    uniCluster.addTo(map);
-    workplaceCluster.addTo(map);
-    clubCluster.addTo(map);
-    copCluster.addTo(map);
-
-    // -----------------------------------
-    // 5. FILTER CONTROL (toggle layers)
-    // -----------------------------------
-    const overlays = {
-      "Universities": uniCluster,
-      "Workplaces": workplaceCluster,
-      "Clubs": clubCluster,
-      "CoP Members": copCluster
-    };
-
-    L.control.layers(null, overlays, { collapsed: false }).addTo(map);
-
-    // -----------------------------------
-    // 6. LGA SEARCH (simple search, zoom to match)
-    // -----------------------------------
-    const searchInput = document.getElementById("lgaSearch");
-
-    searchInput.addEventListener("keyup", function (e) {
-      const q = searchInput.value.toLowerCase().trim();
-      if (q.length < 3) return;  // wait for at least 3 characters
-
-      const matches = Object.keys(lgaLayers).filter(name =>
-        name.includes(q)
-      );
-
-      // If only one match, or user presses Enter, zoom to first match
-      if ((matches.length === 1) ||
-          (e.key === "Enter" && matches.length > 0)) {
-        const layer = lgaLayers[matches[0]];
-        if (layer) {
-          map.fitBounds(layer.getBounds(), { maxZoom: 11 });
-        }
-      }
-    });
-
-    // -----------------------------------
-    // 7. LEGEND
-    // -----------------------------------
-    const legend = L.control({ position: "bottomright" });
-
-    legend.onAdd = function () {
-      const div = L.DomUtil.create("div", "legend");
-
-      div.innerHTML = `
-        <b>Legend</b><br>
-        <div style="margin-top:8px;">
-          <i style="background:#66b2ff; width:18px; height:18px;
-                    float:left; margin-right:6px; border:1px solid #004c99;"></i>
-          Welcoming Cities LGAs<br>
-        </div>
-
-        <div style="margin-top:8px; clear:both;">
-          <i class="fa fa-university" style="color:#f1c40f; margin-right:6px;"></i>
-          University<br>
-        </div>
-
-        <div style="margin-top:8px;">
-          <i class="fa fa-building" style="color:#2E8B57; margin-right:6px;"></i>
-          Workplace<br>
-        </div>
-
-        <div style="margin-top:8px;">
-          <i class="fa fa-flag" style="color:#800080; margin-right:6px;"></i>
-          Club<br>
-        </div>
-
-        <div style="margin-top:8px;">
-          <i class="fa fa-users" style="color:#ff8800; margin-right:6px;"></i>
-          CoP Member<br>
-        </div>
-      `;
-      return div;
-    };
-
-    legend.addTo(map);
-  })
-  .catch(err => {
-    console.error("Error loading data:", err);
+    dropdown.style.display = matches.length ? "block" : "none";
   });
+
+});
 </script>
 
 </body>
