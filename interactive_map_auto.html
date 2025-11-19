@@ -4,12 +4,23 @@
   <meta charset="utf-8" />
   <title>Welcoming Map – Auto-updating</title>
 
-  <!-- Leaflet -->
+  <!-- Leaflet core -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- MarkerCluster for decluttering markers -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
+  />
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
   <!-- Font Awesome for icons -->
   <link
@@ -30,6 +41,27 @@
       height: 100%;
       width: 100%;
     }
+
+    /* LGA search box */
+    #lgaSearchBox {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 9999;
+      background: white;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      padding: 6px 8px;
+      font-size: 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    }
+    #lgaSearchBox input {
+      border: none;
+      outline: none;
+      width: 220px;
+      font-size: 14px;
+    }
+
     .legend {
       background-color: white;
       padding: 15px;
@@ -46,12 +78,18 @@
   </style>
 </head>
 <body>
+
+  <!-- LGA search UI -->
+  <div id="lgaSearchBox">
+    <input id="lgaSearch" type="text" placeholder="Search LGA (min 3 letters)…">
+  </div>
+
   <div id="map"></div>
 
 <script>
-  // -----------------------------
-  // 1. DATA SOURCES (GitHub raw)
-  // -----------------------------
+  // -----------------------------------
+  // 1. DATA SOURCES (GitHub raw URLs)
+  // -----------------------------------
   const GEOJSON_URL =
     "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/LGA_2025_AUST_GDA2020.min.json";
   const POINTS_URL =
@@ -59,9 +97,9 @@
   const WELC_LGAS_URL =
     "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/welcoming_lgas.csv";
 
-  // -----------------------------
+  // -----------------------------------
   // 2. MAP SETUP
-  // -----------------------------
+  // -----------------------------------
   const map = L.map("map").setView([-25.0, 134.0], 4);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -69,11 +107,19 @@
     attribution: "&copy; OpenStreetMap contributors"
   }).addTo(map);
 
-  // -----------------------------
-  // 3. Helpers
-  // -----------------------------
+  // Marker clusters per category
+  const uniCluster       = L.markerClusterGroup();
+  const workplaceCluster = L.markerClusterGroup();
+  const clubCluster      = L.markerClusterGroup();
+  const copCluster       = L.markerClusterGroup();
+
+  // We'll use this to search LGAs
+  const lgaLayers = {};   // name(lowercase) -> layer
+
+  // -----------------------------------
+  // 3. HELPERS
+  // -----------------------------------
   function stripBOM(text) {
-    // Remove invisible BOM if present (GitHub sometimes adds it)
     return text.replace(/^\uFEFF/, "");
   }
 
@@ -90,27 +136,25 @@
       });
   }
 
-  // -----------------------------
-  // 4. Load all data
-  // -----------------------------
+  // -----------------------------------
+  // 4. LOAD ALL DATA
+  // -----------------------------------
   Promise.all([
     loadCSV(WELC_LGAS_URL),                 // 0: welcoming LGAs
-    fetch(GEOJSON_URL).then(r => r.json()), // 1: GeoJSON
-    loadCSV(POINTS_URL)                     // 2: points (unis, workplaces, clubs, cop)
+    fetch(GEOJSON_URL).then(r => r.json()), // 1: LGA GeoJSON
+    loadCSV(POINTS_URL)                     // 2: points
   ])
-  .then(([welcLgasRows, geojsonData, pointRows]) => {
+  .then(([welcLgaRows, geojsonData, pointRows]) => {
 
-    // Build set of welcoming LGA names from CSV
+    // 4a. Build set of welcoming LGA names
     const welcomingLGAs = new Set();
-    welcLgasRows.forEach(row => {
+    welcLgaRows.forEach(row => {
       if (row.lga_name) {
         welcomingLGAs.add(row.lga_name.trim());
       }
     });
 
-    // -----------------------------
-    // 4a. Draw LGAs with styles
-    // -----------------------------
+    // 4b. Add LGA polygons, shading welcoming members
     function lgaStyle(feature) {
       const name = feature.properties && feature.properties.LGA_NAME25;
       if (welcomingLGAs.has(name)) {
@@ -133,16 +177,18 @@
     L.geoJSON(geojsonData, {
       style: lgaStyle,
       onEachFeature: (feature, layer) => {
-        const name = feature.properties && feature.properties.LGA_NAME25;
+        const name = (feature.properties && feature.properties.LGA_NAME25) || "";
+        const key = name.toLowerCase().trim();
+        if (key) {
+          lgaLayers[key] = layer;
+        }
         if (name) {
           layer.bindTooltip("LGA: " + name, { sticky: true });
         }
       }
     }).addTo(map);
 
-    // -----------------------------
-    // 4b. Add point markers
-    // -----------------------------
+    // 4c. Add point markers by category into cluster groups
     pointRows.forEach(row => {
       const lat = parseFloat(row.lat);
       const lon = parseFloat(row.lon);
@@ -150,12 +196,12 @@
 
       const type = (row.type || "").trim().toLowerCase();
 
-      // Map CSV 'type' to FA icon + color
+      // Icons + colours by type
       const iconConfig = {
-        uni:       { icon: "fa-university", color: "#0066cc" },
-        workplace: { icon: "fa-building",   color: "#2E8B57" },
-        club:      { icon: "fa-flag",       color: "#800080" },
-        cop:       { icon: "fa-users",      color: "#ff8800" }
+        uni:       { icon: "fa-university", color: "#f1c40f" }, // yellow
+        workplace: { icon: "fa-building",   color: "#2E8B57" }, // green
+        club:      { icon: "fa-flag",       color: "#800080" }, // purple
+        cop:       { icon: "fa-users",      color: "#ff8800" }  // orange
       };
 
       const cfg = iconConfig[type] || { icon: "fa-map-marker", color: "#555555" };
@@ -180,12 +226,62 @@
       marker.bindPopup(popupHtml);
       marker.bindTooltip(row.name || "", { direction: "top", offset: [0, -10] });
 
-      marker.addTo(map);
+      // Add to appropriate cluster group
+      if (type === "uni") {
+        uniCluster.addLayer(marker);
+      } else if (type === "workplace") {
+        workplaceCluster.addLayer(marker);
+      } else if (type === "club") {
+        clubCluster.addLayer(marker);
+      } else if (type === "cop") {
+        copCluster.addLayer(marker);
+      }
     });
 
-    // -----------------------------
-    // 4c. Add Legend
-    // -----------------------------
+    // Add clusters to map (all on by default)
+    uniCluster.addTo(map);
+    workplaceCluster.addTo(map);
+    clubCluster.addTo(map);
+    copCluster.addTo(map);
+
+    // -----------------------------------
+    // 5. FILTER CONTROL (toggle layers)
+    // -----------------------------------
+    const overlays = {
+      "Universities": uniCluster,
+      "Workplaces": workplaceCluster,
+      "Clubs": clubCluster,
+      "CoP Members": copCluster
+    };
+
+    L.control.layers(null, overlays, { collapsed: false }).addTo(map);
+
+    // -----------------------------------
+    // 6. LGA SEARCH (simple search, zoom to match)
+    // -----------------------------------
+    const searchInput = document.getElementById("lgaSearch");
+
+    searchInput.addEventListener("keyup", function (e) {
+      const q = searchInput.value.toLowerCase().trim();
+      if (q.length < 3) return;  // wait for at least 3 characters
+
+      const matches = Object.keys(lgaLayers).filter(name =>
+        name.includes(q)
+      );
+
+      // If only one match, or user presses Enter, zoom to first match
+      if ((matches.length === 1) ||
+          (e.key === "Enter" && matches.length > 0)) {
+        const layer = lgaLayers[matches[0]];
+        if (layer) {
+          map.fitBounds(layer.getBounds(), { maxZoom: 11 });
+        }
+      }
+    });
+
+    // -----------------------------------
+    // 7. LEGEND
+    // -----------------------------------
     const legend = L.control({ position: "bottomright" });
 
     legend.onAdd = function () {
@@ -200,7 +296,7 @@
         </div>
 
         <div style="margin-top:8px; clear:both;">
-          <i class="fa fa-university" style="color:#0066cc; margin-right:6px;"></i>
+          <i class="fa fa-university" style="color:#f1c40f; margin-right:6px;"></i>
           University<br>
         </div>
 
@@ -223,7 +319,6 @@
     };
 
     legend.addTo(map);
-
   })
   .catch(err => {
     console.error("Error loading data:", err);
