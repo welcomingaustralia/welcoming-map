@@ -121,7 +121,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 const clusterOptions = {
   spiderfyOnMaxZoom: true,
   zoomToBoundsOnClick: false,   // prevents auto-zoom
-  maxClusterRadius: 30,         // expand earlier
+  maxClusterRadius: 20,         // expand earlier
 };
 
 const uniCluster       = L.markerClusterGroup(clusterOptions);
