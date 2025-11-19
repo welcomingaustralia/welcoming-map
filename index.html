@@ -270,7 +270,7 @@ function applyJitterToMarkers(clusterGroup) {
 
     // When clusters are disabled, jitter markers apart slightly
     if (map.getZoom() >= clusterGroup.options.disableClusteringAtZoom) {
-      const jitter = (Math.random() - 0.5) * 0.0006; // ~50–60m
+      const jitter = (Math.random() - 0.5) * 0.0010; // ~90-110m
       marker.setLatLng([
         marker.originalLatLng.lat + jitter,
         marker.originalLatLng.lng + jitter
