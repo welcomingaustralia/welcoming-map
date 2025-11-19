@@ -1,29 +1,4 @@
 ﻿name,type,address,postcode,state,lat,lon,precision
-Epping Wollert Nepalese Community,cop,,3757,VIC,-37.469784,145.182221,postcode_centroid
-African Australian Multicultural Employment and Youth Services,cop,,3021,VIC,-37.743361,144.796693,postcode_centroid
-African Australian Multicultural Employment and Youth Services,cop,,3032,VIC,-37.774486,144.897221,postcode_centroid
-African Australian Multicultural Employment and Youth Services,cop,,3337,VIC,-37.65724033,144.5462424,postcode_centroid
-African Australian Multicultural Employment and Youth Services,cop,,3029,VIC,-37.837165,144.705831,postcode_centroid
-Bosna and Hercegovina Islamic Society - Noble Park,cop,,3175,VIC,-38.016114,145.208504,postcode_centroid
-Islamic Community Milli Gorus Dandenong,cop,,3175,VIC,-38.016114,145.208504,postcode_centroid
-Indian Association of Bendigo,cop,,3550,VIC,-36.764269,144.285267,postcode_centroid
-Anand Ishar,cop,,3805,VIC,-38.037026,145.304198,postcode_centroid
-Australian Telangana State Association,cop,,3021,VIC,-37.743361,144.796693,postcode_centroid
-Australian Telangana State Association,cop,,3220,VIC,-38.157038,144.34652,postcode_centroid
-Australian Telangana State Association,cop,,3015,VIC,-37.838242,144.880556,postcode_centroid
-Australian Telangana State Association,cop,,3032,VIC,-37.774486,144.897221,postcode_centroid
-Australian Telangana State Association,cop,,3029,VIC,-37.837165,144.705831,postcode_centroid
-Australian Telangana State Association,cop,,3347,VIC,#N/A,#N/A,postcode_centroid
-Future Foundation for Kids,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Multicultural Youth Support Services,cop,,3810,VIC,-38.04658,145.472514,postcode_centroid
-Multicultural Youth Support Services,cop,,3806,VIC,-38.025018,145.349488,postcode_centroid
-Cyprus Turkish Islamic Community of Victoria,cop,,3020,VIC,-37.777204,144.829945,postcode_centroid
-United Muslim Migrants Association of Victoria,cop,,3105,VIC,-37.772477,145.084806,postcode_centroid
-Regional Runways,cop,,3220,VIC,-38.157038,144.34652,postcode_centroid
-Srilankan Muslim Community of Victoria,cop,,3030,VIC,-37.91624,144.64209,postcode_centroid
-Chinese Dance Australia,cop,,6104,WA,-31.965498,115.977633,postcode_centroid
-Chinese Dance Australia,cop,,6150,WA,-32.061682,115.833608,postcode_centroid
-Chinese Dance Australia,cop,,6000,WA,-31.948762,115.859912,postcode_centroid
 Nepali Association of Western Australia (NAWA),cop,,6107,WA,-32.017663,115.967142,postcode_centroid
 Nepali Association of Western Australia (NAWA),cop,,6164,WA,-32.131993,115.854584,postcode_centroid
 Nepali Association of Western Australia (NAWA),cop,,6110,WA,-32.078535,116.008603,postcode_centroid
@@ -61,6 +36,7 @@ Organisation of African Communities in Western Australia,cop,,6065,WA,-31.69444,
 Rajasthani Kutumb - Australia,cop,,6155,WA,-32.061501,115.890779,postcode_centroid
 
 Rajasthani Kutumb - Australia,cop,,6110,WA,-32.078535,116.008603,postcode_centroid
+
 
 
 
