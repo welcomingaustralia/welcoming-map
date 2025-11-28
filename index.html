@@ -252,7 +252,8 @@ Promise.all([
     html: `<i class="fa ${cfg.icon}" style="color:${cfg.color}; font-size:20px;"></i>`,
     iconSize: [20, 20]
   }),
-  title: r.name  
+  title: r.name,
+  postcode: r.postcode
 });
 
   // Tooltip on hover (name only)
@@ -353,9 +354,12 @@ orgInput.addEventListener("input", () => {
   }
 
   // Find matches anywhere in the name
-  const matches = allMarkers.filter(marker =>
-    marker.options.title?.toLowerCase().includes(q)
-  );
+  const matches = allMarkers.filter(marker => {
+  const name = marker.options.title?.toLowerCase() || "";
+  const pc = marker.options.postcode?.toString() || "";
+  return name.includes(q) || pc.includes(q);
+});
+
 
   matches.forEach(marker => {
     const item = document.createElement("div");
