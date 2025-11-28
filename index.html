@@ -152,6 +152,7 @@ const uniCluster       = L.markerClusterGroup(clusterOptions);
 const workplaceCluster = L.markerClusterGroup(clusterOptions);
 const clubCluster      = L.markerClusterGroup(clusterOptions);
 const copCluster       = L.markerClusterGroup(clusterOptions);
+const uniCluster       = L.markerClusterGroup(clusterOptions);
 
 // Neutral grey colour cluster CSS (no random colours)
 document.head.insertAdjacentHTML("beforeend", `
@@ -230,7 +231,8 @@ Promise.all([
     uni:       { icon: "fa-university", color: "#C44444" },
     workplace: { icon: "fa-building",   color: "#2E8B57" },
     club:      { icon: "fa-flag",       color: "#800080" },
-    cop:       { icon: "fa-users",      color: "#ff8800" }
+    cop:       { icon: "fa-users",      color: "#ff8800" },
+    hub:       { icon: "fa-home", color: "#0077cc" }
   };
 //thats what i reaplced for markers 
   points.forEach(r => {
@@ -274,6 +276,7 @@ Promise.all([
   if (type === "workplace") workplaceCluster.addLayer(marker);
   if (type === "club")      clubCluster.addLayer(marker);
   if (type === "cop")       copCluster.addLayer(marker);
+  if (type === "hub")       hubCluster.addLayer(marker);
 });
 
 //finished replacement 
@@ -281,6 +284,7 @@ Promise.all([
   workplaceCluster.addTo(map);
   clubCluster.addTo(map);
   copCluster.addTo(map);
+  hubCluster.addTo(map);
 
 
 // jitter code
@@ -313,6 +317,7 @@ map.on("zoomend", () => {
   applyJitterToMarkers(workplaceCluster);
   applyJitterToMarkers(clubCluster);
   applyJitterToMarkers(copCluster);
+  applyJitterToMarkers(hubCluster)
 });
 // -----------------------------------
 // 8. ORGANISATION SEARCH BAR
@@ -331,6 +336,7 @@ collectMarkers(uniCluster);
 collectMarkers(workplaceCluster);
 collectMarkers(clubCluster);
 collectMarkers(copCluster);
+collectMarkers(hubCluster);
 
 // Create dropdown below search box
 const orgDropdown = document.createElement("div");
@@ -390,7 +396,8 @@ orgInput.addEventListener("input", () => {
       "Universities": uniCluster,
       "Workplaces": workplaceCluster,
       "Clubs": clubCluster,
-      "Community Organisations": copCluster
+      "Community Organisations": copCluster,
+      "Community Hubs": hubCluster
     },
     { collapsed: false }           // <-- key bit so tickboxes always show
   ).addTo(map);
@@ -415,6 +422,8 @@ legend.onAdd = function () {
       Welcoming Clubs<br>
     <i class="fa fa-users" style="color:#ff8800; margin-right:6px;"></i>
       Community Organisations<br>
+    <i class="fa fa-home" style="color:#0077cc; margin-right:6px;"></i>
+  Community Hubs<br>
   `;
   return div;
 };
