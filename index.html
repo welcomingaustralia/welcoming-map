@@ -44,8 +44,19 @@
 
     /* LGA search box */
     #lgaSearchBox {
+  top: 10px;
+}
+
+      #lgaSearchBox input {
+    border: none;
+    outline: none;
+    width: 220px;
+    font-size: 14px;
+  }
+
+/* Shared style for BOTH search boxes */
+    .searchBox {
       position: absolute;
-      top: 10px;
       left: 10px;
       z-index: 9999;
       background: white;
@@ -55,13 +66,18 @@
       font-size: 14px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.3);
     }
-    #lgaSearchBox input {
+
+    .searchBox input {
       border: none;
       outline: none;
       width: 220px;
       font-size: 14px;
     }
 
+/* Organisation search box — placed under LGA box */
+    #orgSearchBox {
+      top: 60px;
+    }
     .legend {
       background-color: white;
       padding: 15px;
@@ -86,24 +102,16 @@
 <body>
 
   <!-- LGA search UI -->
-  <div id="lgaSearchBox">
-    <input id="lgaSearch" type="text" placeholder="Search LGA (min 3 letters)…">
-  </div>
+  <!-- LGA search UI -->
+<div id="lgaSearchBox" class="searchBox">
+  <input id="lgaSearch" type="text" placeholder="Search LGA (min 3 letters)…">
+</div>
 
-  <div id="orgSearchBox" style="
-      position:absolute;
-      top:60px;          
-      left:10px;
-      z-index:9999;
-      background:white;
-      border-radius:4px;
-      border:1px solid #ccc;
-      padding:6px 8px;
-      font-size:14px;
-      box-shadow:0 1px 4px rgba(0,0,0,0.3);
-    ">
-      <input id="orgSearch" type="text" placeholder="Search organisation…">
-  </div>
+<!-- Organisation search UI -->
+<div id="orgSearchBox" class="searchBox">
+  <input id="orgSearch" type="text" placeholder="Search organisation or postcode…">
+</div>
+
   
   <div id="map"></div>
 
