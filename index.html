@@ -363,7 +363,7 @@ orgInput.addEventListener("input", () => {
     item.style.cursor = "pointer";
 
     // Show the org name
-    item.innerText = marker.options.title;
+    item.innerText = `${marker.options.title} (${marker.options.postcode})`;
 
     // On click: zoom to marker + open popup
     item.onclick = () => {
