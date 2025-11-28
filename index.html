@@ -207,8 +207,8 @@ Promise.all([
   function lgaStyle(feature) {
     const name = feature.properties.LGA_NAME25;
     return welcomingLGAs.has(name)
-      ? { fillColor: "#66b2ff", color: "#004c99", weight: 1, fillOpacity: 0.45 }
-      : { fillColor: "#e0e0e0", color: "#999", weight: 0.3, fillOpacity: 0.1 };
+      ? { fillColor: "#ffe680", color: "#cc9900", weight: 1, fillOpacity: 0.40 }
+      : { fillColor: "#f2f2f2", color: "#999", weight: 0.3, fillOpacity: 0.1 };
   }
 
   L.geoJSON(geojson, {
@@ -412,7 +412,7 @@ const legend = L.control({ position: "bottomright" });
 legend.onAdd = function () {
   const div = L.DomUtil.create("div", "legend");
   div.innerHTML = `
-    <i style="background:#66b2ff; width:14px; height:14px; display:inline-block; border:1px solid #004c99; margin-right:6px;"></i>
+    <i style="background:#ffe680; width:14px; height:14px; display:inline-block; border:1px solid #cc9900; margin-right:6px;"></i>
       Welcoming Cities<br>
     <i class="fa fa-university" style="color:#C44444; margin-right:6px;"></i>
       Welcoming Universities<br>
