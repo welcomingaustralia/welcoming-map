@@ -90,6 +90,21 @@
     <input id="lgaSearch" type="text" placeholder="Search LGA (min 3 letters)…">
   </div>
 
+  <div id="orgSearchBox" style="
+      position:absolute;
+      top:60px;          
+      left:10px;
+      z-index:9999;
+      background:white;
+      border-radius:4px;
+      border:1px solid #ccc;
+      padding:6px 8px;
+      font-size:14px;
+      box-shadow:0 1px 4px rgba(0,0,0,0.3);
+    ">
+      <input id="orgSearch" type="text" placeholder="Search organisation…">
+  </div>
+  
   <div id="map"></div>
 
 <script>
@@ -224,12 +239,13 @@ Promise.all([
   // ---------------------------------------------
 
   const marker = L.marker([lat, lon], {
-    icon: L.divIcon({
-      className: "fa-icon",
-      html: `<i class="fa ${cfg.icon}" style="color:${cfg.color}; font-size:20px;"></i>`,
-      iconSize: [20, 20]
-    })
-  });
+  icon: L.divIcon({
+    className: "fa-icon",
+    html: `<i class="fa ${cfg.icon}" style="color:${cfg.color}; font-size:20px;"></i>`,
+    iconSize: [20, 20]
+  }),
+  title: r.name  
+});
 
   // Tooltip on hover (name only)
   marker.bindTooltip(r.name, {
@@ -289,7 +305,71 @@ map.on("zoomend", () => {
   applyJitterToMarkers(clubCluster);
   applyJitterToMarkers(copCluster);
 });
+// -----------------------------------
+// 8. ORGANISATION SEARCH BAR
+// -----------------------------------
+const orgInput = document.getElementById("orgSearch");
 
+// A place to store marker references for searching
+const allMarkers = [];
+
+// Collect markers from all clusters
+function collectMarkers(clusterGroup) {
+  clusterGroup.eachLayer(marker => allMarkers.push(marker));
+}
+
+collectMarkers(uniCluster);
+collectMarkers(workplaceCluster);
+collectMarkers(clubCluster);
+collectMarkers(copCluster);
+
+// Create dropdown below search box
+const orgDropdown = document.createElement("div");
+orgDropdown.style.position = "absolute";
+orgDropdown.style.background = "white";
+orgDropdown.style.border = "1px solid #ccc";
+orgDropdown.style.width = "220px";
+orgDropdown.style.maxHeight = "200px";
+orgDropdown.style.overflowY = "auto";
+orgDropdown.style.display = "none";
+orgDropdown.style.zIndex = 99999;
+orgInput.parentNode.appendChild(orgDropdown);
+
+orgInput.addEventListener("input", () => {
+  const q = orgInput.value.toLowerCase().trim();
+  orgDropdown.innerHTML = "";
+
+  if (q.length < 2) {
+    orgDropdown.style.display = "none";
+    return;
+  }
+
+  // Find matches anywhere in the name
+  const matches = allMarkers.filter(marker =>
+    marker.options.title?.toLowerCase().includes(q)
+  );
+
+  matches.forEach(marker => {
+    const item = document.createElement("div");
+    item.style.padding = "5px";
+    item.style.cursor = "pointer";
+
+    // Show the org name
+    item.innerText = marker.options.title;
+
+    // On click: zoom to marker + open popup
+    item.onclick = () => {
+      orgInput.value = marker.options.title;
+      orgDropdown.style.display = "none";
+      map.setView(marker.getLatLng(), 12);
+      marker.openPopup();
+    };
+
+    orgDropdown.appendChild(item);
+  });
+
+  orgDropdown.style.display = matches.length ? "block" : "none";
+});
   
   // 6. FILTER CONTROL – ALWAYS VISIBLE (NOT ON HOVER)
   L.control.layers(
