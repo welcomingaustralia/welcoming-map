@@ -202,14 +202,50 @@ Promise.all([
   const welcomingLGAs = new Set(
     welcList.map(r => r.lga_name?.trim()).filter(Boolean)
   );
-
+// PALM Alliance
+  // PALM Mayoral Alliance LGAs — must match LGA_NAME25 exactly
+const palmAllianceLGAs = new Set([
+  "Leeton Shire",
+  "Wagga Wagga",
+  "Mount Isa",
+  "Mareeba Shire",
+  "Southern Downs",
+  "Hinchinbrook Shire",
+  "Rockhampton",
+  "Lockyer Valley",
+  "Western Downs",
+  "Banana Shire",
+  "South Burnett",
+  "Cassowary Coast",
+  "Greater Hume Shire",
+  "Griffith",
+  "Berrigan Shire",
+  "Sunshine Coast",
+  "Central Coast (Tas.)"
+]);
+  
   // 4. LGA polygons
   function lgaStyle(feature) {
-    const name = feature.properties.LGA_NAME25;
-    return welcomingLGAs.has(name)
-      ? { fillColor: "#ffe680", color: "#cc9900", weight: 1, fillOpacity: 0.40 }
-      : { fillColor: "#f2f2f2", color: "#999", weight: 0.3, fillOpacity: 0.1 };
+  const name = feature.properties.LGA_NAME25;
+
+  const isWelcoming = welcomingLGAs.has(name);
+  const isPalm = palmAllianceLGAs.has(name);
+
+  // Your existing styles (unchanged)
+  let style = isWelcoming
+    ? { fillColor: "#ffe680", color: "#cc9900", weight: 1, fillOpacity: 0.40 }
+    : { fillColor: "#f2f2f2", color: "#999", weight: 0.3, fillOpacity: 0.1 };
+
+  // Add PALM dashed border *without changing fill*
+  if (isPalm) {
+    style.color = "#ff0000";     // red outline
+    style.weight = 3;            // thicker
+    style.dashArray = "4 4";     // dashed
   }
+
+  return style;
+}
+
 
   L.geoJSON(geojson, {
     style: lgaStyle,
@@ -414,6 +450,8 @@ legend.onAdd = function () {
   div.innerHTML = `
     <i style="background:#ffe680; width:14px; height:14px; display:inline-block; border:1px solid #cc9900; margin-right:6px;"></i>
       Welcoming Cities<br>
+    <i style="border:2px dashed #ff0000; width:14px; height:14px; display:inline-block; margin-right:6px;"></i>
+PALM Mayoral Alliance<br>
     <i class="fa fa-university" style="color:#C44444; margin-right:6px;"></i>
       Welcoming Universities<br>
     <i class="fa fa-building" style="color:#2E8B57; margin-right:6px;"></i>
