@@ -153,6 +153,7 @@ const workplaceCluster = L.markerClusterGroup(clusterOptions);
 const clubCluster      = L.markerClusterGroup(clusterOptions);
 const copCluster       = L.markerClusterGroup(clusterOptions);
 const hubCluster       = L.markerClusterGroup(clusterOptions);
+const crispCluster     = L.markerClusterGroup(clusterOptions); //adding CRISP locations
 
 // Neutral grey colour cluster CSS (no random colours)
 document.head.insertAdjacentHTML("beforeend", `
@@ -268,7 +269,8 @@ const palmAllianceLGAs = new Set([
     workplace: { icon: "fa-building",   color: "#2E8B57" },
     club:      { icon: "fa-flag",       color: "#800080" },
     cop:       { icon: "fa-users",      color: "#ff8800" },
-    hub:       { icon: "fa-home", color: "#0077cc" }
+    hub:       { icon: "fa-home", color: "#0077cc" },
+    crisp:     { icon: "fa-user",      color: "#e8a04b" }
   };
 //thats what i reaplced for markers 
   points.forEach(r => {
@@ -313,6 +315,7 @@ const palmAllianceLGAs = new Set([
   if (type === "club")      clubCluster.addLayer(marker);
   if (type === "cop")       copCluster.addLayer(marker);
   if (type === "hub")       hubCluster.addLayer(marker);
+  if (type === "crisp")     crispCluster.addLayer(marker);
 });
 
 //finished replacement 
@@ -321,6 +324,7 @@ const palmAllianceLGAs = new Set([
   clubCluster.addTo(map);
   copCluster.addTo(map);
   hubCluster.addTo(map);
+  crispCluster.addTo(map);
 
 
 // jitter code
@@ -353,7 +357,8 @@ map.on("zoomend", () => {
   applyJitterToMarkers(workplaceCluster);
   applyJitterToMarkers(clubCluster);
   applyJitterToMarkers(copCluster);
-  applyJitterToMarkers(hubCluster)
+  applyJitterToMarkers(hubCluster);
+  applyJitterToMarkers(crispCluster); //there was no ; there before so see if that works
 });
 // -----------------------------------
 // 8. ORGANISATION SEARCH BAR
@@ -373,6 +378,7 @@ collectMarkers(workplaceCluster);
 collectMarkers(clubCluster);
 collectMarkers(copCluster);
 collectMarkers(hubCluster);
+collectMarkers(crispCluster);
 
 // Create dropdown below search box
 const orgDropdown = document.createElement("div");
@@ -433,7 +439,8 @@ orgInput.addEventListener("input", () => {
       "Welcoming Workplaces": workplaceCluster,
       "Welcoming Clubs": clubCluster,
       "Community Organisations": copCluster,
-      "Community Hubs": hubCluster
+      "Community Hubs": hubCluster,
+      "CRISP": crispCluster
     },
     { collapsed: false }           // <-- key bit so tickboxes always show
   ).addTo(map);
@@ -462,6 +469,8 @@ PALM Mayoral Alliance<br>
       Community Organisations<br>
     <i class="fa fa-home" style="color:#0077cc; margin-right:6px;"></i>
   Community Hubs<br>
+    <i class="fa fa-user" style="color:#e8a04b; margin-right:6px;"></i>
+    CRISP Workers<br>
   `;
   return div;
 };
