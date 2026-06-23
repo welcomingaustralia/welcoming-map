@@ -2,33 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Welcoming Map – Auto-updating</title>
+  <title>Welcoming Map – Working Copy</title>
 
-  <!-- Leaflet core -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <!-- MarkerCluster for decluttering markers -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
-  />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-  
-  <!-- Font Awesome for icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
 
-  <!-- PapaParse for CSV parsing -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
   <style>
@@ -37,47 +20,69 @@
       margin: 0;
       padding: 0;
     }
+
     #map {
       height: 100%;
       width: 100%;
     }
 
-    /* LGA search box */
-    #lgaSearchBox {
-  top: 10px;
-}
-
-      #lgaSearchBox input {
-    border: none;
-    outline: none;
-    width: 220px;
-    font-size: 14px;
-  }
-
-/* Shared style for BOTH search boxes */
     .searchBox {
       position: absolute;
       left: 10px;
-      z-index: 9999;
+      z-index: 10000;
       background: white;
-      border-radius: 4px;
+      border-radius: 6px;
       border: 1px solid #ccc;
-      padding: 6px 8px;
-      font-size: 14px;
+      padding: 8px 10px;
+      font-size: 16px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+      width: min(340px, calc(100vw - 30px));
+      box-sizing: border-box;
     }
 
     .searchBox input {
       border: none;
       outline: none;
-      width: 220px;
-      font-size: 14px;
+      width: 100%;
+      font-size: 16px;
+      box-sizing: border-box;
     }
 
-/* Organisation search box — placed under LGA box */
-    #orgSearchBox {
-      top: 60px;
+    #lgaSearchBox {
+      top: 10px;
+      z-index: 30000;
     }
+
+    #orgSearchBox {
+      top: 62px;
+      z-index: 10000;
+    }
+
+    .searchDropdown {
+      position: absolute;
+      background: white;
+      border: 1px solid #ccc;
+      width: 100%;
+      max-height: 260px;
+      overflow-y: auto;
+      display: none;
+      z-index: 20000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      box-sizing: border-box;
+      left: 0;
+      top: 42px;
+    }
+
+    .searchDropdown div {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .searchDropdown div:hover {
+      background: #f2f2f2;
+    }
+
     .legend {
       background-color: white;
       padding: 15px;
@@ -87,65 +92,109 @@
       font-size: 14px;
       line-height: 1.4;
     }
+
     .legend i {
       min-width: 18px;
       text-align: center;
     }
 
-    /* Always show layer control as a box (no hover-only behaviour) */
     .leaflet-control-layers {
       box-shadow: 0 1px 4px rgba(0,0,0,0.3);
       background: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .searchBox {
+        left: 8px;
+        width: calc(100vw - 16px);
+        padding: 12px 14px;
+        font-size: 18px;
+      }
+
+      .searchBox input {
+        font-size: 18px;
+      }
+
+      #orgSearchBox {
+        top: 72px;
+      }
+
+      .searchDropdown {
+        top: 52px;
+        max-height: 320px;
+      }
+
+      .searchDropdown div {
+        padding: 14px;
+        font-size: 18px;
+      }
+
+      .leaflet-control-layers {
+        font-size: 17px;
+        padding: 8px;
+        max-width: 90vw;
+      }
+
+      .leaflet-control-layers label {
+        padding: 6px 0;
+        display: block;
+      }
+
+      .leaflet-control-layers input {
+        transform: scale(1.4);
+        margin-right: 8px;
+      }
+
+      .legend {
+        font-size: 15px;
+        padding: 12px;
+        max-width: 260px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- LGA search UI -->
-  <!-- LGA search UI -->
 <div id="lgaSearchBox" class="searchBox">
-  <input id="lgaSearch" type="text" placeholder="Search LGA (min 3 letters)…">
+  <input id="lgaSearch" type="text" placeholder="Search council area...">
 </div>
 
-<!-- Organisation search UI -->
 <div id="orgSearchBox" class="searchBox">
-  <input id="orgSearch" type="text" placeholder="Search organisation or postcode…">
+  <input id="orgSearch" type="text" placeholder="Search organisation or postcode...">
 </div>
 
-  
-  <div id="map"></div>
+<div id="map"></div>
 
 <script>
-// -----------------------------------
-// 1. DATA SOURCES
-// -----------------------------------
 const GEOJSON_URL =
   "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/LGA_2025_AUST_GDA2020.min.json";
+
 const POINTS_URL =
   "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/welcoming_points_centroids.csv";
+
 const WELC_LGAS_URL =
   "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/welcoming_lgas.csv";
 
+const CRISP_LGA_URL =
+  "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/crisp_lgas.csv";
 
-  
-  // -----------------------------------
-// 2. MAP SETUP
-// -----------------------------------
+const LGA_SUMMARY_URL =
+  "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/lga_summary.csv";
+
 const map = L.map("map").setView([-25.0, 134.0], 5);
-
-// MOVE ZOOM CONTROL TO BOTTOM-LEFT
 map.zoomControl.setPosition("bottomleft");
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 18
 }).addTo(map);
 
-// Cluster tuning: decluster earlier
 const clusterOptions = {
   spiderfyOnMaxZoom: true,
-  zoomToBoundsOnClick: true,   // prevents auto-zoom
+  zoomToBoundsOnClick: true,
   maxClusterRadius: 50,
-  disableClusteringAtZoom: 11 //when clusters disappear
+  disableClusteringAtZoom: 11
 };
 
 const uniCluster       = L.markerClusterGroup(clusterOptions);
@@ -153,9 +202,8 @@ const workplaceCluster = L.markerClusterGroup(clusterOptions);
 const clubCluster      = L.markerClusterGroup(clusterOptions);
 const copCluster       = L.markerClusterGroup(clusterOptions);
 const hubCluster       = L.markerClusterGroup(clusterOptions);
-const crispCluster     = L.markerClusterGroup(clusterOptions); //adding CRISP locations
+const crispLayer       = L.layerGroup();
 
-// Neutral grey colour cluster CSS (no random colours)
 document.head.insertAdjacentHTML("beforeend", `
 <style>
 .marker-cluster-small,
@@ -171,267 +219,330 @@ document.head.insertAdjacentHTML("beforeend", `
 }
 </style>`);
 
-// -----------------------------------
-// CSV helper
-// -----------------------------------
 function loadCSV(url) {
   return fetch(url)
     .then(r => r.text())
     .then(t => Papa.parse(t, { header: true, skipEmptyLines: true }).data);
 }
 
-// helper: Title Case
-function toTitleCase(str) {
-  return str
-    .toLowerCase()
-    .split(" ")
-    .map(word => word ? word[0].toUpperCase() + word.slice(1) : "")
-    .join(" ");
+function normaliseName(str) {
+  return (str || "").trim().toLowerCase();
 }
 
-// LGA storage for search (store both layer + displayName)
+function publicLGAName(name) {
+  if (name === "Unincorporated ACT") return "ACT";
+  if (name === "Unincorporated NT") return "NT";
+  return name;
+}
+
+function publicCountText(count) {
+  return count < 5 ? "Less than 5" : count;
+}
+
+function crispRadius(count) {
+  if (count < 5) return 8;
+  return Math.max(10, Math.sqrt(count) * 5);
+}
+
 const lgaLayers = {};
+const lgaCentres = {};
+let selectedLGALayer = null;
+const lgaSummaryLookup = {};
+  
 
 Promise.all([
   loadCSV(WELC_LGAS_URL),
   fetch(GEOJSON_URL).then(r => r.json()),
-  loadCSV(POINTS_URL)
+  loadCSV(POINTS_URL),
+  loadCSV(CRISP_LGA_URL),
+  loadCSV(LGA_SUMMARY_URL)
 ])
-.then(([welcList, geojson, points]) => {
+.then(([welcList, geojson, points, crispData, lgaSummaryData]) => {
 
-  // 3. Welcoming LGAs
   const welcomingLGAs = new Set(
     welcList.map(r => r.lga_name?.trim()).filter(Boolean)
   );
-// PALM Alliance
-  // PALM Mayoral Alliance LGAs — must match LGA_NAME25 exactly
-const palmAllianceLGAs = new Set([
-  "Leeton",
-  "Wagga Wagga",
-  "Mount Isa",
-  "Mareeba Shire",
-  "Southern Downs",
-  "Hinchinbrook",
-  "Rockhampton",
-  "Lockyer Valley",
-  "Western Downs",
-  "Banana",
-  "South Burnett",
-  "Cassowary Coast",
-  "Greater Hume",
-  "Griffith",
-  "Berrigan",
-  "Sunshine Coast",
-  "Central Coast (Tas.)"
-]);
-  
-  // 4. LGA polygons
+
+  const palmAllianceLGAs = new Set([
+    "Leeton",
+    "Wagga Wagga",
+    "Mount Isa",
+    "Mareeba Shire",
+    "Southern Downs",
+    "Hinchinbrook",
+    "Rockhampton",
+    "Lockyer Valley",
+    "Western Downs",
+    "Banana",
+    "South Burnett",
+    "Cassowary Coast",
+    "Greater Hume",
+    "Griffith",
+    "Berrigan",
+    "Sunshine Coast",
+    "Central Coast (Tas.)"
+  ]);
+
+  lgaSummaryData.forEach(row => {
+    const key = normaliseName(row.lga_name);
+
+    if (!key) return;
+
+    lgaSummaryLookup[key] = row;
+  });
+
   function lgaStyle(feature) {
-  const name = feature.properties.LGA_NAME25;
+    const name = feature.properties.LGA_NAME25;
+    const isWelcoming = welcomingLGAs.has(name);
+    const isPalm = palmAllianceLGAs.has(name);
 
-  const isWelcoming = welcomingLGAs.has(name);
-  const isPalm = palmAllianceLGAs.has(name);
+    let style = isWelcoming
+      ? { fillColor: "#CCA234", color: "#CCA234", weight: 1, fillOpacity: 0.50 }
+      : { fillColor: "#f2f2f2", color: "#999", weight: 0.3, fillOpacity: 0.1 };
 
-  // Your existing styles (unchanged)
-  let style = isWelcoming
-    ? { fillColor: "#ffe680", color: "#cc9900", weight: 1, fillOpacity: 0.40 }
-    : { fillColor: "#f2f2f2", color: "#999", weight: 0.3, fillOpacity: 0.1 };
+    if (isPalm) {
+      style.color = "#EC6C5B";
+      style.weight = 3;
+      style.dashArray = "4 4";
+    }
 
-  // Add PALM dashed border *without changing fill*
-  if (isPalm) {
-    style.color = "#e67373";     // new coral red
-    style.weight = 3;            // thicker
-    style.dashArray = "4 4";     // dashed
+    return style;
   }
 
-  return style;
-}
+  function highlightLGA(layer) {
+    if (selectedLGALayer) {
+      selectedLGALayer.setStyle(lgaStyle(selectedLGALayer.feature));
+    }
 
+    selectedLGALayer = layer;
+
+    layer.setStyle({
+      color: "#666666",
+      weight: 3,
+      fillOpacity: 0.65
+    });
+
+    layer.bringToBack();
+  }
+
+  function showLGAPopup(rawName, layer) {
+    const profile = lgaSummaryLookup[normaliseName(rawName)];
+
+    if (!profile) return;
+
+    const popupContent = `
+      <div style="min-width:220px;">
+        <h3 style="margin:0 0 8px 0;">${rawName}</h3>
+
+        <p style="margin:6px 0;">
+          <strong>Born overseas:</strong> ${profile.overseas_born_pct}%
+        </p>
+
+        <p style="margin:6px 0;">
+          <strong>Language other than English:</strong> ${profile.language_other_than_english_pct}%
+        </p>
+      </div>
+    `;
+
+    layer.bindPopup(popupContent).openPopup();
+  }
 
   L.geoJSON(geojson, {
     style: lgaStyle,
     onEachFeature: (feature, layer) => {
       const rawName = feature.properties.LGA_NAME25 || "";
-      const key = rawName.toLowerCase();
-      const displayName = toTitleCase(rawName);
+      const key = normaliseName(rawName);
+      const displayName = publicLGAName(rawName);
 
-      // store layer + display name for search
       lgaLayers[key] = { layer, displayName };
 
-      // tooltip shown on hover in Title Case
+      const centre = layer.getBounds().getCenter();
+      lgaCentres[key] = {
+        lat: centre.lat,
+        lon: centre.lng,
+        displayName
+      };
+
       layer.bindTooltip(displayName);
+
+      layer.on("click", () => {
+        highlightLGA(layer);
+        showLGAPopup(rawName, layer);
+      });
     }
   }).addTo(map);
 
-  // 5. POINT MARKERS
-  const iconMap = {
-    uni:       { icon: "fa-university", color: "#C44444" },
-    workplace: { icon: "fa-building",   color: "#2E8B57" },
-    club:      { icon: "fa-flag",       color: "#800080" },
-    cop:       { icon: "fa-users",      color: "#ff8800" },
-    hub:       { icon: "fa-home", color: "#0077cc" },
-    crisp:     { icon: "fa-user",      color: "#5ca85c" }
+  const circleColorMap = {
+    uni: "#00AFC7",
+    workplace: "#FD4731",
+    club: "#BF824B",
+    cop: "#ff8800",
+    hub: "#02006C"
   };
-//thats what i reaplced for markers 
+
   points.forEach(r => {
-  if (!r.lat || !r.lon) return;
+    if (!r.lat || !r.lon) return;
 
-  const type = r.type?.trim().toLowerCase();
-  const cfg = iconMap[type] || { icon: "fa-map-marker", color: "#444" };
+    const type = r.type?.trim().toLowerCase();
+    if (type === "crisp") return;
 
-  // ---- JITTER FIX FOR IDENTICAL COORDINATES ----
-  // Tiny random offset: ~20–30 meters
-  const jitter = (Math.random() - 0.5) * 0.0015;
-  const lat = +r.lat + jitter;
-  const lon = +r.lon + jitter;
-  // ---------------------------------------------
+    const markerColor = circleColorMap[type] || "#444";
 
-  const marker = L.marker([lat, lon], {
-  icon: L.divIcon({
-    className: "fa-icon",
-    html: `<i class="fa ${cfg.icon}" style="color:${cfg.color}; font-size:20px;"></i>`,
-    iconSize: [20, 20]
-  }),
-  title: r.name,
-  postcode: r.postcode
-});
+    const jitterLat = (Math.random() - 0.5) * 0.0015;
+    const jitterLon = (Math.random() - 0.5) * 0.0015;
 
-  // Tooltip on hover (name only)
-  marker.bindTooltip(r.name, {
-    direction: "top",
-    offset: [0, -10],
-    opacity: 0.9
+    const marker = L.circleMarker([+r.lat + jitterLat, +r.lon + jitterLon], {
+      radius: 7,
+      color: markerColor,
+      fillColor: markerColor,
+      fillOpacity: 0.75,
+      weight: 2,
+      title: r.name,
+      postcode: r.postcode
+    });
+
+    marker.bindTooltip(r.name, {
+      direction: "top",
+      offset: [0, -10],
+      opacity: 0.9
+    });
+
+    marker.bindPopup(`
+      <b>${r.name}</b><br>
+      ${r.address || ""}<br>
+      ${r.postcode || ""}
+    `);
+
+    if (type === "uni")       uniCluster.addLayer(marker);
+    if (type === "workplace") workplaceCluster.addLayer(marker);
+    if (type === "club")      clubCluster.addLayer(marker);
+    if (type === "cop")       copCluster.addLayer(marker);
+    if (type === "hub")       hubCluster.addLayer(marker);
   });
 
-  // Popup on click (full details)
-  marker.bindPopup(`
-    <b>${r.name}</b><br>
-    ${r.address}<br>
-    ${r.postcode}
-  `);
+  crispData.forEach(row => {
+    const rawLGAName = row.lga_name?.trim();
+    const count = Number(row.count);
 
-  if (type === "uni")       uniCluster.addLayer(marker);
-  if (type === "workplace") workplaceCluster.addLayer(marker);
-  if (type === "club")      clubCluster.addLayer(marker);
-  if (type === "cop")       copCluster.addLayer(marker);
-  if (type === "hub")       hubCluster.addLayer(marker);
-  if (type === "crisp")     crispCluster.addLayer(marker);
-});
+    if (!rawLGAName || !count) return;
 
-//finished replacement 
+    const key = normaliseName(rawLGAName);
+    const centre = lgaCentres[key];
+
+    if (!centre) {
+      console.warn("CRISP LGA not found in GeoJSON:", rawLGAName);
+      return;
+    }
+
+    const displayCount = publicCountText(count);
+    const displayName = publicLGAName(centre.displayName);
+
+    const circle = L.circleMarker([centre.lat, centre.lon], {
+      radius: crispRadius(count),
+      color: "#d98ca3",
+      fillColor: "#d98ca3",
+      fillOpacity: 0.55,
+      weight: 2
+    });
+
+    circle.bindTooltip(`${displayName}: ${displayCount} people settled`, {
+      direction: "top",
+      opacity: 0.9
+    });
+
+    circle.bindPopup(`
+      <b>${displayName}</b><br>
+      ${displayCount} people settled through CRISP
+    `);
+
+    crispLayer.addLayer(circle);
+  });
+
   uniCluster.addTo(map);
   workplaceCluster.addTo(map);
   clubCluster.addTo(map);
   copCluster.addTo(map);
   hubCluster.addTo(map);
-  crispCluster.addTo(map);
+  crispLayer.addTo(map);
 
+  function applyJitterToMarkers(clusterGroup) {
+    clusterGroup.eachLayer(marker => {
+      if (!marker.originalLatLng) {
+        marker.originalLatLng = marker.getLatLng();
+      }
 
-// jitter code
-// ---- JITTER ON ZOOM (spread icons apart when clustering turns off) ----
-function applyJitterToMarkers(clusterGroup) {
-  clusterGroup.eachLayer(marker => {
+      if (map.getZoom() >= clusterGroup.options.disableClusteringAtZoom) {
+        const jitterLat = (Math.random() - 0.5) * 0.0010;
+        const jitterLon = (Math.random() - 0.5) * 0.0010;
 
-    // Save original location once
-    if (!marker.originalLatLng) {
-      marker.originalLatLng = marker.getLatLng();
-    }
-
-    // When clusters are disabled, jitter markers apart slightly
-    if (map.getZoom() >= clusterGroup.options.disableClusteringAtZoom) {
-      const jitter = (Math.random() - 0.5) * 0.0010; // ~90-110m
-      marker.setLatLng([
-        marker.originalLatLng.lat + jitter,
-        marker.originalLatLng.lng + jitter
-      ]);
-    } else {
-      // Reset to real coordinates
-      marker.setLatLng(marker.originalLatLng);
-    }
-  });
-}
-
-// Re-jitter whenever user finishes zooming
-map.on("zoomend", () => {
-  applyJitterToMarkers(uniCluster);
-  applyJitterToMarkers(workplaceCluster);
-  applyJitterToMarkers(clubCluster);
-  applyJitterToMarkers(copCluster);
-  applyJitterToMarkers(hubCluster);
-  applyJitterToMarkers(crispCluster) //there was no ; there before so see if that works
-});
-// -----------------------------------
-// 8. ORGANISATION SEARCH BAR
-// -----------------------------------
-const orgInput = document.getElementById("orgSearch");
-
-// A place to store marker references for searching
-const allMarkers = [];
-
-// Collect markers from all clusters
-function collectMarkers(clusterGroup) {
-  clusterGroup.eachLayer(marker => allMarkers.push(marker));
-}
-
-collectMarkers(uniCluster);
-collectMarkers(workplaceCluster);
-collectMarkers(clubCluster);
-collectMarkers(copCluster);
-collectMarkers(hubCluster);
-collectMarkers(crispCluster);
-
-// Create dropdown below search box
-const orgDropdown = document.createElement("div");
-orgDropdown.style.position = "absolute";
-orgDropdown.style.background = "white";
-orgDropdown.style.border = "1px solid #ccc";
-orgDropdown.style.width = "220px";
-orgDropdown.style.maxHeight = "200px";
-orgDropdown.style.overflowY = "auto";
-orgDropdown.style.display = "none";
-orgDropdown.style.zIndex = 99999;
-orgInput.parentNode.appendChild(orgDropdown);
-
-orgInput.addEventListener("input", () => {
-  const q = orgInput.value.toLowerCase().trim();
-  orgDropdown.innerHTML = "";
-
-  if (q.length < 2) {
-    orgDropdown.style.display = "none";
-    return;
+        marker.setLatLng([
+          marker.originalLatLng.lat + jitterLat,
+          marker.originalLatLng.lng + jitterLon
+        ]);
+      } else {
+        marker.setLatLng(marker.originalLatLng);
+      }
+    });
   }
 
-  // Find matches anywhere in the name
-  const matches = allMarkers.filter(marker => {
-  const name = marker.options.title?.toLowerCase() || "";
-  const pc = marker.options.postcode?.toString() || "";
-  return name.includes(q) || pc.includes(q);
-});
-
-
-  matches.forEach(marker => {
-    const item = document.createElement("div");
-    item.style.padding = "5px";
-    item.style.cursor = "pointer";
-
-    // Show the org name
-    item.innerText = `${marker.options.title} (${marker.options.postcode})`;
-
-    // On click: zoom to marker + open popup
-    item.onclick = () => {
-      orgInput.value = marker.options.title;
-      orgDropdown.style.display = "none";
-      map.setView(marker.getLatLng(), 12);
-      marker.openPopup();
-    };
-
-    orgDropdown.appendChild(item);
+  map.on("zoomend", () => {
+    applyJitterToMarkers(uniCluster);
+    applyJitterToMarkers(workplaceCluster);
+    applyJitterToMarkers(clubCluster);
+    applyJitterToMarkers(copCluster);
+    applyJitterToMarkers(hubCluster);
   });
 
-  orgDropdown.style.display = matches.length ? "block" : "none";
-});
-  
-  // 6. FILTER CONTROL – ALWAYS VISIBLE (NOT ON HOVER)
+  const orgInput = document.getElementById("orgSearch");
+  const allMarkers = [];
+
+  function collectMarkers(clusterGroup) {
+    clusterGroup.eachLayer(marker => allMarkers.push(marker));
+  }
+
+  collectMarkers(uniCluster);
+  collectMarkers(workplaceCluster);
+  collectMarkers(clubCluster);
+  collectMarkers(copCluster);
+  collectMarkers(hubCluster);
+
+  const orgDropdown = document.createElement("div");
+  orgDropdown.className = "searchDropdown";
+  orgDropdown.style.zIndex = "20000";
+  orgInput.parentNode.appendChild(orgDropdown);
+
+  orgInput.addEventListener("input", () => {
+    const q = orgInput.value.toLowerCase().trim();
+    orgDropdown.innerHTML = "";
+
+    if (q.length < 2) {
+      orgDropdown.style.display = "none";
+      return;
+    }
+
+    const matches = allMarkers.filter(marker => {
+      const name = marker.options.title?.toLowerCase() || "";
+      const pc = marker.options.postcode?.toString() || "";
+      return name.includes(q) || pc.includes(q);
+    });
+
+    matches.forEach(marker => {
+      const item = document.createElement("div");
+      item.innerText = `${marker.options.title} (${marker.options.postcode || ""})`;
+
+      item.onclick = () => {
+        orgInput.value = marker.options.title;
+        orgDropdown.style.display = "none";
+        map.setView(marker.getLatLng(), 12);
+        marker.openPopup();
+      };
+
+      orgDropdown.appendChild(item);
+    });
+
+    orgDropdown.style.display = matches.length ? "block" : "none";
+  });
+
   L.control.layers(
     null,
     {
@@ -440,58 +551,43 @@ orgInput.addEventListener("input", () => {
       "Welcoming Clubs": clubCluster,
       "Community Organisations": copCluster,
       "Community Hubs": hubCluster,
-      "CRISP": crispCluster
+      "CRISP Settlements": crispLayer
     },
-    { collapsed: false }           // <-- key bit so tickboxes always show
+    { collapsed: false }
   ).addTo(map);
 
+  const legend = L.control({ position: "bottomright" });
 
-
-  // -----------------------------------
-// 6b. LEGEND CONTROL
-// -----------------------------------
-const legend = L.control({ position: "bottomright" });
-
-legend.onAdd = function () {
-  const div = L.DomUtil.create("div", "legend");
-  div.innerHTML = `
-    <i style="background:#ffe680; width:14px; height:14px; display:inline-block; border:1px solid #cc9900; margin-right:6px;"></i>
-      Welcoming Cities<br>
-    <i style="border:2px dashed #e67373; width:14px; height:14px; display:inline-block; margin-right:6px;"></i>
-PALM Mayoral Alliance<br>
-    <i class="fa fa-university" style="color:#C44444; margin-right:6px;"></i>
-      Welcoming Universities<br>
-    <i class="fa fa-building" style="color:#2E8B57; margin-right:6px;"></i>
-      Welcoming Workplaces<br>
-    <i class="fa fa-flag" style="color:#800080; margin-right:6px;"></i>
-      Welcoming Clubs<br>
-    <i class="fa fa-users" style="color:#ff8800; margin-right:6px;"></i>
-      Community Organisations<br>
-    <i class="fa fa-home" style="color:#0077cc; margin-right:6px;"></i>
+  legend.onAdd = function () {
+    const div = L.DomUtil.create("div", "legend");
+    div.innerHTML = `
+      <i style="background:#CCA234; width:14px; height:14px; display:inline-block; border:1px solid #CCA234; margin-right:6px;"></i>
+        Welcoming Cities<br>
+      <i style="border:2px dashed #e67373; width:14px; height:14px; display:inline-block; margin-right:6px;"></i>
+        PALM Mayoral Alliance<br>
+      <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#00AFC7; opacity:0.75; margin-right:6px;"></span>
+  Welcoming Universities<br>
+      <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#FD4731; opacity:0.75; margin-right:6px;"></span>
+  Welcoming Workplaces<br>
+      <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#BF824B; opacity:0.75; margin-right:6px;"></span>
+  Welcoming Clubs<br>
+      <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#ff8800; opacity:0.75; margin-right:6px;"></span>
+  Community Organisations<br>
+      <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#02006C; opacity:0.75; margin-right:6px;"></span>
   Community Hubs<br>
-    <i class="fa fa-user" style="color:#5ca85c; margin-right:6px;"></i>
-    CRISP<br>
-  `;
-  return div;
-};
+      <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#d98ca3; opacity:0.75; margin-right:6px;"></span>
+        CRISP Settlements<br>
+    `;
+    return div;
+  };
 
-legend.addTo(map);
+  legend.addTo(map);
 
-  // -----------------------------------
-  // 7. LGA SEARCH WITH DROPDOWN
-  // -----------------------------------
   const input = document.getElementById("lgaSearch");
 
-  // Create dropdown container
   const dropdown = document.createElement("div");
-  dropdown.style.position = "absolute";
-  dropdown.style.background = "white";
-  dropdown.style.border = "1px solid #ccc";
-  dropdown.style.width = "220px";
-  dropdown.style.maxHeight = "200px";
-  dropdown.style.overflowY = "auto";
-  dropdown.style.display = "none";
-  dropdown.style.zIndex = 99999;
+  dropdown.className = "searchDropdown";
+  dropdown.style.zIndex = "50000";
   input.parentNode.appendChild(dropdown);
 
   input.addEventListener("input", () => {
@@ -508,23 +604,25 @@ legend.addTo(map);
     matches.forEach(nameKey => {
       const info = lgaLayers[nameKey];
       const item = document.createElement("div");
-      item.style.padding = "5px";
-      item.style.cursor = "pointer";
-
-      // SHOW TITLE CASE NAME IN DROPDOWN
       item.innerText = info.displayName;
 
       item.onclick = () => {
         input.value = info.displayName;
         dropdown.style.display = "none";
         map.fitBounds(info.layer.getBounds(), { maxZoom: 10 });
+        highlightLGA(info.layer);
+        showLGAPopup(info.displayName, info.layer);
       };
+
       dropdown.appendChild(item);
     });
 
     dropdown.style.display = matches.length ? "block" : "none";
   });
 
+})
+.catch(error => {
+  console.error("Map data failed to load:", error);
 });
 </script>
 
