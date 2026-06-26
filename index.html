@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcoming Map – Working Copy</title>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -19,6 +20,14 @@
       height: 100%;
       margin: 0;
       padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    button,
+    input,
+    .leaflet-control,
+    .leaflet-popup-content {
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     #map {
@@ -103,53 +112,141 @@
       background: white;
       font-size: 14px;
     }
-
+    
+#mobileMenuButton,
+#mobileMenuPanel {
+  display: none;
+}
+    
     @media (max-width: 600px) {
-      .searchBox {
-        left: 8px;
-        width: calc(100vw - 16px);
-        padding: 12px 14px;
-        font-size: 18px;
-      }
-
-      .searchBox input {
-        font-size: 18px;
-      }
-
-      #orgSearchBox {
-        top: 72px;
-      }
-
-      .searchDropdown {
-        top: 52px;
-        max-height: 320px;
-      }
-
-      .searchDropdown div {
-        padding: 14px;
-        font-size: 18px;
-      }
-
+      #lgaSearchBox,
+      #orgSearchBox,
       .leaflet-control-layers {
-        font-size: 17px;
-        padding: 8px;
-        max-width: 90vw;
+        display: none;
       }
-
-      .leaflet-control-layers label {
-        padding: 6px 0;
+    
+      #mobileMenuButton {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 50000;
+        background: white;
+        color: #000 !important;
+        border: 1px solid #aaa;
+        border-radius: 7px;
+        padding: 10px 13px;
+        font-size: 16px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      }
+    
+      #mobileMenuPanel {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 60000;
+        background: white;
+        width: 74vw;
+        max-width: 320px;
+        height: 100vh;
+        overflow-y: auto;
+        padding: 14px;
+        box-shadow: 3px 0 12px rgba(0,0,0,0.35);
+        box-sizing: border-box;
+      }
+    
+      #mobileMenuPanel.open {
         display: block;
       }
-
-      .leaflet-control-layers input {
-        transform: scale(1.4);
-        margin-right: 8px;
+    
+      #mobileMenuClose {
+        float: right;
+        font-size: 32px;
+        background: none;
+        border: none;
+        cursor: pointer;
       }
-
-      .legend {
+    
+      #mobileMenuPanel h3 {
+        font-size: 18px;
+        margin: 4px 0 20px 0;
+        color: black !important;
+      }
+    
+      .mobileMenuSection {
+        margin-bottom: 16px;
+      }
+    
+      .mobileMenuSection label {
+        display: block;
         font-size: 15px;
-        padding: 12px;
+        margin: 7px 0;
+      }
+    
+      .mobileMenuSection input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+        padding: 10px 12px;
+        border: 1px solid #bbb;
+        border-radius: 6px;
+      }
+    
+      .mobileLayerToggle {
+        transform: scale(1.3);
+        margin-right: 10px;
+      }
+    
+      .mobileDropdown {
+        display: none;
+        border: 1px solid #ccc;
+        max-height: 260px;
+        overflow-y: auto;
+        margin-top: 6px;
+        background: white;
+      }
+    
+      .mobileDropdown div {
+        padding: 10px 12px;
+        font-size: 15px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+      }
+    
+      .legend {
+        font-size: 11px;
+        padding: 6px 8px;
+        max-width: 155px;
+        line-height: 1.25;
+    }
+
+      .legend i,
+      .legend span {
+          width: 9px !important;
+          height: 9px !important;
+          min-width: 9px !important;
+          margin-right: 4px !important;
+      }
+      
+      .leaflet-popup-content {
+        font-size: 14px;
+        line-height: 1.35;
+        min-width: 210px;
         max-width: 260px;
+      }
+      
+      .leaflet-popup-content h3 {
+        font-size: 17px;
+        margin-bottom: 6px;
+      }
+      
+      .leaflet-popup-content p {
+        margin: 3px 0 !important;
+      }
+      
+      .leaflet-popup-content ul {
+        margin-top: 3px !important;
       }
     }
   </style>
@@ -165,25 +262,56 @@
   <input id="orgSearch" type="text" placeholder="Search organisation or postcode...">
 </div>
 
+<button id="mobileMenuButton">☰ Search & filters</button>
+
+<div id="mobileMenuPanel">
+  <button id="mobileMenuClose">×</button>
+  <h3>Search & filters</h3>
+
+  <div class="mobileMenuSection">
+    <label for="mobileLgaSearch">Council area</label>
+    <input id="mobileLgaSearch" type="text" placeholder="Search council area...">
+    <div id="mobileLgaDropdown" class="mobileDropdown"></div>
+  </div>
+
+  <div class="mobileMenuSection">
+    <label for="mobileOrgSearch">Organisation</label>
+    <input id="mobileOrgSearch" type="text" placeholder="Search organisation...">
+    <div id="mobileOrgDropdown" class="mobileDropdown"></div>
+  </div>
+
+  <div class="mobileMenuSection">
+    <h4>Show initiatives</h4>
+    <label><input type="checkbox" class="mobileLayerToggle" data-layer="uni" checked> Welcoming Universities</label>
+    <label><input type="checkbox" class="mobileLayerToggle" data-layer="workplace" checked> Welcoming Workplaces</label>
+    <label><input type="checkbox" class="mobileLayerToggle" data-layer="club" checked> Welcoming Clubs</label>
+    <label><input type="checkbox" class="mobileLayerToggle" data-layer="cop" checked> Community Organisations</label>
+    <label><input type="checkbox" class="mobileLayerToggle" data-layer="hub" checked> Community Hubs</label>
+    <label><input type="checkbox" class="mobileLayerToggle" data-layer="crisp" checked> CRISP Settlements</label>
+  </div>
+</div>
+
+  
 <div id="map"></div>
 
 <script>
 const GEOJSON_URL =
-  "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/LGA_2025_AUST_GDA2020.min.json";
+  "https://raw.githubusercontent.com/welcomingaustralia/initiatives-mapping/main/LGA_2025_AUST_GDA2020.min.json";
 
 const POINTS_URL =
-  "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/welcoming_points_centroids.csv";
+  "https://raw.githubusercontent.com/welcomingaustralia/initiatives-mapping/main/welcoming_points_centroids.csv";
 
 const WELC_LGAS_URL =
-  "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/welcoming_lgas.csv";
+  "https://raw.githubusercontent.com/welcomingaustralia/initiatives-mapping/main/welcoming_lgas.csv";
 
 const CRISP_LGA_URL =
-  "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/crisp_lgas.csv";
+  "https://raw.githubusercontent.com/welcomingaustralia/initiatives-mapping/main/crisp_lgas.csv";
 
 const LGA_SUMMARY_URL =
-  "https://raw.githubusercontent.com/welcomingaustralia/welcoming-map/main/lga_summary.csv";
+  "https://raw.githubusercontent.com/welcomingaustralia/initiatives-mapping/main/lga_summary.csv";
 
-const map = L.map("map").setView([-25.0, 134.0], 5);
+const initialZoom = window.innerWidth <= 600 ? 3 : 5;
+const map = L.map("map").setView([-25.0, 134.0], initialZoom);
 map.zoomControl.setPosition("bottomleft");
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -194,7 +322,7 @@ const clusterOptions = {
   spiderfyOnMaxZoom: true,
   zoomToBoundsOnClick: true,
   maxClusterRadius: 50,
-  disableClusteringAtZoom: 9
+  disableClusteringAtZoom: 11
 };
 
 const uniCluster       = L.markerClusterGroup(clusterOptions);
@@ -248,7 +376,8 @@ const lgaLayers = {};
 const lgaCentres = {};
 let selectedLGALayer = null;
 const lgaSummaryLookup = {};
-  
+const initiativeCountsByLGA = {};
+const accreditedOrgsByLGA = {};
 
 Promise.all([
   loadCSV(WELC_LGAS_URL),
@@ -327,21 +456,92 @@ Promise.all([
   }
 
   function showLGAPopup(rawName, layer) {
-    const profile = lgaSummaryLookup[normaliseName(rawName)];
+    const key = normaliseName(rawName);
+    const profile = lgaSummaryLookup[key];
 
     if (!profile) return;
 
+    const isWelcoming = welcomingLGAs.has(rawName);
+    const isPalm = palmAllianceLGAs.has(rawName);
+
+    const counts = initiativeCountsByLGA[key] || {
+      uni: new Set(),
+      workplace: new Set(),
+      club: new Set(),
+      cop: new Set(),
+      hub: new Set()
+    };
+
+    const initiativeRows = [
+      ["Welcoming Universities", counts.uni.size],
+      ["Welcoming Workplaces", counts.workplace.size],
+      ["Welcoming Clubs", counts.club.size],
+      ["Community Organisations", counts.cop.size],
+      ["Community Hubs", counts.hub.size]
+    ].filter(row => row[1] > 0);
+
+    const initiativeText = initiativeRows.length
+      ? `
+        <hr>
+        <p style="margin:8px 0 4px 0;"><strong>Initiatives</strong></p>
+        ${initiativeRows.map(row => `
+          <p style="margin:4px 0;">${row[0]}: ${row[1]}</p>
+        `).join("")}
+      `
+      : "";
+
+    const accreditedOrgs = accreditedOrgsByLGA[key]
+      ? Array.from(accreditedOrgsByLGA[key].values())
+      : [];
+
+    const membershipItems = [];
+
+    if (isWelcoming) {
+      membershipItems.push(
+        `<p style="margin:6px 0;"><strong>Welcoming Cities Network Member</strong></p>`
+      );
+    }
+
+    if (isPalm) {
+      membershipItems.push(
+        `<p style="margin:6px 0;"><strong>PALM Mayoral Alliance Member</strong></p>`
+      );
+    }
+
+    const membershipText = membershipItems.join("");
+
+    const accreditationText = profile.lga_accreditation?.trim()
+      ? `<p style="margin:6px 0;"><strong>Welcoming City Accreditation:</strong> ${profile.lga_accreditation}</p>`
+      : "";
+
+    const accreditedOrgText = accreditedOrgs.length
+      ? `
+        <hr>
+        <p style="margin:8px 0 4px 0;"><strong>Accredited Organisations</strong></p>
+        <ul style="margin:4px 0 0 18px; padding:0;">
+          ${accreditedOrgs.map(org => `
+            <li>${org.name} (${org.level})</li>
+          `).join("")}
+        </ul>
+      `
+      : "";
+
     const popupContent = `
-      <div style="min-width:220px;">
+      <div style="min-width:240px;">
         <h3 style="margin:0 0 8px 0;">${rawName}</h3>
 
-        <p style="margin:6px 0;">
-          <strong>Born overseas:</strong> ${profile.overseas_born_pct}%
-        </p>
+        ${membershipText}
+        ${accreditationText}
 
-        <p style="margin:6px 0;">
-          <strong>Language other than English:</strong> ${profile.language_other_than_english_pct}%
-        </p>
+        ${initiativeText}
+
+        ${accreditedOrgText}
+
+        <hr>
+
+        <p style="margin:8px 0 4px 0;"><strong>Community Profile</strong></p>
+        <p style="margin:4px 0;"><strong>Born overseas:</strong> ${profile.overseas_born_pct}%</p>
+        <p style="margin:4px 0;"><strong>Language other than English:</strong> ${profile.language_other_than_english_pct}%</p>
       </div>
     `;
 
@@ -376,7 +576,7 @@ Promise.all([
   const circleColorMap = {
     uni: "#00AFC7",
     workplace: "#FD4731",
-    club: "#228B22",
+    club: "#BF824B",
     cop: "#ff8800",
     hub: "#02006C"
   };
@@ -386,6 +586,37 @@ Promise.all([
 
     const type = r.type?.trim().toLowerCase();
     if (type === "crisp") return;
+
+    const lgaKey = normaliseName(r.lga_name);
+    const institutionId = r.institution_id?.trim();
+    const accreditationLevel = r.accreditation_level?.trim();
+
+    if (lgaKey && institutionId) {
+      if (!initiativeCountsByLGA[lgaKey]) {
+        initiativeCountsByLGA[lgaKey] = {
+          uni: new Set(),
+          workplace: new Set(),
+          club: new Set(),
+          cop: new Set(),
+          hub: new Set()
+        };
+      }
+
+      if (initiativeCountsByLGA[lgaKey][type]) {
+      initiativeCountsByLGA[lgaKey][type].add(institutionId);
+      }
+
+      if (accreditationLevel) {
+        if (!accreditedOrgsByLGA[lgaKey]) {
+          accreditedOrgsByLGA[lgaKey] = new Map();
+        }
+
+        accreditedOrgsByLGA[lgaKey].set(institutionId, {
+          name: r.name,
+          level: accreditationLevel
+        });
+      }
+    }
 
     const markerColor = circleColorMap[type] || "#444";
 
@@ -570,7 +801,7 @@ Promise.all([
   Welcoming Universities<br>
       <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#FD4731; opacity:0.75; margin-right:6px;"></span>
   Welcoming Workplaces<br>
-      <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#228B22; opacity:0.75; margin-right:6px;"></span>
+      <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#BF824B; opacity:0.75; margin-right:6px;"></span>
   Welcoming Clubs<br>
       <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#ff8800; opacity:0.75; margin-right:6px;"></span>
   Community Organisations<br>
@@ -583,6 +814,41 @@ Promise.all([
   };
 
   legend.addTo(map);
+
+  const mobileMenuButton = document.getElementById("mobileMenuButton");
+  const mobileMenuPanel = document.getElementById("mobileMenuPanel");
+  const mobileMenuClose = document.getElementById("mobileMenuClose");
+  
+  mobileMenuButton.addEventListener("click", () => {
+    mobileMenuPanel.classList.add("open");
+  });
+  
+  mobileMenuClose.addEventListener("click", () => {
+    mobileMenuPanel.classList.remove("open");
+  });
+
+  const mobileLayerMap = {
+    uni: uniCluster,
+    workplace: workplaceCluster,
+    club: clubCluster,
+    cop: copCluster,
+    hub: hubCluster,
+    crisp: crispLayer
+  };
+  
+  document.querySelectorAll(".mobileLayerToggle").forEach(toggle => {
+    toggle.addEventListener("change", () => {
+      const layer = mobileLayerMap[toggle.dataset.layer];
+  
+      if (!layer) return;
+  
+      if (toggle.checked) {
+        map.addLayer(layer);
+      } else {
+        map.removeLayer(layer);
+      }
+    });
+  });
 
   const input = document.getElementById("lgaSearch");
 
@@ -610,7 +876,11 @@ Promise.all([
       item.onclick = () => {
         input.value = info.displayName;
         dropdown.style.display = "none";
-        map.fitBounds(info.layer.getBounds(), { maxZoom: 10 });
+        map.fitBounds(info.layer.getBounds(), {
+          maxZoom: 9,
+          paddingTopLeft: [20, 150],
+          paddingBottomRight: [20, 80]
+        });
         highlightLGA(info.layer);
         showLGAPopup(info.displayName, info.layer);
       };
@@ -621,6 +891,82 @@ Promise.all([
     dropdown.style.display = matches.length ? "block" : "none";
   });
 
+  const mobileLgaInput = document.getElementById("mobileLgaSearch");
+const mobileLgaDropdown = document.getElementById("mobileLgaDropdown");
+
+mobileLgaInput.addEventListener("input", () => {
+  const q = mobileLgaInput.value.toLowerCase().trim();
+  mobileLgaDropdown.innerHTML = "";
+
+  if (q.length < 2) {
+    mobileLgaDropdown.style.display = "none";
+    return;
+  }
+
+  const matches = Object.keys(lgaLayers).filter(name => name.includes(q));
+
+  matches.forEach(nameKey => {
+    const info = lgaLayers[nameKey];
+    const item = document.createElement("div");
+    item.innerText = info.displayName;
+
+    item.onclick = () => {
+      mobileLgaInput.value = info.displayName;
+      mobileLgaDropdown.style.display = "none";
+      mobileMenuPanel.classList.remove("open");
+
+      const centre = info.layer.getBounds().getCenter();
+      map.setView(centre, 8);
+
+      highlightLGA(info.layer);
+      showLGAPopup(info.displayName, info.layer);
+    };
+
+    mobileLgaDropdown.appendChild(item);
+  });
+
+  mobileLgaDropdown.style.display = matches.length ? "block" : "none";
+});
+
+
+const mobileOrgInput = document.getElementById("mobileOrgSearch");
+const mobileOrgDropdown = document.getElementById("mobileOrgDropdown");
+
+mobileOrgInput.addEventListener("input", () => {
+  const q = mobileOrgInput.value.toLowerCase().trim();
+  mobileOrgDropdown.innerHTML = "";
+
+  if (q.length < 2) {
+    mobileOrgDropdown.style.display = "none";
+    return;
+  }
+
+  const matches = allMarkers.filter(marker => {
+    const name = marker.options.title?.toLowerCase() || "";
+    const pc = marker.options.postcode?.toString() || "";
+    return name.includes(q) || pc.includes(q);
+  });
+
+  matches.forEach(marker => {
+    const item = document.createElement("div");
+    item.innerText = `${marker.options.title} (${marker.options.postcode || ""})`;
+
+    item.onclick = () => {
+      mobileOrgInput.value = marker.options.title;
+      mobileOrgDropdown.style.display = "none";
+      mobileMenuPanel.classList.remove("open");
+
+      map.setView(marker.getLatLng(), 12);
+      marker.openPopup();
+    };
+
+    mobileOrgDropdown.appendChild(item);
+  });
+
+  mobileOrgDropdown.style.display = matches.length ? "block" : "none";
+});
+
+  
 })
 .catch(error => {
   console.error("Map data failed to load:", error);
