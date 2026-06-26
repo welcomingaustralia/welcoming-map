@@ -1,948 +1,575 @@
-name,type,address,postcode,state,lat,lon,precision
-La Trobe University,uni,,3086,VIC,-37.7229498,145.047012,postcode_centroid
-La Trobe University,uni,,3083,VIC,-37.6987006,145.056223,postcode_centroid
-La Trobe University,uni,,2000,NSW,-33.8638,151.2015802,postcode_centroid
-La Trobe University,uni,,3550,VIC,-36.7570157,144.285267,postcode_centroid
-La Trobe University,uni,,3630,VIC,-36.4616,145.403176,postcode_centroid
-La Trobe University,uni,,3250,VIC,-38.3410186,143.584742,postcode_centroid
-La Trobe University,uni,,3500,VIC,-34.2151229,142.154161,postcode_centroid
-University of the Sunshine Coast,uni,,4556,QLD,-26.685,153.049784,postcode_centroid
-University of the Sunshine Coast,uni,,4510,QLD,-27.0797,152.960273,postcode_centroid
-University of the Sunshine Coast,uni,,4655,QLD,-25.353889,152.78368,postcode_centroid
-University of the Sunshine Coast,uni,,4570,QLD,-26.3486,152.616943,postcode_centroid
-University of the Sunshine Coast,uni,,4502,QLD,-27.2583,152.966813,postcode_centroid
-University of the Sunshine Coast,uni,,4101,QLD,-27.487,153.009661,postcode_centroid
-University of the Sunshine Coast,uni,,4575,QLD,-26.743,153.119478,postcode_centroid
-University of Melbourne,uni,,3006,VIC,-37.825,144.9520744,postcode_centroid
-University of Melbourne,uni,,3121,VIC,-37.8296728,145.001788,postcode_centroid
-University of Melbourne,uni,,3363,VIC,-37.4241222,143.88637,postcode_centroid
-University of Melbourne,uni,,3647,VIC,-36.3969441,145.704473,postcode_centroid
-University of Melbourne,uni,,3030,VIC,-37.7935,144.64209,postcode_centroid
-University of Melbourne,uni,,3630,VIC,-36.4616,145.403176,postcode_centroid
-UNSW,uni,,2052,NSW,-33.917347,151.234417,postcode_centroid
-UNSW,uni,,2021,NSW,-33.8943,151.227236,postcode_centroid
-UNSW,uni,,2600,ACT,-35.307778,149.201072,postcode_centroid
-UNSW,uni,,2033,NSW,-33.9096151,151.218435,postcode_centroid
-UTS,uni,,2007,NSW,-33.8842554,151.19665,postcode_centroid
-UTS,uni,,2000,NSW,-33.8638,151.2015802,postcode_centroid
-Western Sydney University,uni,,2170,NSW,-33.9503864,150.921448,postcode_centroid
-Western Sydney University,uni,,2150,NSW,-33.8219453,151.006506,postcode_centroid
-Western Sydney University,uni,,2751,NSW,-33.7506759,151.280352,postcode_centroid
-Western Sydney University,uni,,2116,NSW,-33.8124093,151.036941,postcode_centroid
-Western Sydney University,uni,,2199,NSW,-33.9050378,151.023171,postcode_centroid
-Western Sydney University,uni,,2753,NSW,-33.61529,150.646053,postcode_centroid
-Western Sydney University,uni,,2145,NSW,-33.7945,150.9751544,postcode_centroid
-Western Sydney University,uni,,2790,NSW,-33.239963,150.356874,postcode_centroid
-University of Tasmania,uni,,7320,TAS,-41.07007,145.862079,postcode_centroid
-University of Tasmania,uni,,7005,TAS,-42.901111,147.3368,postcode_centroid
-University of Tasmania,uni,,7000,TAS,-42.8811,147.308002,postcode_centroid
-University of Tasmania,uni,,7001,TAS,-42.8821377,146.356055,postcode_centroid
-University of Tasmania,uni,,7004,TAS,-42.892778,147.328928,postcode_centroid
-University of Tasmania,uni,,7053,TAS,-42.971944,147.334695,postcode_centroid
-University of Tasmania,uni,,2039,NSW,-33.8661553,151.171915,postcode_centroid
-University of Tasmania,uni,,7250,TAS,-41.46,147.077589,postcode_centroid
-Victoria University,uni,,3011,VIC,-37.7988987,144.907953,postcode_centroid
-Victoria University,uni,,3021,VIC,-37.746,144.796693,postcode_centroid
-Victoria University,uni,,3022,VIC,-37.7776716,144.793961,postcode_centroid
-Victoria University,uni,,3030,VIC,-37.7935,144.64209,postcode_centroid
-Victoria University,uni,,4006,QLD,-27.4432,153.175242,postcode_centroid
-Victoria University,uni,,3000,VIC,-37.812131,144.958492,postcode_centroid
-Curtin University,uni,,6845,WA,-31.9505269,115.763228,postcode_centroid
-Curtin University,uni,,6102,WA,-32.0041058,115.904425,postcode_centroid
-Curtin University,uni,,6000,WA,-31.955,115.859912,postcode_centroid
-Flinders University,uni,,5042,SA,-35.021,138.575023,postcode_centroid
-Flinders University,uni,,5000,SA,-34.9328294,138.600746,postcode_centroid
-Flinders University,uni,,5355,SA,-34.4733985,139.007886,postcode_centroid
-Flinders University,uni,,5253,SA,-35.0900807,139.273641,postcode_centroid
-Flinders University,uni,,5211,SA,-35.5412823,138.627975,postcode_centroid
-University of Adelaide,uni,,5001,SA,-34.9219463,138.600746,postcode_centroid
-University of Adelaide,uni,,5371,SA,-34.4153843,138.7560699,postcode_centroid
-University of Adelaide,uni,,5005,SA,-34.920603,138.60351,postcode_centroid
-Bond University,uni,,4226,QLD,-28.042,153.40282,postcode_centroid
-Bond University,uni,,4000,QLD,-27.4660994,153.022126,postcode_centroid
-Charles Darwin University,uni,,815,NT,-12.3718,130.869,postcode_centroid
-Charles Darwin University,uni,,830,NT,-12.5164,130.9580765,postcode_centroid
-Charles Darwin University,uni,,871,NT,-23.698042,131.298809,postcode_centroid
-Charles Darwin University,uni,,850,NT,-14.5052,132.1721041,postcode_centroid
-Charles Darwin University,uni,,2000,NSW,-33.8638,151.2015802,postcode_centroid
-JBS Foods Riverina,workplace,"2 Regulator Rd, Yanco NSW 2703",2703,NSW,-34.6034853,146.370827,postcode_centroid
-BLU by adcorp,workplace,"Level 3, 2 Gardner Cl, Milton QLD 4064",4064,QLD,-27.4662,152.999039,postcode_centroid
-Museums Victoria,workplace,"GPO Box 666, Melbourne VIC 3001",3001,VIC,-37.8136276,144.9825846,postcode_centroid
-Rajdhani Marathi Mandal,cop,,2618,ACT,-35.1679431,149.0616656,postcode_centroid
-The African Gospel Band,cop,,2606,ACT,-35.351693,149.092601,postcode_centroid
-Forcibly Displaced People Network,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid
-Forcibly Displaced People Network,cop,,4000,QLD,-27.468391,153.022126,postcode_centroid
-Forcibly Displaced People Network,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
-Forcibly Displaced People Network,cop,,6000,WA,-31.948762,115.859912,postcode_centroid
-Forcibly Displaced People Network,cop,,2603,ACT,-35.330382,149.125739,postcode_centroid
-Forcibly Displaced People Network,cop,,2000,NSW,-33.86051951,151.2015802,postcode_centroid
-The Slovenian-australian Association of Canberra,cop,,2606,ACT,-35.351693,149.092601,postcode_centroid
-Africa 2 Australia,cop,,2603,ACT,-35.330382,149.125739,postcode_centroid
-Federation of Indian associations of ACT (FINACT),cop,,2602,ACT,-35.248071,149.148147,postcode_centroid
-Heilongjiang Association of Australia,cop,,2617,ACT,-35.231279,149.086682,postcode_centroid
-Woolgoolga and Northern Beaches Chamber of Commerce,cop,,2450,NSW,-30.097726,152.658268,postcode_centroid
-Oriscon,cop,,2830,NSW,-32.24224,148.657282,postcode_centroid
-Assyrian National Council - Australia,cop,,2165,NSW,-33.872435,150.947496,postcode_centroid
-Somali Australian Community Association of NSW (SACA),cop,,2144,NSW,-33.851868,151.026756,postcode_centroid
-Somali Australian Community Association of NSW (SACA),cop,,2200,NSW,-33.926559,151.014937,postcode_centroid
-Somali Australian Community Association of NSW (SACA),cop,,2193,NSW,-33.910308,151.12086,postcode_centroid
-Somali Australian Community Association of NSW (SACA),cop,,2165,NSW,-33.872435,150.947496,postcode_centroid
-Somali Australian Community Association of NSW (SACA),cop,,2160,NSW,-33.835883,150.976594,postcode_centroid
-Australian Meff Consortium,cop,,2165,NSW,-33.872435,150.947496,postcode_centroid
-Khmer Community of New South Wales,cop,,2144,NSW,-33.851868,151.026756,postcode_centroid
-Khmer Community of New South Wales,cop,,2200,NSW,-33.926559,151.014937,postcode_centroid
-Khmer Community of New South Wales,cop,,2148,NSW,-33.783751,150.900547,postcode_centroid
-Khmer Community of New South Wales,cop,,2165,NSW,-33.872435,150.947496,postcode_centroid
-Khmer Community of New South Wales,cop,,2170,NSW,-33.928392,150.921448,postcode_centroid
-Khmer Community of New South Wales,cop,,2160,NSW,-33.835883,150.976594,postcode_centroid
-Khmer Community of New South Wales,cop,,2150,NSW,-33.814463,151.006506,postcode_centroid
-Association of Community Language Schools,cop,,2560,NSW,-34.194216,150.768408,postcode_centroid
-Association of Community Language Schools,cop,,2500,NSW,-34.423171,150.874294,postcode_centroid
-Australian Druze Community,cop,,2160,NSW,-33.835883,150.976594,postcode_centroid
-Chabad of the Hunter and Central Coast,cop,,2250,NSW,-33.325373,151.189243,postcode_centroid
-Chabad of the Hunter and Central Coast,cop,,2300,NSW,-32.931635,151.778021,postcode_centroid
-Islamic Centre of Newcastle,cop,,2300,NSW,-32.931635,151.778021,postcode_centroid
-Museum of Chinese in Australia,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid
-Museum of Chinese in Australia,cop,,3500,,-34.1931,142.154161,postcode_centroid
-Museum of Chinese in Australia,cop,,4870,,-16.923761,145.742303,postcode_centroid
-Museum of Chinese in Australia,cop,,4868,,-16.993753,145.729193,postcode_centroid
-Museum of Chinese in Australia,cop,,0800,,-12.458684,130.83668,postcode_centroid
-Museum of Chinese in Australia,cop,,7250,TAS,-41.432254,147.077589,postcode_centroid
-Museum of Chinese in Australia,cop,,6000,WA,-31.948762,115.859912,postcode_centroid
-Rainbow Crossing,cop,,2560,NSW,-34.194216,150.768408,postcode_centroid
-Vietnamese Community in Australia NSW Chapter,cop,,2465,NSW,-29.412622,153.243897,postcode_centroid
-Voices of Women Incorporated,cop,,2830,NSW,-32.24224,148.657282,postcode_centroid
-Voices of Women Incorporated,cop,,2440,NSW,-30.375791,153.019648,postcode_centroid
-St Mary's Ethiopian Women's Association in Sydney,cop,,2144,NSW,-33.851868,151.026756,postcode_centroid
-St Mary's Ethiopian Women's Association in Sydney,cop,,2148,NSW,-33.783751,150.900547,postcode_centroid
-St Mary's Ethiopian Women's Association in Sydney,cop,,2770,NSW,-33.756443,150.810246,postcode_centroid
-African Australian Advocacy Centre,cop,,2170,NSW,-33.928392,150.921448,postcode_centroid
-African Australian Advocacy Centre,cop,,2150,NSW,-33.814463,151.006506,postcode_centroid
-Australian Arab Cultural Forum,cop,,2170,NSW,-33.928392,150.921448,postcode_centroid
-Turbans 4 Australia,cop,,2150,NSW,-33.814463,151.006506,postcode_centroid
-Tamil Senior Citizens Association (N.S.W.),cop,,2135,NSW,-33.881009,151.084759,postcode_centroid
-Pacific Communities Centre ,cop,,2170,NSW,-33.928392,150.921448,postcode_centroid
-Sadat Welfare and Sports Association,cop,,2144,NSW,-33.851868,151.026756,postcode_centroid
-Sadat Welfare and Sports Association,cop,,2160,NSW,-33.835883,150.976594,postcode_centroid
-Lismore Friendship Festival,cop,,2480,NSW,-28.706486,153.25943,postcode_centroid
-The Sinhalese Cultural Centre,cop,,2148,NSW,-33.783751,150.900547,postcode_centroid
-African/Australian Football Association,cop,,2144,NSW,-33.851868,151.026756,postcode_centroid
-African/Australian Football Association,cop,,2118,NSW,-33.775596,151.043518,postcode_centroid
-African/Australian Football Association,cop,,2148,NSW,-33.783751,150.900547,postcode_centroid
-African/Australian Football Association,cop,,2160,NSW,-33.835883,150.976594,postcode_centroid
-African/Australian Football Association,cop,,2150,NSW,-33.814463,151.006506,postcode_centroid
-Australian Afghan Hassanian Youth Association,cop,,2144,NSW,-33.851868,151.026756,postcode_centroid
-Armenian Cultural Centre,cop,,2165,NSW,-33.872435,150.947496,postcode_centroid
-Multicultural Community Services of Central Australia,cop,,0870,NT,-23.702291,133.86314,postcode_centroid
-UMNT,cop,,0800,NT,-12.458684,130.83668,postcode_centroid
-The Korean Association in Australia Northern Territory,cop,,0810,NT,-12.381806,130.866242,postcode_centroid
-Darwin Malayalee Association,cop,,0870,NT,-23.702291,133.86314,postcode_centroid
-Central Australia Sikh Cultural Centre,cop,,0830,NT,-12.52139649,130.9580765,postcode_centroid
-Vibrant Diverse Cultures,cop,,0830,NT,-12.52139649,130.9580765,postcode_centroid
-Bangladesh Association of Northern Territory,cop,,0800,NT,-12.458684,130.83668,postcode_centroid
-Australian Vietnamese Family Association,cop,,0800,NT,-12.458684,130.83668,postcode_centroid
-Chabad North Queensland,cop,,4870,QLD,-16.923761,145.742303,postcode_centroid
-Chabad North Queensland,cop,,4868,QLD,-16.993753,145.729193,postcode_centroid
-Chabad North Queensland,cop,,4860,QLD,-17.520343,145.888782,postcode_centroid
-Chabad North Queensland,cop,,4740,QLD,-21.33763,149.059737,postcode_centroid
-Chabad North Queensland,cop,,4810,QLD,-19.227783,146.764659,postcode_centroid
-Chabad North Queensland,cop,,4802,QLD,-20.271072,148.989038,postcode_centroid
-Mongolian Community Association in Queensland,cop,,4000,QLD,-27.468391,153.022126,postcode_centroid
-The Vietnamese Community in Australia (Queensland Chapter),cop,,4807,QLD,-19.914965,147.133033,postcode_centroid
-LVIC,cop,,4350,QLD,-27.543577,151.960952,postcode_centroid
-Women's Mentoring Foundation,cop,,4207,QLD,-27.733991,153.204523,postcode_centroid
-Women's Mentoring Foundation,cop,,4006,QLD,-27.36618,153.175242,postcode_centroid
-Women's Mentoring Foundation,cop,,4218,QLD,-28.037627,153.41692,postcode_centroid
-Women's Mentoring Foundation,cop,,4122,QLD,-27.543316,153.088155,postcode_centroid
-Women's Mentoring Foundation,cop,,4127,QLD,-27.629474,153.142035,postcode_centroid
-Women's Mentoring Foundation,cop,,4810,QLD,-19.227783,146.764659,postcode_centroid
-Ukrainian Community of Queensland,cop,,4000,QLD,-27.468391,153.022126,postcode_centroid
-Multicultural Mailer,cop,,3805,QLD,-38.037026,145.304198,postcode_centroid
-Multicultural Mailer,cop,,3977,QLD,-38.1466398,145.2695101,postcode_centroid
-Multicultural Mailer,cop,,3175,QLD,-38.016114,145.208504,postcode_centroid
-Multicultural Mailer,cop,,4215,QLD,-27.967134,153.397952,postcode_centroid
-Multicultural Mailer,cop,,4127,QLD,-27.629474,153.142035,postcode_centroid
-Australian National Chinese Women's Federation,cop,,4215,QLD,-27.967134,153.397952,postcode_centroid
-The Federation of Indian Communities of Queensland,cop,,4000,QLD,-27.468391,153.022126,postcode_centroid
-Arise Women Support Association,cop,,4051,QLD,-27.427508,153.000297,postcode_centroid
-Arise Women Support Association,cop,,4350,QLD,-27.576308,151.852689,postcode_centroid
-Women's Power of Inspiration,cop,,4215,QLD,-27.967134,153.397952,postcode_centroid
-Women's Power of Inspiration,cop,,4131,QLD,-27.669913,153.136072,postcode_centroid
-Bangle Foundation,cop,,4000,QLD,-27.468391,153.022126,postcode_centroid
-Hillcrest Community Centre,cop,,4118,QLD,-27.673806,153.027323,postcode_centroid
-Vedic Education Arts and Culture,cop,,4350,QLD,-27.599253,151.939683,postcode_centroid
-Middle Eastern Communities Council of S.A.,cop,,5453,SA,-33.802932,138.582681,postcode_centroid
-Slava Ukrainian Cultural Centre,cop,,5011,SA,-34.87089128,138.5353265,postcode_centroid
-Afghan United Association of South Australia,cop,,5114,SA,-34.718681,138.754254,postcode_centroid
-Adelaide Eid Festival,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid
-Pashtun Association of SA,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid
-Pashtun Association of SA,cop,,5012,SA,-34.86303,138.541637,postcode_centroid
-Pashtun Association of SA,cop,,5043,SA,-35.005492,138.553853,postcode_centroid
-Pashtun Association of SA,cop,,5067,SA,-34.919985,138.630575,postcode_centroid
-Pashtun Association of SA,cop,,5015,SA,-34.808422,138.531567,postcode_centroid
-Pashtun Association of SA,cop,,5082,SA,-34.886018,138.587083,postcode_centroid
-Pashtun Association of SA,cop,,5108,SA,-34.761553,138.61884,postcode_centroid
-Pashtun Association of SA,cop,,5061,SA,-34.957195,138.60648,postcode_centroid
-Pashtun Association of SA,cop,,5031,SA,-34.936926,138.570873,postcode_centroid
-St. Elias Antiochian Orthodox Parish Association,cop,,5012,SA,-34.86303,138.541637,postcode_centroid
-Associazione Sinopolese Del Sud Australia Maria SS Di Tutte Le Grazie,cop,,5012,SA,-34.86303,138.541637,postcode_centroid
-Ceylon Tamil Association of South Australia,cop,,5066,SA,-34.940962,138.66029,postcode_centroid
-Ceylon Tamil Association of South Australia,cop,,5074,SA,-34.884233,138.669275,postcode_centroid
-Ceylon Tamil Association of South Australia,cop,,5091,SA,-34.822615,138.735572,postcode_centroid
-Circle of Friends Australia,cop,,5152,SA,-34.998401,138.703957,postcode_centroid
-Hispanic Women's Association of South Australia,cop,,5043,SA,-35.005492,138.553853,postcode_centroid
-Hispanic Women's Association of South Australia,cop,,5108,SA,-34.761553,138.61884,postcode_centroid
-Afghan Culture Association,cop,,5114,SA,-34.718681,138.754254,postcode_centroid
-Afghan Culture Association,cop,,5082,SA,-34.886018,138.587083,postcode_centroid
-Afghan Culture Association,cop,,5108,SA,-34.761553,138.61884,postcode_centroid
-Telugu Association of South Australia,cop,,5011,SA,-34.87089128,138.5353265,postcode_centroid
-Telugu Association of South Australia,cop,,5043,SA,-35.005492,138.553853,postcode_centroid
-Telugu Association of South Australia,cop,,5015,SA,-34.808422,138.531567,postcode_centroid
-Telugu Association of South Australia,cop,,5108,SA,-34.761553,138.61884,postcode_centroid
-Telugu Association of South Australia,cop,,5031,SA,-34.936926,138.570873,postcode_centroid
-Cyprus Community of South Australia,cop,,5011,SA,-34.87089128,138.5353265,postcode_centroid
-Hong Kong Cultural Association of South Australia,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid
-Hong Kong Cultural Association of South Australia,cop,,5061,SA,-34.957195,138.60648,postcode_centroid
-Hong Kong Cultural Association of South Australia,cop,,5031,SA,-34.936926,138.570873,postcode_centroid
-Farda Group,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid
-Farda Group,cop,,5108,SA,-34.761553,138.61884,postcode_centroid
-Akaal Sikh Society Launceston,cop,,7277,TAS,-41.366416,146.996977,postcode_centroid
-Akaal Sikh Society Launceston,cop,,7304,TAS,-41.710417,146.165998,postcode_centroid
-Shia Association of Ahl-E-Bayt Tasmania,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
-The Non-resident Nepali Association Australia,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
-Association of Colombians in Tasmania (ASSOCOLTAS),cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
-Australian Italian Club,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
-Be Hers,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
-Multicultural Womens Council of Tasmania,cop,,7010,TAS,-42.85913,147.212366,postcode_centroid
-Multicultural Womens Council of Tasmania,cop,,7015,TAS,-42.83903,147.360174,postcode_centroid
-Multicultural Womens Council of Tasmania,cop,,7005,TAS,-42.916204,147.3368,postcode_centroid
-Multicultural Womens Council of Tasmania,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid
-Australian Professionals of Colour (APOC),cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Sufi Festival,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Cypher Culture (Vic),cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Somali Community,cop,,3040,VIC,-37.751845,144.902556,postcode_centroid
-Somali Community,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Somali Community,cop,,3030,VIC,-37.91624,144.64209,postcode_centroid
-Yarra Ethnic Arts Exchange Association,cop,,3067,VIC,-37.803515,144.998203,postcode_centroid
-Somali Elders Group in Victoria,cop,,3084,VIC,-37.744406,145.082685,postcode_centroid
-Walker Close & Brooklyn Hall Association,cop,,3015,VIC,-37.838242,144.880556,postcode_centroid
-Multicultural Women Victoria,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Australia-Korea Business Council,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-The Federation of Chinese Associations (VIC),cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Malayalee Association of Victoria,cop,,3810,VIC,-38.04658,145.472514,postcode_centroid
-Malayalee Association of Victoria,cop,,3805,VIC,-38.037026,145.304198,postcode_centroid
-Malayalee Association of Victoria,cop,,3977,VIC,-38.1466398,145.2695101,postcode_centroid
-Malayalee Association of Victoria,cop,,3175,VIC,-38.016114,145.208504,postcode_centroid
-Astha Nepali Hindu Society of Victoria Shree Pashupatinath Temple,cop,,3977,VIC,-38.1466398,145.2695101,postcode_centroid
-Filipino Australian Seniors Association,cop,,3192,VIC,-37.965655,145.0623,postcode_centroid
-Diwali & Holi in West,cop,,3337,VIC,-37.65724033,144.5462424,postcode_centroid
-Indian Women in Australia,cop,,3337,VIC,-37.65724033,144.5462424,postcode_centroid
-Nepalese Neighbourhood Community,cop,,3757,VIC,-37.469784,145.182221,postcode_centroid
-Northern Melbourne Marathi Mandal,cop,,3043,VIC,-37.691916,144.888368,postcode_centroid
-Northern Melbourne Marathi Mandal,cop,,3757,VIC,-37.469784,145.182221,postcode_centroid
-Asha Global Foundation,cop,,3805,VIC,-38.037026,145.304198,postcode_centroid
-Libyan Women's Association Incorporated,cop,,3757,VIC,-37.469784,145.182221,postcode_centroid
-Melbourne Orthodox Jewish Community Centre,cop,,3163,VIC,-37.896497,145.057237,postcode_centroid
-Melbourne Orthodox Jewish Community Centre,cop,,3182,VIC,-37.865322,144.979478,postcode_centroid
-Kaiga Tuvalu Victoria Community Incorporated,cop,,3337,VIC,-37.65724033,144.5462424,postcode_centroid
-River Nile Learning Centre Incorporated,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Help - Himalayan Youth Foundation,cop,,3046,VIC,-37.706578,144.927968,postcode_centroid
-Help - Himalayan Youth Foundation,cop,,3043,VIC,-37.691916,144.888368,postcode_centroid
-Help - Himalayan Youth Foundation,cop,,3024,VIC,-37.75045631,144.649936,postcode_centroid
-Alevi Community Council of Australia,cop,,3056,VIC,-37.766292,144.960108,postcode_centroid
-Chabad of Rara,cop,,6330,VIC,-34.905438,117.863286,postcode_centroid
-Chabad of Rara,cop,,2640,VIC,-36.016196,147.026549,postcode_centroid
-Chabad of Rara,cop,,0870,VIC,-23.702291,133.86314,postcode_centroid
-Chabad of Rara,cop,,3350,VIC,-37.571941,143.864505,postcode_centroid
-Chabad of Rara,cop,,3550,VIC,-36.764269,144.285267,postcode_centroid
-Chabad of Rara,cop,,6230,VIC,-33.341076,115.649205,postcode_centroid
-Chabad of Rara,cop,,4670,VIC,-24.88776,152.297855,postcode_centroid
-Chabad of Rara,cop,,2450,VIC,-30.097726,152.658268,postcode_centroid
-Chabad of Rara,cop,,3175,VIC,-38.016114,145.208504,postcode_centroid
-Chabad of Rara,cop,,0800,VIC,-12.458684,130.83668,postcode_centroid
-Chabad of Rara,cop,,2830,VIC,-32.24224,148.657282,postcode_centroid
-Chabad of Rara,cop,,6450,VIC,-33.401152,122.211127,postcode_centroid
-Chabad of Rara,cop,,4570,VIC,-26.153831,152.616943,postcode_centroid
-Chabad of Rara,cop,,7250,VIC,-41.432254,147.077589,postcode_centroid
-Chabad of Rara,cop,,4740,VIC,-21.33763,149.059737,postcode_centroid
-Chabad of Rara,cop,,2320,VIC,-32.741737,151.543675,postcode_centroid
-Chabad of Rara,cop,,3500,VIC,-34.1931,142.154161,postcode_centroid
-Chabad of Rara,cop,,4567,VIC,-26.408596,153.096957,postcode_centroid
-Chabad of Rara,cop,,2444,VIC,-31.439614,152.87253,postcode_centroid
-Chabad of Rara,cop,,3280,VIC,-38.37884,142.482889,postcode_centroid
-Chabad of Rara,cop,,5576,VIC,-35.050773,137.56046,postcode_centroid
-Chabad of Rara,cop,,6168,VIC,-32.281957,115.75773,postcode_centroid
-Chabad of Rara,cop,,2620,VIC,-35.34172619,149.2104515,postcode_centroid
-Chabad of Rara,cop,,3221,VIC,-38.181608,144.427419,postcode_centroid
-Epping Wollert Nepalese Community,cop,,3757,VIC,-37.469784,145.182221,postcode_centroid
-African Australian Multicultural Employment and Youth Services,cop,,3021,VIC,-37.743361,144.796693,postcode_centroid
-African Australian Multicultural Employment and Youth Services,cop,,3032,VIC,-37.774486,144.897221,postcode_centroid
-African Australian Multicultural Employment and Youth Services,cop,,3337,VIC,-37.65724033,144.5462424,postcode_centroid
-African Australian Multicultural Employment and Youth Services,cop,,3029,VIC,-37.837165,144.705831,postcode_centroid
-Bosna and Hercegovina Islamic Society - Noble Park,cop,,3175,VIC,-38.016114,145.208504,postcode_centroid
-Islamic Community Milli Gorus Dandenong,cop,,3175,VIC,-38.016114,145.208504,postcode_centroid
-Indian Association of Bendigo,cop,,3550,VIC,-36.764269,144.285267,postcode_centroid
-Anand Ishar,cop,,3805,VIC,-38.037026,145.304198,postcode_centroid
-Australian Telangana State Association,cop,,3021,VIC,-37.743361,144.796693,postcode_centroid
-Australian Telangana State Association,cop,,3220,VIC,-38.157038,144.34652,postcode_centroid
-Australian Telangana State Association,cop,,3015,VIC,-37.838242,144.880556,postcode_centroid
-Australian Telangana State Association,cop,,3032,VIC,-37.774486,144.897221,postcode_centroid
-Australian Telangana State Association,cop,,3029,VIC,-37.837165,144.705831,postcode_centroid
-Future Foundation for Kids,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Multicultural Youth Support Services,cop,,3810,VIC,-38.04658,145.472514,postcode_centroid
-Multicultural Youth Support Services,cop,,3806,VIC,-38.025018,145.349488,postcode_centroid
-Cyprus Turkish Islamic Community of Victoria,cop,,3020,VIC,-37.777204,144.829945,postcode_centroid
-United Muslim Migrants Association of Victoria,cop,,3105,VIC,-37.772477,145.084806,postcode_centroid
-Regional Runways,cop,,3220,VIC,-38.157038,144.34652,postcode_centroid
-Srilankan Muslim Community of Victoria,cop,,3030,VIC,-37.91624,144.64209,postcode_centroid
-Chinese Dance Australia,cop,,6104,WA,-31.965498,115.977633,postcode_centroid
-Chinese Dance Australia,cop,,6150,WA,-32.061682,115.833608,postcode_centroid
-Chinese Dance Australia,cop,,6000,WA,-31.948762,115.859912,postcode_centroid
-Nepali Association of Western Australia (NAWA),cop,,6107,WA,-32.017663,115.967142,postcode_centroid
-Nepali Association of Western Australia (NAWA),cop,,6164,WA,-32.131993,115.854584,postcode_centroid
-Nepali Association of Western Australia (NAWA),cop,,6110,WA,-32.078535,116.008603,postcode_centroid
-Nepali Association of Western Australia (NAWA),cop,,6000,WA,-31.948762,115.859912,postcode_centroid
-Perth Italian Festival WA,cop,,6000,WA,-31.948762,115.859912,postcode_centroid
-Gosnells Chinese Association,cop,,6110,WA,-32.078535,116.008603,postcode_centroid
-Western Australia Chongqing & Sichuan Association (WACSA),cop,,6000,WA,-31.948762,115.859912,postcode_centroid
-Lebanese Community Western Australia,cop,,6112,WA,-32.158675,115.997934,postcode_centroid
-Lebanese Community Western Australia,cop,,6053,WA,-31.920863,115.914851,postcode_centroid
-Lebanese Community Western Australia,cop,,6000,WA,-31.948762,115.859912,postcode_centroid
-Lebanese Community Western Australia,cop,,6056,WA,-31.838398,116.0261,postcode_centroid
-Midwest Indian Cultural Society,cop,,6000,WA,-31.948762,115.859912,postcode_centroid
-Australia Buddhist Bliss Culture Mission,cop,,6156,WA,-32.03954,115.800233,postcode_centroid
-Estonian Cultural Association of Western Australia,cop,,6104,WA,-31.965498,115.977633,postcode_centroid
-Estonian Cultural Association of Western Australia,cop,,6155,WA,-32.061501,115.890779,postcode_centroid
-Estonian Cultural Association of Western Australia,cop,,6076,WA,-32.108961,116.208263,postcode_centroid
-Perth African Nations Sports Association (PANSA),cop,,6054,WA,-31.901801,115.942572,postcode_centroid
-Perth African Nations Sports Association (PANSA),cop,,6104,WA,-31.965498,115.977633,postcode_centroid
-Perth African Nations Sports Association (PANSA),cop,,6151,WA,-31.982199,115.869482,postcode_centroid
-Gortankaku Community Association of WA,cop,,6065,WA,-31.69444,115.845329,postcode_centroid
-Federation of Indian Associations of WA,cop,,6112,WA,-32.158675,115.997934,postcode_centroid
-Federation of Indian Associations of WA,cop,,6155,WA,-32.061501,115.890779,postcode_centroid
-Federation of Indian Associations of WA,cop,,6110,WA,-32.078535,116.008603,postcode_centroid
-Western Australia Kannada Sangha,cop,,6104,WA,-31.965498,115.977633,postcode_centroid
-Western Australia Kannada Sangha,cop,,6155,WA,-32.061501,115.890779,postcode_centroid
-Cockburn Chinese Community Association,cop,,6164,WA,-32.131993,115.854584,postcode_centroid
-Bunbury Multicultural Group,cop,,6230,WA,-33.341076,115.649205,postcode_centroid
-Organisation of African Communities in Western Australia,cop,,6112,WA,-32.158675,115.997934,postcode_centroid
-Organisation of African Communities in Western Australia,cop,,6155,WA,-32.061501,115.890779,postcode_centroid
-Organisation of African Communities in Western Australia,cop,,6167,WA,-32.223657,115.835308,postcode_centroid
-Organisation of African Communities in Western Australia,cop,,6000,WA,-31.948762,115.859912,postcode_centroid
-Organisation of African Communities in Western Australia,cop,,6021,WA,-31.871671,115.811933,postcode_centroid
-Organisation of African Communities in Western Australia,cop,,6056,WA,-31.838398,116.0261,postcode_centroid
-Organisation of African Communities in Western Australia,cop,,6065,WA,-31.69444,115.845329,postcode_centroid
-Rajasthani Kutumb - Australia,cop,,6155,WA,-32.061501,115.890779,postcode_centroid
-Rajasthani Kutumb - Australia,cop,,6110,WA,-32.078535,116.008603,postcode_centroid
-Elizabeth Park School,hub,,5113,SA,-34.712542,138.685171,postcode_centroid
-Elizabeth Vale Primary School,hub,,5112,SA,-34.746911,138.669590,postcode_centroid
-Playford College,hub,,5112,SA,-34.710117,138.673350,postcode_centroid
-St Mary Magdalene's School,hub,,5112,SA,-34.733933,138.666503,postcode_centroid
-St Brigid's School,hub,,5084,SA,-34.860871,138.587608,postcode_centroid
-Karrendi Primary School,hub,,5107,SA,-34.790546,138.618712,postcode_centroid
-Para Vista Primary School,hub,,5093,SA,-34.830226,138.663594,postcode_centroid
-Paralowe R-12 School,hub,,5108,SA,-34.758192,138.613433,postcode_centroid
-Salisbury Primary School,hub,,5108,SA,-34.767988,138.646489,postcode_centroid
-St Augustine's Parish School,hub,,5108,SA,-34.763709,138.650457,postcode_centroid
-Bert Oldfield Public School,hub,,2146,NSW,-33.789374,150.959508,postcode_centroid
-Kings Langley School,hub,,2147,NSW,-33.766075,150.935836,postcode_centroid
-Banksia Road Public School,hub,,2190,NSW,-33.89194485,151.0477059,postcode_centroid
-Bankstown Public School,hub,,2200,NSW,-33.926559,151.014937,postcode_centroid
-Bass Hill Public School,hub,,2322,NSW,-32.819819,151.65415,postcode_centroid
-Chester Hill North Public School,hub,,2162,NSW,-33.88349,151.004128,postcode_centroid
-Chester Hill Public School Hub,hub,,2162,NSW,-33.88349,151.004128,postcode_centroid
-Villawood East Public School,hub,,2163,NSW,-33.887203,150.979458,postcode_centroid
-Narranga Public School,hub,,2450,NSW,-30.097726,152.658268,postcode_centroid
-Tyalla Public School,hub,,2450,NSW,-30.097726,152.658268,postcode_centroid
-William Bayldon Public School,hub,,2452,NSW,-30.357168,153.08188,postcode_centroid
-Granville Public School,hub,,1830,NSW,-33.859289,150.948582,postcode_centroid
-Hilltop Road Public School,hub,,2160,NSW,-33.835883,150.976594,postcode_centroid
-Westemead Public School,hub,,2145,NSW,-33.79382308,150.9751544,postcode_centroid
-Fairfiled West Public School,hub,,2165,NSW,-33.872435,150.947496,postcode_centroid
-Prairievale Public School,hub,,2176,NSW,-33.872014,150.88526,postcode_centroid
-Smithfield Public School,hub,,2164,NSW,-33.844153,150.875028,postcode_centroid
-Austral Public School,hub,,2179,NSW,-33.933109,150.812031,postcode_centroid
-Heckenberg Public School,hub,,2168,NSW,-33.915939,150.875345,postcode_centroid
-Hoxton Park Public School,hub,,2171,NSW,-33.93771581,150.8487366,postcode_centroid
-Parramatta West Public School,hub,,2150,NSW,-33.814463,151.006506,postcode_centroid
-Rydelmere Public School,hub,,2116,NSW,-33.814368,151.036941,postcode_centroid
-Acacia Ridge State School,hub,,4110,QLD,-27.612178,153.009526,postcode_centroid
-Inala State School,hub,,4077,QLD,-27.587085,152.976019,postcode_centroid
-Nundah State School,hub,,4012,QLD,-27.402910,153.058341,postcode_centroid
-St Brendan's Primary School Moorooka,hub,,4105,QLD,-27.537585,153.019065,postcode_centroid
-Fernbrooke State School,hub,,4301,QLD,-27.662938,152.844072,postcode_centroid
-Kruger State School,hub,,4300,QLD,-27.628810,152.876589,postcode_centroid
-Riverview State School,hub,,4303,QLD,-27.604659,152.846631,postcode_centroid
-Springfield Lakes State School,hub,,4300,QLD,-27.682273,152.884999,postcode_centroid
-Staines Memorial College,hub,,4301,QLD,-27.669017,152.849445,postcode_centroid
-Marsden State School,hub,,4114,QLD,-27.685736,153.105061,postcode_centroid
-St Francis College,hub,,4132,QLD,-27.691704,153.080443,postcode_centroid
-St Paul's Catholic Primary School,hub,,4114,QLD,-27.634955,153.109767,postcode_centroid
-Woodridge North State School,hub,,4114,QLD,-27.626530,153.106415,postcode_centroid
-Woodridge State School,hub,,4114,QLD,-27.641647,153.105186,postcode_centroid
-Lakes Creek State School,hub,,4701,QLD,-23.376086,150.560023,postcode_centroid
-Mount Archer State School,hub,,4701,QLD,-23.359021,150.546409,postcode_centroid
-Waraburra State School,hub,,4702,QLD,-23.449043,150.450930,postcode_centroid
-Darling heights State School,hub,,4350,QLD,-27.590732,151.926157,postcode_centroid
-Harlaxton State School,hub,,4350,QLD,-27.540063,151.955948,postcode_centroid
-Newtown State School,hub,,4350,QLD,-27.559003,151.934708,postcode_centroid
-Aitkenvale State School,hub,,4814,QLD,-19.295048,146.762800,postcode_centroid
-Cranbook State School,hub,,4814,QLD,-19.307623,146.754827,postcode_centroid
-Kelso State School,hub,,4815,QLD,-19.388851,146.727267,postcode_centroid
-Deer Park North Primary School,hub,,3023,VIC,-37.78272,144.770641,postcode_centroid
-St Albans East primary School,hub,,3021,VIC,-37.743361,144.796693,postcode_centroid
-St Albans Heights Primary School,hub,,3021,VIC,-37.743361,144.796693,postcode_centroid
-St Albans Primary school,hub,,3021,VIC,-37.743361,144.796693,postcode_centroid
-Stevensville Primary school,hub,,3021,VIC,-37.743361,144.796693,postcode_centroid
-Barton Primary School,hub,,3977,VIC,-38.1466398,145.2695101,postcode_centroid
-Cranbourne Primary School,hub,,3977,VIC,-38.1466398,145.2695101,postcode_centroid
-Fleetwood Primary School,hub,,3805,VIC,-38.037026,145.304198,postcode_centroid
-Fountain Gate Primary School,hub,,3805,VIC,-38.037026,145.304198,postcode_centroid
-Hampton Park Primary School,hub,,3976,VIC,-38.043995,145.264296,postcode_centroid
-Dandenong Primary School,hub,,3175,VIC,-38.016114,145.208504,postcode_centroid
-Dandenong South Primary School,hub,,3175,VIC,-38.016114,145.208504,postcode_centroid
-Dandenong West Primary School,hub,,3175,VIC,-38.016114,145.208504,postcode_centroid
-Springvale Rise Primary School,hub,,3171,VIC,-37.944608,145.156783,postcode_centroid
-St Anthony's School Noble Park,hub,,3174,VIC,-37.966218,145.17877,postcode_centroid
-Bell Park North Primary School,hub,,3215,VIC,-38.111002,144.33452,postcode_centroid
-Northern bay College Family Cente (Goldsworthy),hub,,3214,VIC,-38.084781,144.352385,postcode_centroid
-St Thomas Aquinas Primary School,hub,,3214,VIC,-38.084781,144.352385,postcode_centroid
-Mooroopna Park Primary School,hub,,3629,VIC,-36.287306,145.260653,postcode_centroid
-St Georges Road Primary School,hub,,3630,VIC,-36.380853,145.403176,postcode_centroid
-Wilmot Road Primary School,hub,,3630,VIC,-36.380853,145.403176,postcode_centroid
-Bethal Primary School,hub,,3048,VIC,-37.653917,144.923609,postcode_centroid
-Broadmeadows Valley Primary,hub,,3047,VIC,-37.681105,144.930247,postcode_centroid
-Campbellfield Heights Primary School,hub,,3061,VIC,-37.666265,144.956763,postcode_centroid
-Coolaroo South Primary School,hub,,3048,VIC,-37.653917,144.923609,postcode_centroid
-Craigieburn South Primary School,hub,,3064,VIC,-37.546522,144.942199,postcode_centroid
-Dallas Brooks Community Primary School,hub,,3047,VIC,-37.681105,144.930247,postcode_centroid
-Good Samarotan Catholic Primary School,hub,,3064,VIC,-37.546522,144.942199,postcode_centroid
-Holy Child Primary School,hub,,3047,VIC,-37.681105,144.930247,postcode_centroid
-Meadow Heights Primary School,hub,,3048,VIC,-37.653917,144.923609,postcode_centroid
-Meadows Primary School,hub,,3047,VIC,-37.681105,144.930247,postcode_centroid
-Mount Ridley College,hub,,3064,VIC,-37.546522,144.942199,postcode_centroid
-Roxburgh Park Primary School,hub,,3064,VIC,-37.546522,144.942199,postcode_centroid
-Roxburgh Rise Primary School,hub,,3064,VIC,-37.546522,144.942199,postcode_centroid
-St Dominic's Primary School,hub,,3047,VIC,-37.681105,144.930247,postcode_centroid
-Sunbury Heights Primary School,hub,,3429,VIC,-37.56762,144.728973,postcode_centroid
-Davis Creek primary School,hub,,3029,VIC,-37.837165,144.705831,postcode_centroid
-Doherty's Creek P-9 College,hub,,3029,VIC,-37.837165,144.705831,postcode_centroid
-Point Cook P-9 College,hub,,3030,VIC,-37.91624,144.64209,postcode_centroid
-Truganina South Primary School,hub,,3029,VIC,-37.837165,144.705831,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,810,NT,-12.381806,130.866242,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,820,NT,-12.428017,130.873315,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,830,NT,-12.52139649,130.9580765,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,832,NT,-12.49684676,130.9936551,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2000,NSW,-33.86051951,151.2015802,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2021,NSW,-33.895705,151.227236,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2022,NSW,-33.896401,151.245049,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2023,NSW,-33.884685,151.25591,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2031,NSW,-33.914832,151.239167,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2034,NSW,-33.929096,151.252171,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2035,NSW,-33.945635,151.241292,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2036,NSW,-33.969624,151.237844,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2040,NSW,-33.878774,151.156819,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2046,NSW,-33.866044,151.133865,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2048,NSW,-33.89418,151.16564,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2050,NSW,-33.89037,151.17598,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2060,NSW,-33.839863,151.204557,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2065,NSW,-33.828361,151.192212,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2066,NSW,-33.818641,151.160912,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2067,NSW,-33.798378,151.17711,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2070,NSW,-33.78042,151.162007,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2071,NSW,-33.75536381,151.1814551,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2074,NSW,-33.735222,151.123716,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2077,NSW,-33.691922,151.097508,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2079,NSW,-33.666637,151.112681,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2085,NSW,-33.728782,151.211719,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2088,NSW,-33.830687,151.243351,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2089,NSW,-33.84149573,151.2228263,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2090,NSW,-33.828949,151.223094,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2092,NSW,-33.796636,151.241813,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2093,NSW,-33.79315,151.258069,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2094,NSW,-33.795227,151.273242,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2095,NSW,-33.815482,151.294675,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2096,NSW,-33.776781,151.28494,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2100,NSW,-33.766409,151.257781,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2102,NSW,-33.689941,151.290953,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2110,NSW,-33.836102,151.149126,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2111,NSW,-33.829953,151.124488,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2112,NSW,-33.81658,151.108447,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2113,NSW,-33.79419,151.130233,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2119,NSW,-33.755499,151.064176,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2121,NSW,-33.774145,151.079919,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2122,NSW,-33.791357,151.092072,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2125,NSW,-33.752645,151.031807,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2131,NSW,-33.887602,151.124008,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2132,NSW,-33.882419,151.113385,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2134,NSW,-33.880049,151.101757,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2141,NSW,-33.872483,151.044768,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2142,NSW,-33.832747,151.015196,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2144,NSW,-33.851868,151.026756,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2145,NSW,-33.79382308,150.9751544,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2146,NSW,-33.789374,150.959508,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2147,NSW,-33.766075,150.935836,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2148,NSW,-33.783751,150.900547,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2150,NSW,-33.814463,151.006506,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2156,NSW,-33.656984,150.974528,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2162,NSW,-33.88349,151.004128,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2166,NSW,-33.892738,150.92937,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2170,NSW,-33.928392,150.921448,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2192,NSW,-33.921018,151.089663,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2193,NSW,-33.910308,151.12086,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2194,NSW,-33.917601,151.101777,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2203,NSW,-33.90441,151.138999,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2204,NSW,-33.912288,151.155539,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2209,NSW,-33.94913,151.075304,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2213,NSW,-33.964102,150.997836,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2229,NSW,-34.05494,151.120091,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2232,NSW,-34.061753,151.064329,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2250,NSW,-33.325373,151.189243,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2251,NSW,-33.482209,151.401999,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2257,NSW,-33.520358,151.374403,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2259,NSW,-33.208801,151.377213,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2260,NSW,-33.42537,151.436939,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2261,NSW,-33.315827,151.519708,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2262,NSW,-33.209125,151.528042,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2264,NSW,-33.106675,151.533807,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2265,NSW,-33.095552,151.412119,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2287,NSW,-32.892577,151.65807,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2289,NSW,-32.948567,151.71008,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2290,NSW,-32.983963,151.707801,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2291,NSW,-32.951039,151.742882,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2292,NSW,-32.931589,151.740716,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2303,NSW,-32.924571,151.743325,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2324,NSW,-32.623108,152.332617,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2325,NSW,-32.977861,151.317476,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2350,NSW,-30.493397,151.906153,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2470,NSW,-28.92786,152.749759,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2477,NSW,-28.907675,153.427314,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2478,NSW,-28.865483,153.532475,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2482,NSW,-28.547307,153.432398,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2483,NSW,-28.461128,153.494236,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2484,NSW,-28.38059,153.31648,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2485,NSW,-28.184241,153.526816,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2487,NSW,-28.27973,153.548588,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2508,NSW,-34.230944,150.969679,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2538,NSW,-35.366161,150.320507,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2539,NSW,-35.522387,150.393202,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2540,NSW,-34.8282,150.5789,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2541,NSW,-34.990592,150.450994,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2580,NSW,-34.726283,149.729215,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2582,NSW,-34.75833012,148.9655031,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2600,NSW,-35.302911,149.201072,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2602,NSW,-35.248071,149.148147,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2620,NSW,-35.34172619,149.2104515,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2640,NSW,-36.016196,147.026549,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2761,NSW,-33.742006,150.84746,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2763,NSW,-33.725619,150.89547,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2767,NSW,-33.77972161,150.8651828,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2770,NSW,-33.756443,150.810246,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2773,NSW,-33.768837,150.626788,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2785,NSW,-33.707725,150.181517,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2800,NSW,-33.233929,149.116263,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,2900,NSW,-35.41891,149.063805,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3000,VIC,-37.81443733,144.9825846,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3006,VIC,-37.82528675,144.9520744,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3011,VIC,-37.807101,144.907953,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3012,VIC,-37.807135,144.861162,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3013,VIC,-37.814183,144.888686,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3016,VIC,-37.863743,144.888461,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3018,VIC,-37.86172,144.812736,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3029,VIC,-37.837165,144.705831,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3031,VIC,-37.79119,144.923403,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3032,VIC,-37.774486,144.897221,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3044,VIC,-37.731138,144.936356,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3052,VIC,-37.788996,144.948903,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3054,VIC,-37.786971,144.96724,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3055,VIC,-37.763584,144.942222,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3056,VIC,-37.766292,144.960108,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3057,VIC,-37.770012,144.97728,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3058,VIC,-37.739901,144.964524,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3059,VIC,-37.639887,144.879626,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3064,VIC,-37.546522,144.942199,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3065,VIC,-37.802608,144.977795,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3066,VIC,-37.804846,144.986906,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3067,VIC,-37.803515,144.998203,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3068,VIC,-37.790974,144.98622,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3070,VIC,-37.774064,144.999745,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3071,VIC,-37.759426,145.007006,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3072,VIC,-37.74247,145.005702,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3074,VIC,-37.684684,145.006644,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3075,VIC,-37.66607,145.002679,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3078,VIC,-37.778298,145.025853,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3079,VIC,-37.772675,145.048573,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3081,VIC,-37.743008,145.046401,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3082,VIC,-37.664858,145.065658,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3083,VIC,-37.701346,145.056223,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3087,VIC,-37.711787,145.082426,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3088,VIC,-37.700175,145.108339,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3095,VIC,-37.713299,145.158579,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3096,VIC,-37.670851,145.185826,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3101,VIC,-37.807397,145.036575,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3102,VIC,-37.793805,145.05219,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3104,VIC,-37.793695,145.081714,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3105,VIC,-37.772477,145.084806,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3108,VIC,-37.786429,145.125797,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3109,VIC,-37.784786,145.161649,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3111,VIC,-37.794054,145.186334,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3113,VIC,-37.752123,145.204689,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3115,VIC,-37.736734,145.267586,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3116,VIC,-37.737629,145.313086,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3121,VIC,-37.823303,145.001788,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3122,VIC,-37.822725,145.030602,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3123,VIC,-37.829752,145.049415,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3124,VIC,-37.840867,145.068191,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3125,VIC,-37.851305,145.101,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3127,VIC,-37.825173,145.097236,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3128,VIC,-37.828866,145.122393,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3129,VIC,-37.806965,145.125084,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3130,VIC,-37.81805,145.149653,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3131,VIC,-37.817798,145.174489,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3132,VIC,-37.819222,145.196686,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3133,VIC,-37.848786,145.192303,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3134,VIC,-37.823058,145.257929,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3135,VIC,-37.819594,145.248209,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3136,VIC,-37.779876,145.282396,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3138,VIC,-37.78391,145.322794,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3142,VIC,-37.84411,145.017732,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3145,VIC,-37.873557,145.049328,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3148,VIC,-37.882562,145.090149,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3149,VIC,-37.880748,145.128118,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3150,VIC,-37.914383,145.168834,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3152,VIC,-37.864951,145.221695,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3153,VIC,-37.845116,145.270141,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3161,VIC,-37.873733,145.019929,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3162,VIC,-37.892139,145.023394,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3163,VIC,-37.896497,145.057237,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3165,VIC,-37.922369,145.059426,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3166,VIC,-37.902805,145.089719,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3167,VIC,-37.923345,145.087614,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3169,VIC,-37.945149,145.115271,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3173,VIC,-38.006771,145.164863,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3174,VIC,-37.966218,145.17877,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3175,VIC,-38.016114,145.208504,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3181,VIC,-37.854683,144.995504,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3182,VIC,-37.865322,144.979478,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3183,VIC,-37.869072,144.999026,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3184,VIC,-37.881414,144.984034,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3186,VIC,-37.915066,144.996329,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3187,VIC,-37.925371,145.013593,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3188,VIC,-37.938889,145.007238,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3189,VIC,-37.942021,145.047802,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3190,VIC,-37.951394,145.038147,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3191,VIC,-37.956585,145.013472,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3192,VIC,-37.965655,145.0623,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3193,VIC,-37.978698,145.031561,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3194,VIC,-37.985059,145.067356,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3195,VIC,-38.007024,145.104105,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3196,VIC,-38.046479,145.122762,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3198,VIC,-38.103194,145.137811,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3204,VIC,-37.916956,145.036783,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3205,VIC,-37.831693,144.958176,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3206,VIC,-37.846534,144.95086,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3207,VIC,-37.832179,144.918044,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3216,VIC,-38.215906,144.334005,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3227,VIC,-38.263052,144.40814,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3228,VIC,-38.307545,144.299978,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3231,VIC,-38.459435,144.106892,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3239,VIC,-38.564014,143.448102,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3250,VIC,-38.311513,143.584742,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3280,VIC,-38.37884,142.482889,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3285,VIC,-38.290199,142.058916,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3434,VIC,-37.35388,144.750796,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3435,VIC,-37.179453,144.743358,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3437,VIC,-37.501619,144.513018,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3442,VIC,-37.330661,144.548846,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3444,VIC,-37.171788,144.544716,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3446,VIC,-37.184831,144.374338,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3448,VIC,-37.075364,144.387629,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3450,VIC,-37.061635,144.214903,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3451,VIC,-37.125338,144.21419,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3461,VIC,-37.287848,144.170995,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3463,VIC,-36.957983,144.05651,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3550,VIC,-36.764269,144.285267,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3551,VIC,-36.78137,144.457937,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3555,VIC,-36.777226,144.245239,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3556,VIC,-36.656422,144.178282,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3690,VIC,-36.135717,146.864361,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3691,VIC,-36.027154,147.880991,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3750,VIC,-37.596078,145.005578,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3752,VIC,-37.619102,145.074353,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3916,VIC,-38.415199,145.050587,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3925,VIC,-38.528213,145.379683,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3927,VIC,-38.383368,145.153269,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3934,VIC,-38.2783,145.031598,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3937,VIC,-38.373694,145.01994,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3950,VIC,-38.435217,145.812945,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3951,VIC,-38.47372,145.798419,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3992,VIC,-38.569135,145.534315,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3995,VIC,-38.578071,145.630713,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,3996,VIC,-38.629561,145.745609,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4005,,-27.470078,153.045194,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4006,,-27.36618,153.175242,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4017,,-27.318074,153.047339,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4053,,-27.399573,152.98725,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4055,,-27.393676,152.92424,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4067,,-27.500518,153.005045,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4068,,-27.506907,152.976926,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4102,,-27.495458,153.0328,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4103,,-27.512175,153.028768,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4104,,-27.515758,153.011535,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4105,,-27.534438,153.018893,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4121,,-27.526966,153.053952,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4130,,-27.669244,153.24333,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4151,,-27.500807,153.058605,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4152,,-27.501349,153.096812,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4158,,-27.487689,153.1998,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4160,,-27.506409,153.243312,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4161,,-27.533407,153.226864,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4163,,-27.535216,153.26571,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4170,,-27.470778,153.074231,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4209,,-27.805498,153.392892,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4211,,-28.035453,153.241258,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4213,,-28.110164,153.318916,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4214,,-27.967005,153.365576,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4215,,-27.967134,153.397952,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4217,,-28.008783,153.412197,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4218,,-28.037627,153.41692,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4221,,-28.127323,153.45837,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4223,,-28.19076,153.415088,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4225,,-28.168787,153.517333,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4306,,-27.480898,152.725408,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4370,,-28.195678,151.9514612,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4380,,-28.60158006,151.8126377,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4500,,-27.307845,152.939438,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4505,,-27.153669,152.976886,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4509,,-27.232691,153.017319,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4510,,-27.070177,152.960273,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4551,,-26.828067,153.088435,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4556,,-26.700379,153.049784,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4560,,-26.635087,152.917384,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4561,,-26.531487,152.964814,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4563,,-26.425754,152.909206,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4564,,-26.612359,153.079239,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4572,,-26.671589,153.101997,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4573,,-26.516942,153.068303,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,4670,,-24.88776,152.297855,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5000,,-34.92849902,138.600746,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5041,,-35.00298,138.594176,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5052,,-35.003888,138.618684,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5061,,-34.957195,138.60648,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5062,,-35.004063,138.602387,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5063,,-34.954325,138.621477,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5066,,-34.940962,138.66029,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5152,,-34.998401,138.703957,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5153,,-35.091002,138.757945,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5154,,-35.023252,138.73592,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5158,,-35.084001,138.519781,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5165,,-35.137389,138.475092,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5167,,-35.166866,138.481211,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5173,,-35.290568,138.470002,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5266,,-35.902842,139.815539,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,5267,,-36.093534,140.348707,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6008,,-31.956599,115.811432,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6009,,-31.985791,115.804692,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6011,,-31.996371,115.757646,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6014,,-31.936389,115.808169,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6016,,-31.921222,115.831181,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6019,,-31.90733,115.769183,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6026,,-31.801707,115.799832,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6051,,-31.938107,115.899589,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6054,,-31.901801,115.942572,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6060,,-31.903241,115.840879,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6062,,-31.886322,115.89088,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6082,,-31.738368,116.295706,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6100,,-31.971725,115.896029,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6101,,-31.985247,115.908576,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6102,,-32.005644,115.904425,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6104,,-31.965498,115.977633,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6105,,-31.95388,115.963293,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6108,,-32.06089,115.953584,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6149,,-32.064941,115.858679,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6151,,-31.982199,115.869482,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6152,,-32.008509,115.870058,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6156,,-32.03954,115.800233,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6158,,-32.038541,115.766561,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6162,,-32.068768,115.759022,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6163,,-32.084784,115.798722,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6166,,-32.158361,115.790704,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6168,,-32.281957,115.75773,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6169,,-32.338504,115.763949,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6210,,-32.557981,115.728286,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6284,,-33.857591,115.188682,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6285,,-33.941351,115.280972,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,6530,,-28.802491,114.862505,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7000,,-42.878355,147.308002,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7004,,-42.890148,147.328928,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7005,,-42.916204,147.3368,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7007,,-42.922863,147.319501,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7009,,-42.842607,147.289682,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7010,,-42.85913,147.212366,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7011,,-42.793393,147.230065,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7015,,-42.83903,147.360174,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7018,,-42.877588,147.385681,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7050,,-42.975502,147.298181,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7052,,-43.008052,147.309302,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7053,,-42.947314,147.334695,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7054,,-43.00658,147.256698,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7109,,-43.571087,146.524064,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7112,,-43.291937,147.140014,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7113,,-43.091051,146.970489,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7155,,-43.128868,147.216918,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7170,,-42.85132,147.449794,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7173,,-42.823649,147.630737,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7212,,-41.567876,147.488412,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7248,,-41.397239,147.130185,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7249,,-41.472435,147.157786,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7250,,-41.432254,147.077589,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7276,,-41.293081,146.972023,postcode_centroid
-Community Refugee Integration and Settlement Pilot,crisp,,7301,,-41.600123,147.046481,postcode_centroid
-Adamstown Rosebuds Football Club,club,,2289,,-32.948567,151.71008,postcode_centroid
-Altona Gators Basketball Association,club,,3018,,-37.86172,144.812736,postcode_centroid
-Aspley Devils Netball,club,,4034,,-27.354711,153.040051,postcode_centroid
-Australian Academy of Martial Arts,club,,4114,,-27.652812,153.110764,postcode_centroid
-Beats and Bounce,club,,3175,,-38.016114,145.208504,postcode_centroid
-Beenleigh AFC,club,,4207,,-27.733991,153.204523,postcode_centroid
-Brimbank Aquatic Centre,club,,3020,,-37.777204,144.829945,postcode_centroid
-Broadmeadows (Hume City Council Civic Centre),club,,3047,,-37.681105,144.930247,postcode_centroid
-Broadmeadows Basketball Association,club,,3047,,-37.681105,144.930247,postcode_centroid
-Calamvale Leopards AFL,club,,4116,,-27.633988,153.050793,postcode_centroid
-Cardinia Tigers Netball Club,club,,3977,,-38.1466398,145.2695101,postcode_centroid
-Carlton Cricket Club,club,,3053,,-37.803569,144.966112,postcode_centroid
-Charlestown Junior Cricket Club,club,,2290,,-32.983963,151.707801,postcode_centroid
-Collingwood Park Power AFC,club,,4301,,-27.629394,152.858086,postcode_centroid
-Craigieburn Hockey Club,club,,3064,,-37.546522,144.942199,postcode_centroid
-Dallas Football Club,club,,3047,,-37.681105,144.930247,postcode_centroid
-Dandenong Saints Basketball,club,,3175,,-38.016114,145.208504,postcode_centroid
-Dandenong West Cricket Club,club,,3175,,-38.016114,145.208504,postcode_centroid
-Downey Park Netball,club,,4006,,-27.36618,153.175242,postcode_centroid
-Easts Tigers Rugby Union,club,,4171,,-27.456031,153.06036,postcode_centroid
-Fitzroy Lions Soccer Club,club,,3065,,-37.802608,144.977795,postcode_centroid
-Frankston and District Basketball Association,club,,3199,,-38.162578,145.135961,postcode_centroid
-Frankston Blues,club,,3199,,-38.162578,145.135961,postcode_centroid
-Gold Coast Basketball,club,,4212,,-27.869823,153.360694,postcode_centroid
-Greenbank Giants,club,,4124,,-27.701681,152.967761,postcode_centroid
-Griffith Athletics Club,club,,2680,,-34.321422,145.914625,postcode_centroid
-Hume Bombers AFL Club,club,,3047,,-37.681105,144.930247,postcode_centroid
-Hume City FC,club,,3047,,-37.681105,144.930247,postcode_centroid
-Hume Cricket Club,club,,3047,,-37.681105,144.930247,postcode_centroid
-Hunter Valley Volleyball,club,,2320,,-32.741737,151.543675,postcode_centroid
-Indians Baseball Club,club,,4110,,-27.612178,153.009526,postcode_centroid
-Ipswich Basketball,club,,4305,,-27.627522,152.753696,postcode_centroid
-Logan Basketball Association,club,,4114,,-27.652812,153.110764,postcode_centroid
-Malaysian Club QLD,club,,4108,,-27.568359,153.020197,postcode_centroid
-Maryborough Basketball QLD,club,,4650,,-25.640978,152.791302,postcode_centroid
-Moorooka AFC,club,,4105,,-27.534438,153.018893,postcode_centroid
-Noble Park Aquatic Centre,club,,3174,,-37.966218,145.17877,postcode_centroid
-Noble Park Junior Football Club,club,,3174,,-37.966218,145.17877,postcode_centroid
-North Gold Coast Seahawks Basketball,club,,4214,,-27.967005,153.365576,postcode_centroid
-Northside Wizards,club,,4031,,-27.408542,153.030695,postcode_centroid
-Pakenham Tennis Club,club,,3810,,-38.04658,145.472514,postcode_centroid
-Queensland Rugby League (HQ),club,,4064,,-27.464676,152.999039,postcode_centroid
-Redcity Road (Redlands),club,,4165,,-27.623975,153.263801,postcode_centroid
-Sandgate Tennis Club,club,,4017,,-27.318074,153.047339,postcode_centroid
-South Brisbane Sailing Club,club,,4101,,-27.484254,153.009661,postcode_centroid
-South East Leisure,club,,3175,,-38.016114,145.208504,postcode_centroid
-St Kilda Football Club,club,,3182,,-37.865322,144.979478,postcode_centroid
-Stallions Netball Club,club,,3175,,-38.016114,145.208504,postcode_centroid
-Sunbury United Football Club,club,,3429,,-37.56762,144.728973,postcode_centroid
-Sunshine Leisure Centre,club,,3020,,-37.777204,144.829945,postcode_centroid
-Tarneit Basketball Club,club,,3029,,-37.837165,144.705831,postcode_centroid
-Temora Gliding Club,club,,2666,,-34.487779,147.583811,postcode_centroid
-Temora Pistol Club,club,,2666,,-34.487779,147.583811,postcode_centroid
-Toowoomba Basketball,club,,4350,,-27.562461,151.940764,postcode_centroid
-Tumut and District Hockey Association,club,,2720,,-35.379935,148.383619,postcode_centroid
-United Khalsa Hockey Club,club,,3064,,-37.546522,144.942199,postcode_centroid
-Waverley Council,club,,3149,,-37.880748,145.128118,postcode_centroid
-Werribee All Abilities Basketball,club,,3030,,-37.91624,144.64209,postcode_centroid
-West Brunswick Football Club,club,,3055,,-37.763584,144.942222,postcode_centroid
-Western Districts Netball Association,club,,4101,,-27.484254,153.009661,postcode_centroid
-Wyndham Basketball Association,club,,3030,,-37.91624,144.64209,postcode_centroid
-Youlden Parkville Cricket Club,club,,3052,,-37.788996,144.948903,postcode_centroid
-Active Schools,club,,3000,,-37.81443733,144.9825846,postcode_centroid
-African Women and Families Network,club,,3000,,-37.81443733,144.9825846,postcode_centroid
-Alternatives to Violence Project,club,,2042,,-33.900649,151.175354,postcode_centroid
-Amie St Clair – Melanoma Institute Australia,club,,2006,,-33.889219,151.186507,postcode_centroid
-Australian Red Cross,club,,3000,,-37.81443733,144.9825846,postcode_centroid
-Baba Mazari Foundation,club,,3000,,-37.81443733,144.9825846,postcode_centroid
-Barellan Working Clydesdales,club,,2665,,-34.313241,146.841533,postcode_centroid
-CALD Connect,club,,3000,,-37.81443733,144.9825846,postcode_centroid
-Cohealth,club,,3000,,-37.81443733,144.9825846,postcode_centroid
-Country University Centre Griffith,club,,2680,,-34.321422,145.914625,postcode_centroid
-CWA (Temora Branch),club,,2666,,-34.487779,147.583811,postcode_centroid
-Days for Girls Wagga,club,,2650,,-35.07459,147.376202,postcode_centroid
-Demonstration Gardens Wagga Wagga,club,,2650,,-35.07459,147.376202,postcode_centroid
-Downside Rural Fire Brigade,club,,2650,,-35.07459,147.376202,postcode_centroid
-Foundation House,club,,3053,,-37.803569,144.966112,postcode_centroid
-Friends of Temora Shire Cemeteries,club,,2666,,-34.487779,147.583811,postcode_centroid
-Griffith Prostate Cancer Support Group,club,,2680,,-34.321422,145.914625,postcode_centroid
-Griffith Shed for Men Inc,club,,2680,,-34.321422,145.914625,postcode_centroid
-Griffith Show Society,club,,2680,,-34.321422,145.914625,postcode_centroid
-Harden Murrumburrah Regional Development Corporation,club,,2587,,-34.505797,148.360971,postcode_centroid
-Harvest Haven Community Garden Tumbarumba,club,,2653,,-35.776209,148.041339,postcode_centroid
-Headspace,club,,3000,,-37.81443733,144.9825846,postcode_centroid
-Hume Leisure,club,,3047,,-37.681105,144.930247,postcode_centroid
-Intereach,club,,2710,,-35.357619,144.984378,postcode_centroid
-Islamic Society of Victoria,club,,3031,,-37.79119,144.923403,postcode_centroid
-Kooringal Rotary,club,,2650,,-35.07459,147.376202,postcode_centroid
-Kooringal Scout Group,club,,2650,,-35.07459,147.376202,postcode_centroid
-Legacy Wagga Wagga,club,,2650,,-35.07459,147.376202,postcode_centroid
-Leeton Connect Inc,club,,2705,,-34.489867,146.373471,postcode_centroid
-Leeton Shire Ratepayers and Residents,club,,2705,,-34.489867,146.373471,postcode_centroid
-Lions Club (Griffith),club,,2680,,-34.321422,145.914625,postcode_centroid
-LHAC Committee,club,,2680,,-34.321422,145.914625,postcode_centroid
-Montreal Community Theatre,club,,2680,,-34.321422,145.914625,postcode_centroid
-Mosaic Multicultural Ladies Group,club,,2680,,-34.321422,145.914625,postcode_centroid
-Multicultural Council of Wagga,club,,2650,,-35.07459,147.376202,postcode_centroid
-Muslim Sisters United Victoria,club,,3000,,-37.81443733,144.9825846,postcode_centroid
-Newcastle SES,club,,2300,,-32.931635,151.778021,postcode_centroid
-NSW Health,club,,2000,,-33.86051951,151.2015802,postcode_centroid
-Permaculture Riverina,club,,2650,,-35.07459,147.376202,postcode_centroid
-Riverina Murray Regional Alliance,club,,2650,,-35.07459,147.376202,postcode_centroid
-Rocky Hill Regenerators,club,,2680,,-34.321422,145.914625,postcode_centroid
-Rotary Club of Griffith Avanti,club,,2680,,-34.321422,145.914625,postcode_centroid
-Rotary Club of Leeton,club,,2705,,-34.489867,146.373471,postcode_centroid
-Rotary Club of Murrumburrah Harden,club,,2587,,-34.505797,148.360971,postcode_centroid
-Rotary Club of Tumut,club,,2720,,-35.379935,148.383619,postcode_centroid
-Rotary Club of Wollundry,club,,2650,,-35.07459,147.376202,postcode_centroid
-Rotary Sunrise Wagga Wagga,club,,2650,,-35.07459,147.376202,postcode_centroid
-Scouts NSW,club,,2011,,-33.873599,151.221626,postcode_centroid
-SCC Auxiliary,club,,2680,,-34.321422,145.914625,postcode_centroid
-SES NSW Temora,club,,2666,,-34.487779,147.583811,postcode_centroid
-Slvation Army Leeton,club,,2705,,-34.489867,146.373471,postcode_centroid
-Snowy Valleys Heroes Inc.,club,,2720,,-35.379935,148.383619,postcode_centroid
-Soroptimists International Griffith,club,,2680,,-34.321422,145.914625,postcode_centroid
-Soul Hub,club,,2650,,-35.07459,147.376202,postcode_centroid
-South Wagga Rotary,club,,2650,,-35.07459,147.376202,postcode_centroid
-St Vincent de Paul Society,club,,2010,,-33.884119,151.212262,postcode_centroid
-Stories of Resilience,club,,2680,,-34.321422,145.914625,postcode_centroid
-Temora Aviation Museum,club,,2666,,-34.487779,147.583811,postcode_centroid
-Temora Rotary Club,club,,2666,,-34.487779,147.583811,postcode_centroid
-Temora Town Hall Theatre Film Club,club,,2666,,-34.487779,147.583811,postcode_centroid
-Townsville Multicultural Support Group,club,,4810,,-19.227783,146.764659,postcode_centroid
-Tumbarumba and District Garden Club,club,,2653,,-35.776209,148.041339,postcode_centroid
-Tumut Fijian Community,club,,2720,,-35.379935,148.383619,postcode_centroid
-Tumut Hospital Auxiliary,club,,2720,,-35.379935,148.383619,postcode_centroid
-UNISONg Community Choir,club,,2650,,-35.07459,147.376202,postcode_centroid
-University of the Third Age,club,,3000,,-37.81443733,144.9825846,postcode_centroid
-Urana Soldiers' Memorial Hall,club,,2645,,-35.333843,146.332431,postcode_centroid
-Wagga Wagga Society of Model Engineers,club,,2650,,-35.07459,147.376202,postcode_centroid
-Wellness at Ten Park Avenue,club,,2000,,-33.86051951,151.2015802,postcode_centroid
-Wesley Mission,club,,2000,,-33.86051951,151.2015802,postcode_centroid
-Whitton Town Improvement Committee,club,,2705,,-34.489867,146.373471,postcode_centroid
-Griffith University,uni,,4215,,-33.839,151.147,postcode_centroid
-Griffith University,uni,,4111,,-27.5515001,153.0559687,postcode_centroid
-Griffith University,uni,,4101,,-27.47665,153.01667,postcode_centroid
-Griffith University,uni,,4131,,-27.676389,153.130833,postcode_centroid
-Griffith University,uni,,4000,,-27.4666186,153.027371,postcode_centroid
-University of New England,uni,,2351,,-30.498708,151.6448128,postcode_centroid
-University of New England,uni,,2150,,-33.8219453,151.0107506,postcode_centroid
-University of New England,uni,,2340,,-31.048611,150.973611,postcode_centroid
-University of New England,uni,,2430,,-31.894431,152.658919,postcode_centroid
-Darling Downs Tarpaulins,workplace,,4350,,-27.501059,151.852006,postcode_centroid
-Ningana Retirement Village,workplace,,4405,,-27.173073,151.271148,postcode_centroid
-Jimbour Beef and Bacon,workplace,,4406,,-26.959522,151.227843,postcode_centroid
-Carers Queensland Toowoomba,workplace,,4350,,-27.557749,151.957294,postcode_centroid
-MFE Engineering,workplace,,4413,,-26.748264,150.641855,postcode_centroid
-Runcorn State School,hub,,4109,QLD,-27.587168,153.061794,postcode_centroid
+institution_id,name,type,address,postcode,state,lat,lon,precision,lga_name,accreditation_level
+La_Trobe_University,La Trobe University,uni,,3086,VIC,-37.702453,145.05676,postcode_centroid,Darebin,
+La_Trobe_University,La Trobe University,uni,,3083,VIC,-37.703475,145.056005,postcode_centroid,Darebin,
+La_Trobe_University,La Trobe University,uni,,2000,NSW,-33.868156,151.210444,postcode_centroid,Sydney,
+La_Trobe_University,La Trobe University,uni,,3550,VIC,-36.789909,144.303665,postcode_centroid,Greater Bendigo,
+La_Trobe_University,La Trobe University,uni,,3630,VIC,-36.380821,145.406464,postcode_centroid,Greater Shepparton,
+La_Trobe_University,La Trobe University,uni,,3500,VIC,-34.205995,142.166813,postcode_centroid,Mildura,
+University_of_the_Sunshine_Coast,University of the Sunshine Coast,uni,,4556,QLD,-26.715191,153.058472,postcode_centroid,Sunshine Coast,
+University_of_the_Sunshine_Coast,University of the Sunshine Coast,uni,,4510,QLD,-27.053775,152.990885,postcode_centroid,Moreton Bay,
+University_of_the_Sunshine_Coast,University of the Sunshine Coast,uni,,4655,QLD,-25.285659,152.836481,postcode_centroid,Fraser Coast,
+University_of_the_Sunshine_Coast,University of the Sunshine Coast,uni,,4570,QLD,-26.169191,152.660481,postcode_centroid,Gympie,
+University_of_the_Sunshine_Coast,University of the Sunshine Coast,uni,,4502,QLD,-27.271654,152.981384,postcode_centroid,Moreton Bay,
+University_of_the_Sunshine_Coast,University of the Sunshine Coast,uni,,4101,QLD,-27.476099,153.016579,postcode_centroid,Brisbane,
+University_of_the_Sunshine_Coast,University of the Sunshine Coast,uni,,4575,QLD,-26.746509,153.113941,postcode_centroid,Sunshine Coast,
+University_of_Melbourne,University of Melbourne,uni,,3006,VIC,-37.824094,144.969562,postcode_centroid,Melbourne,
+University_of_Melbourne,University of Melbourne,uni,,3121,VIC,-37.827274,145.016347,postcode_centroid,Yarra,
+University_of_Melbourne,University of Melbourne,uni,,3363,VIC,-37.423707,143.897809,postcode_centroid,Hepburn,
+University_of_Melbourne,University of Melbourne,uni,,3647,VIC,-36.38303,145.714493,postcode_centroid,Greater Shepparton,
+University_of_Melbourne,University of Melbourne,uni,,3030,VIC,-37.888531,144.69273,postcode_centroid,Wyndham,
+University_of_Melbourne,University of Melbourne,uni,,3630,VIC,-36.362348,145.406336,postcode_centroid,Greater Shepparton,
+UNSW,UNSW,uni,,2052,NSW,-33.916383,151.234967,postcode_centroid,Randwick,
+UNSW,UNSW,uni,,2021,NSW,-33.88335,151.220918,postcode_centroid,Sydney,
+UNSW,UNSW,uni,,2600,ACT,-35.286581,149.136956,postcode_centroid,Unincorporated ACT,
+UNSW,UNSW,uni,,2033,NSW,-33.91829,151.226146,postcode_centroid,Randwick,
+UTS,UTS,uni,,2007,NSW,-33.883389,151.200806,postcode_centroid,Sydney,
+UTS,UTS,uni,,2000,NSW,-33.8801,151.202026,postcode_centroid,Sydney,
+Western_Sydney_University,Western Sydney University,uni,,2170,NSW,-33.916628,150.92486,postcode_centroid,Liverpool,
+Western_Sydney_University,Western Sydney University,uni,,2150,NSW,-33.817859,151.007652,postcode_centroid,Parramatta,
+Western_Sydney_University,Western Sydney University,uni,,2747,NSW,-33.763944,150.72724,postcode_centroid,Northern Beaches,
+Western_Sydney_University,Western Sydney University,uni,,2116,NSW,-33.812193,151.040452,postcode_centroid,Parramatta,
+Western_Sydney_University,Western Sydney University,uni,,2200,NSW,-33.915031,151.035614,postcode_centroid,Canterbury-Bankstown,
+Western_Sydney_University,Western Sydney University,uni,,2753,NSW,-33.603199,150.760895,postcode_centroid,Hawkesbury,
+Western_Sydney_University,Western Sydney University,uni,,2145,NSW,-33.807424,150.986842,postcode_centroid,Parramatta,
+Western_Sydney_University,Western Sydney University,uni,,2790,NSW,-33.480775,150.161778,postcode_centroid,Lithgow,
+University_of_Tasmania,University of Tasmania,uni,,7320,TAS,-41.040736,145.876616,postcode_centroid,Burnie,
+University_of_Tasmania,University of Tasmania,uni,,7005,TAS,-42.907193,147.329489,postcode_centroid,Hobart,
+University_of_Tasmania,University of Tasmania,uni,,7000,TAS,-42.879801,147.325574,postcode_centroid,Hobart,
+University_of_Tasmania,University of Tasmania,uni,,7004,TAS,-42.88613,147.335796,postcode_centroid,Hobart,
+University_of_Tasmania,University of Tasmania,uni,,7053,TAS,-42.949453,147.353784,postcode_centroid,Kingborough,
+University_of_Tasmania,University of Tasmania,uni,,7248,TAS,-41.400539,147.12568,postcode_centroid,Launceston,
+Victoria_University,Victoria University,uni,,3011,VIC,-37.793746,144.898585,postcode_centroid,Maribyrnong,
+Victoria_University,Victoria University,uni,,3021,VIC,-37.755416,144.799813,postcode_centroid,Brimbank,
+Victoria_University,Victoria University,uni,,3022,VIC,-37.777708,144.835794,postcode_centroid,Brimbank,
+Victoria_University,Victoria University,uni,,3030,VIC,-37.889445,144.700342,postcode_centroid,Wyndham,
+Victoria_University,Victoria University,uni,,4006,QLD,-27.45657,153.035065,postcode_centroid,Brisbane,
+Victoria_University,Victoria University,uni,,3000,VIC,-37.8121,144.9585,postcode_centroid,Melbourne,
+Curtin_University,Curtin University,uni,,6102,WA,-32.001824,115.8875,postcode_centroid,Canning,
+Curtin_University,Curtin University,uni,,6000,WA,-31.954307,115.854592,postcode_centroid,Perth,
+Flinders_University,Flinders University,uni,,5042,SA,-35.016808,138.567884,postcode_centroid,Marion,
+Flinders_University,Flinders University,uni,,5000,SA,-34.920133,138.597359,postcode_centroid,Adelaide,
+Flinders_University,Flinders University,uni,,5355,SA,-34.465945,138.9894,postcode_centroid,Light,
+Flinders_University,Flinders University,uni,,5253,SA,-35.129003,139.280587,postcode_centroid,Murray Bridge,
+Flinders_University,Flinders University,uni,,5211,SA,-35.561719,138.60645,postcode_centroid,Victor Harbor,
+University_of_Adelaide,University of Adelaide,uni,,5001,SA,-34.921281,138.60381,postcode_centroid,Adelaide,
+University_of_Adelaide,University of Adelaide,uni,,5371,SA,-34.42354,138.67554,postcode_centroid,Barossa,
+University_of_Adelaide,University of Adelaide,uni,,5005,SA,-34.921637,138.604607,postcode_centroid,Adelaide,
+Bond_University,Bond University,uni,,4226,QLD,-28.072149,153.417007,postcode_centroid,Gold Coast,
+Bond_University,Bond University,uni,,4000,QLD,-27.467936,153.026964,postcode_centroid,Brisbane,
+Charles_Darwin_University,Charles Darwin University,uni,,815,NT,-12.369824,130.8731,postcode_centroid,Darwin,
+Charles_Darwin_University,Charles Darwin University,uni,,830,NT,-12.47733,130.983039,postcode_centroid,Palmerston,
+Charles_Darwin_University,Charles Darwin University,uni,,871,NT,-23.699207,133.895724,postcode_centroid,Alice Springs,
+Charles_Darwin_University,Charles Darwin University,uni,,850,NT,-14.467759,132.266794,postcode_centroid,Katherine,
+Charles_Darwin_University,Charles Darwin University,uni,,2000,NSW,-33.88287,151.203443,postcode_centroid,Sydney,
+JBS_Foods_Riverina,JBS Foods Riverina,workplace,"2 Regulator Rd, Yanco NSW 2703",2703,NSW,-34.638638,146.464171,postcode_centroid,Leeton,
+BLU_by_adcorp,BLU by adcorp,workplace,"Level 3, 2 Gardner Cl, Milton QLD 4064",4064,QLD,-27.473241,153.003875,postcode_centroid,Brisbane,
+Museums_Victoria,Museums Victoria,workplace,"GPO Box 666, Melbourne VIC 3001",3001,VIC,-37.804144,144.971696,postcode_centroid,Melbourne,
+Rajdhani_Marathi_Mandal,Rajdhani Marathi Mandal,cop,,2618,ACT,-35.1679431,149.0616656,postcode_centroid,Unincorporated ACT,
+The_African_Gospel_Band,The African Gospel Band,cop,,2606,ACT,-35.351693,149.092601,postcode_centroid,Unincorporated ACT,
+Forcibly_Displaced_People_Network,Forcibly Displaced People Network,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid,Adelaide,
+Forcibly_Displaced_People_Network,Forcibly Displaced People Network,cop,,4000,QLD,-27.468391,153.022126,postcode_centroid,Brisbane,
+Forcibly_Displaced_People_Network,Forcibly Displaced People Network,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid,Hobart,
+Forcibly_Displaced_People_Network,Forcibly Displaced People Network,cop,,6000,WA,-31.948762,115.859912,postcode_centroid,Vincent,
+Forcibly_Displaced_People_Network,Forcibly Displaced People Network,cop,,2603,ACT,-35.330382,149.125739,postcode_centroid,Unincorporated ACT,
+Forcibly_Displaced_People_Network,Forcibly Displaced People Network,cop,,2000,NSW,-33.86051951,151.2015802,postcode_centroid,Sydney,
+The_Slovenian-australian_Association_of_Canberra,The Slovenian-australian Association of Canberra,cop,,2606,ACT,-35.351693,149.092601,postcode_centroid,Unincorporated ACT,
+Africa_2_Australia,Africa 2 Australia,cop,,2603,ACT,-35.330382,149.125739,postcode_centroid,Unincorporated ACT,
+Federation_of_Indian_associations_of_ACT_(FINACT),Federation of Indian associations of ACT (FINACT),cop,,2602,ACT,-35.248071,149.148147,postcode_centroid,Unincorporated ACT,
+Heilongjiang_Association_of_Australia,Heilongjiang Association of Australia,cop,,2617,ACT,-35.231279,149.086682,postcode_centroid,Unincorporated ACT,
+Woolgoolga_and_Northern_Beaches_Chamber_of_Commerce,Woolgoolga and Northern Beaches Chamber of Commerce,cop,,2450,NSW,-30.097726,152.658268,postcode_centroid,Clarence Valley,
+Oriscon,Oriscon,cop,,2830,NSW,-32.24224,148.657282,postcode_centroid,Warrumbungle,
+Assyrian_National_Council_-_Australia,Assyrian National Council - Australia,cop,,2165,NSW,-33.872435,150.947496,postcode_centroid,Cumberland,
+Somali_Australian_Community_Association_of_NSW_(SACA),Somali Australian Community Association of NSW (SACA),cop,,2144,NSW,-33.851868,151.026756,postcode_centroid,Cumberland,
+Somali_Australian_Community_Association_of_NSW_(SACA),Somali Australian Community Association of NSW (SACA),cop,,2200,NSW,-33.926559,151.014937,postcode_centroid,Canterbury-Bankstown,
+Somali_Australian_Community_Association_of_NSW_(SACA),Somali Australian Community Association of NSW (SACA),cop,,2193,NSW,-33.910308,151.12086,postcode_centroid,Inner West,
+Somali_Australian_Community_Association_of_NSW_(SACA),Somali Australian Community Association of NSW (SACA),cop,,2165,NSW,-33.872435,150.947496,postcode_centroid,Cumberland,
+Somali_Australian_Community_Association_of_NSW_(SACA),Somali Australian Community Association of NSW (SACA),cop,,2160,NSW,-33.835883,150.976594,postcode_centroid,Parramatta,
+Australian_Meff_Consortium,Australian Meff Consortium,cop,,2165,NSW,-33.872435,150.947496,postcode_centroid,Cumberland,
+Khmer_Community_of_New_South_Wales,Khmer Community of New South Wales,cop,,2144,NSW,-33.851868,151.026756,postcode_centroid,Cumberland,
+Khmer_Community_of_New_South_Wales,Khmer Community of New South Wales,cop,,2200,NSW,-33.926559,151.014937,postcode_centroid,Canterbury-Bankstown,
+Khmer_Community_of_New_South_Wales,Khmer Community of New South Wales,cop,,2148,NSW,-33.783751,150.900547,postcode_centroid,Cumberland,
+Khmer_Community_of_New_South_Wales,Khmer Community of New South Wales,cop,,2165,NSW,-33.872435,150.947496,postcode_centroid,Cumberland,
+Khmer_Community_of_New_South_Wales,Khmer Community of New South Wales,cop,,2170,NSW,-33.928392,150.921448,postcode_centroid,Fairfield,
+Khmer_Community_of_New_South_Wales,Khmer Community of New South Wales,cop,,2160,NSW,-33.835883,150.976594,postcode_centroid,Parramatta,
+Khmer_Community_of_New_South_Wales,Khmer Community of New South Wales,cop,,2150,NSW,-33.814463,151.006506,postcode_centroid,Parramatta,
+Association_of_Community_Language_Schools,Association of Community Language Schools,cop,,2560,NSW,-34.194216,150.768408,postcode_centroid,Wollongong,
+Association_of_Community_Language_Schools,Association of Community Language Schools,cop,,2500,NSW,-34.423171,150.874294,postcode_centroid,Wollongong,
+Australian_Druze_Community,Australian Druze Community,cop,,2160,NSW,-33.835883,150.976594,postcode_centroid,Parramatta,
+Chabad_of_the_Hunter_and_Central_Coast,Chabad of the Hunter and Central Coast,cop,,2250,NSW,-33.325373,151.189243,postcode_centroid,Hawkesbury,
+Chabad_of_the_Hunter_and_Central_Coast,Chabad of the Hunter and Central Coast,cop,,2300,NSW,-32.931635,151.778021,postcode_centroid,Newcastle,
+Islamic_Centre_of_Newcastle,Islamic Centre of Newcastle,cop,,2300,NSW,-32.931635,151.778021,postcode_centroid,Newcastle,
+Museum_of_Chinese_in_Australia,Museum of Chinese in Australia,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid,Adelaide,
+Museum_of_Chinese_in_Australia,Museum of Chinese in Australia,cop,,3500,,-34.1931,142.154161,postcode_centroid,Mildura,
+Museum_of_Chinese_in_Australia,Museum of Chinese in Australia,cop,,4870,,-16.923761,145.742303,postcode_centroid,Cairns,
+Museum_of_Chinese_in_Australia,Museum of Chinese in Australia,cop,,4868,,-16.993753,145.729193,postcode_centroid,Cairns,
+Museum_of_Chinese_in_Australia,Museum of Chinese in Australia,cop,,800,,-12.458684,130.83668,postcode_centroid,Darwin Waterfront Precinct,
+Museum_of_Chinese_in_Australia,Museum of Chinese in Australia,cop,,7250,TAS,-41.432254,147.077589,postcode_centroid,Meander Valley,
+Museum_of_Chinese_in_Australia,Museum of Chinese in Australia,cop,,6000,WA,-31.948762,115.859912,postcode_centroid,Vincent,
+Rainbow_Crossing,Rainbow Crossing,cop,,2560,NSW,-34.194216,150.768408,postcode_centroid,Wollongong,
+Vietnamese_Community_in_Australia_NSW_Chapter,Vietnamese Community in Australia NSW Chapter,cop,,2465,NSW,-29.412622,153.243897,postcode_centroid,Clarence Valley,
+Voices_of_Women_Incorporated,Voices of Women Incorporated,cop,,2830,NSW,-32.24224,148.657282,postcode_centroid,Warrumbungle,
+Voices_of_Women_Incorporated,Voices of Women Incorporated,cop,,2440,NSW,-30.375791,153.019648,postcode_centroid,Port Macquarie-Hastings,
+St_Mary's_Ethiopian_Women's_Association_in_Sydney,St Mary's Ethiopian Women's Association in Sydney,cop,,2144,NSW,-33.851868,151.026756,postcode_centroid,Cumberland,
+St_Mary's_Ethiopian_Women's_Association_in_Sydney,St Mary's Ethiopian Women's Association in Sydney,cop,,2148,NSW,-33.783751,150.900547,postcode_centroid,Cumberland,
+St_Mary's_Ethiopian_Women's_Association_in_Sydney,St Mary's Ethiopian Women's Association in Sydney,cop,,2770,NSW,-33.756443,150.810246,postcode_centroid,Blacktown,
+African_Australian_Advocacy_Centre,African Australian Advocacy Centre,cop,,2170,NSW,-33.928392,150.921448,postcode_centroid,Fairfield,
+African_Australian_Advocacy_Centre,African Australian Advocacy Centre,cop,,2150,NSW,-33.814463,151.006506,postcode_centroid,Parramatta,
+Australian_Arab_Cultural_Forum,Australian Arab Cultural Forum,cop,,2170,NSW,-33.928392,150.921448,postcode_centroid,Fairfield,
+Turbans_4_Australia,Turbans 4 Australia,cop,,2150,NSW,-33.814463,151.006506,postcode_centroid,Parramatta,
+Tamil_Senior_Citizens_Association_(N.S.W.),Tamil Senior Citizens Association (N.S.W.),cop,,2135,NSW,-33.881009,151.084759,postcode_centroid,Canada Bay,
+Pacific_Communities_Centre_,Pacific Communities Centre ,cop,,2170,NSW,-33.928392,150.921448,postcode_centroid,Fairfield,
+Sadat_Welfare_and_Sports_Association,Sadat Welfare and Sports Association,cop,,2144,NSW,-33.851868,151.026756,postcode_centroid,Cumberland,
+Sadat_Welfare_and_Sports_Association,Sadat Welfare and Sports Association,cop,,2160,NSW,-33.835883,150.976594,postcode_centroid,Parramatta,
+Lismore_Friendship_Festival,Lismore Friendship Festival,cop,,2480,NSW,-28.706486,153.25943,postcode_centroid,Ballina,
+The_Sinhalese_Cultural_Centre,The Sinhalese Cultural Centre,cop,,2148,NSW,-33.783751,150.900547,postcode_centroid,Cumberland,
+African/Australian_Football_Association,African/Australian Football Association,cop,,2144,NSW,-33.851868,151.026756,postcode_centroid,Cumberland,
+African/Australian_Football_Association,African/Australian Football Association,cop,,2118,NSW,-33.775596,151.043518,postcode_centroid,The Hills,
+African/Australian_Football_Association,African/Australian Football Association,cop,,2148,NSW,-33.783751,150.900547,postcode_centroid,Cumberland,
+African/Australian_Football_Association,African/Australian Football Association,cop,,2160,NSW,-33.835883,150.976594,postcode_centroid,Parramatta,
+African/Australian_Football_Association,African/Australian Football Association,cop,,2150,NSW,-33.814463,151.006506,postcode_centroid,Parramatta,
+Australian_Afghan_Hassanian_Youth_Association,Australian Afghan Hassanian Youth Association,cop,,2144,NSW,-33.851868,151.026756,postcode_centroid,Cumberland,
+Armenian_Cultural_Centre,Armenian Cultural Centre,cop,,2165,NSW,-33.872435,150.947496,postcode_centroid,Cumberland,
+Multicultural_Community_Services_of_Central_Australia,Multicultural Community Services of Central Australia,cop,,870,NT,-23.702291,133.86314,postcode_centroid,Alice Springs,
+UMNT,UMNT,cop,,800,NT,-12.458684,130.83668,postcode_centroid,Alice Springs,
+The_Korean_Association_in_Australia_Northern_Territory,The Korean Association in Australia Northern Territory,cop,,810,NT,-12.381806,130.866242,postcode_centroid,Darwin,
+Darwin_Malayalee_Association,Darwin Malayalee Association,cop,,870,NT,-23.702291,133.86314,postcode_centroid,Alice Springs,
+Central_Australia_Sikh_Cultural_Centre,Central Australia Sikh Cultural Centre,cop,,830,NT,-12.52139649,130.9580765,postcode_centroid,Litchfield,
+Vibrant_Diverse_Cultures,Vibrant Diverse Cultures,cop,,830,NT,-12.52139649,130.9580765,postcode_centroid,Litchfield,
+Bangladesh_Association_of_Northern_Territory,Bangladesh Association of Northern Territory,cop,,800,NT,-12.458684,130.83668,postcode_centroid,Darwin Waterfront Precinct,
+Australian_Vietnamese_Family_Association,Australian Vietnamese Family Association,cop,,800,NT,-12.458684,130.83668,postcode_centroid,Darwin Waterfront Precinct,
+Chabad_North_Queensland,Chabad North Queensland,cop,,4870,QLD,-16.923761,145.742303,postcode_centroid,Cairns,
+Chabad_North_Queensland,Chabad North Queensland,cop,,4868,QLD,-16.993753,145.729193,postcode_centroid,Cairns,
+Chabad_North_Queensland,Chabad North Queensland,cop,,4860,QLD,-17.520343,145.888782,postcode_centroid,Tablelands,
+Chabad_North_Queensland,Chabad North Queensland,cop,,4740,QLD,-21.33763,149.059737,postcode_centroid,Mackay,
+Chabad_North_Queensland,Chabad North Queensland,cop,,4810,QLD,-19.227783,146.764659,postcode_centroid,Townsville,
+Chabad_North_Queensland,Chabad North Queensland,cop,,4802,QLD,-20.271072,148.989038,postcode_centroid,Whitsunday,
+Mongolian_Community_Association_in_Queensland,Mongolian Community Association in Queensland,cop,,4000,QLD,-27.468391,153.022126,postcode_centroid,Brisbane,
+The_Vietnamese_Community_in_Australia_(Queensland_Chapter),The Vietnamese Community in Australia (Queensland Chapter),cop,,4807,QLD,-19.914965,147.133033,postcode_centroid,Burdekin,
+LVIC,LVIC,cop,,4350,QLD,-27.543577,151.960952,postcode_centroid,Toowoomba,
+Women's_Mentoring_Foundation,Women's Mentoring Foundation,cop,,4207,QLD,-27.733991,153.204523,postcode_centroid,Gold Coast,
+Women's_Mentoring_Foundation,Women's Mentoring Foundation,cop,,4006,QLD,-27.36618,153.175242,postcode_centroid,Brisbane,
+Women's_Mentoring_Foundation,Women's Mentoring Foundation,cop,,4218,QLD,-28.037627,153.41692,postcode_centroid,Gold Coast,
+Women's_Mentoring_Foundation,Women's Mentoring Foundation,cop,,4122,QLD,-27.543316,153.088155,postcode_centroid,Brisbane,
+Women's_Mentoring_Foundation,Women's Mentoring Foundation,cop,,4127,QLD,-27.629474,153.142035,postcode_centroid,Brisbane,
+Women's_Mentoring_Foundation,Women's Mentoring Foundation,cop,,4810,QLD,-19.227783,146.764659,postcode_centroid,Townsville,
+Ukrainian_Community_of_Queensland,Ukrainian Community of Queensland,cop,,4000,QLD,-27.468391,153.022126,postcode_centroid,Brisbane,
+Multicultural_Mailer,Multicultural Mailer,cop,,3805,QLD,-38.037026,145.304198,postcode_centroid,Casey,
+Multicultural_Mailer,Multicultural Mailer,cop,,3977,QLD,-38.1466398,145.2695101,postcode_centroid,Frankston,
+Multicultural_Mailer,Multicultural Mailer,cop,,3175,QLD,-38.016114,145.208504,postcode_centroid,Casey,
+Multicultural_Mailer,Multicultural Mailer,cop,,4215,QLD,-27.967134,153.397952,postcode_centroid,Gold Coast,
+Multicultural_Mailer,Multicultural Mailer,cop,,4127,QLD,-27.629474,153.142035,postcode_centroid,Brisbane,
+Australian_National_Chinese_Women's_Federation,Australian National Chinese Women's Federation,cop,,4215,QLD,-27.967134,153.397952,postcode_centroid,Gold Coast,
+The_Federation_of_Indian_Communities_of_Queensland,The Federation of Indian Communities of Queensland,cop,,4000,QLD,-27.468391,153.022126,postcode_centroid,Brisbane,
+Arise_Women_Support_Association,Arise Women Support Association,cop,,4051,QLD,-27.427508,153.000297,postcode_centroid,Brisbane,
+Arise_Women_Support_Association,Arise Women Support Association,cop,,4350,QLD,-27.576308,151.852689,postcode_centroid,Toowoomba,
+Women's_Power_of_Inspiration,Women's Power of Inspiration,cop,,4215,QLD,-27.967134,153.397952,postcode_centroid,Gold Coast,
+Women's_Power_of_Inspiration,Women's Power of Inspiration,cop,,4131,QLD,-27.669913,153.136072,postcode_centroid,Logan,
+Bangle_Foundation,Bangle Foundation,cop,,4000,QLD,-27.468391,153.022126,postcode_centroid,Brisbane,
+Hillcrest_Community_Centre,Hillcrest Community Centre,cop,,4118,QLD,-27.673806,153.027323,postcode_centroid,Logan,
+Vedic_Education_Arts_and_Culture,Vedic Education Arts and Culture,cop,,4350,QLD,-27.599253,151.939683,postcode_centroid,Toowoomba,
+Middle_Eastern_Communities_Council_of_S.A.,Middle Eastern Communities Council of S.A.,cop,,5453,SA,-33.802932,138.582681,postcode_centroid,Wakefield,
+Slava_Ukrainian_Cultural_Centre,Slava Ukrainian Cultural Centre,cop,,5011,SA,-34.87089128,138.5353265,postcode_centroid,Charles Sturt,
+Afghan_United_Association_of_South_Australia,Afghan United Association of South Australia,cop,,5114,SA,-34.718681,138.754254,postcode_centroid,Gawler,
+Adelaide_Eid_Festival,Adelaide Eid Festival,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid,Adelaide,
+Pashtun_Association_of_SA,Pashtun Association of SA,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid,Adelaide,
+Pashtun_Association_of_SA,Pashtun Association of SA,cop,,5012,SA,-34.86303,138.541637,postcode_centroid,Charles Sturt,
+Pashtun_Association_of_SA,Pashtun Association of SA,cop,,5043,SA,-35.005492,138.553853,postcode_centroid,Marion,
+Pashtun_Association_of_SA,Pashtun Association of SA,cop,,5067,SA,-34.919985,138.630575,postcode_centroid,Burnside,
+Pashtun_Association_of_SA,Pashtun Association of SA,cop,,5015,SA,-34.808422,138.531567,postcode_centroid,Port Adelaide Enfield,
+Pashtun_Association_of_SA,Pashtun Association of SA,cop,,5082,SA,-34.886018,138.587083,postcode_centroid,Port Adelaide Enfield,
+Pashtun_Association_of_SA,Pashtun Association of SA,cop,,5108,SA,-34.761553,138.61884,postcode_centroid,Salisbury,
+Pashtun_Association_of_SA,Pashtun Association of SA,cop,,5061,SA,-34.957195,138.60648,postcode_centroid,Unley,
+Pashtun_Association_of_SA,Pashtun Association of SA,cop,,5031,SA,-34.936926,138.570873,postcode_centroid,West Torrens,
+St._Elias_Antiochian_Orthodox_Parish_Association,St. Elias Antiochian Orthodox Parish Association,cop,,5012,SA,-34.86303,138.541637,postcode_centroid,Charles Sturt,
+Associazione_Sinopolese_Del_Sud_Australia_Maria_SS_Di_Tutte_Le_Grazie,Associazione Sinopolese Del Sud Australia Maria SS Di Tutte Le Grazie,cop,,5012,SA,-34.86303,138.541637,postcode_centroid,Charles Sturt,
+Ceylon_Tamil_Association_of_South_Australia,Ceylon Tamil Association of South Australia,cop,,5066,SA,-34.940962,138.66029,postcode_centroid,Adelaide Hills,
+Ceylon_Tamil_Association_of_South_Australia,Ceylon Tamil Association of South Australia,cop,,5074,SA,-34.884233,138.669275,postcode_centroid,Campbelltown (SA),
+Ceylon_Tamil_Association_of_South_Australia,Ceylon Tamil Association of South Australia,cop,,5091,SA,-34.822615,138.735572,postcode_centroid,Tea Tree Gully,
+Circle_of_Friends_Australia,Circle of Friends Australia,cop,,5152,SA,-34.998401,138.703957,postcode_centroid,Mitcham,
+Hispanic_Women's_Association_of_South_Australia,Hispanic Women's Association of South Australia,cop,,5043,SA,-35.005492,138.553853,postcode_centroid,Marion,
+Hispanic_Women's_Association_of_South_Australia,Hispanic Women's Association of South Australia,cop,,5108,SA,-34.761553,138.61884,postcode_centroid,Salisbury,
+Afghan_Culture_Association,Afghan Culture Association,cop,,5114,SA,-34.718681,138.754254,postcode_centroid,Gawler,
+Afghan_Culture_Association,Afghan Culture Association,cop,,5082,SA,-34.886018,138.587083,postcode_centroid,Port Adelaide Enfield,
+Afghan_Culture_Association,Afghan Culture Association,cop,,5108,SA,-34.761553,138.61884,postcode_centroid,Salisbury,
+Telugu_Association_of_South_Australia,Telugu Association of South Australia,cop,,5011,SA,-34.87089128,138.5353265,postcode_centroid,Charles Sturt,
+Telugu_Association_of_South_Australia,Telugu Association of South Australia,cop,,5043,SA,-35.005492,138.553853,postcode_centroid,Marion,
+Telugu_Association_of_South_Australia,Telugu Association of South Australia,cop,,5015,SA,-34.808422,138.531567,postcode_centroid,Port Adelaide Enfield,
+Telugu_Association_of_South_Australia,Telugu Association of South Australia,cop,,5108,SA,-34.761553,138.61884,postcode_centroid,Salisbury,
+Telugu_Association_of_South_Australia,Telugu Association of South Australia,cop,,5031,SA,-34.936926,138.570873,postcode_centroid,West Torrens,
+Cyprus_Community_of_South_Australia,Cyprus Community of South Australia,cop,,5011,SA,-34.87089128,138.5353265,postcode_centroid,Charles Sturt,
+Hong_Kong_Cultural_Association_of_South_Australia,Hong Kong Cultural Association of South Australia,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid,Adelaide,
+Hong_Kong_Cultural_Association_of_South_Australia,Hong Kong Cultural Association of South Australia,cop,,5061,SA,-34.957195,138.60648,postcode_centroid,Unley,
+Hong_Kong_Cultural_Association_of_South_Australia,Hong Kong Cultural Association of South Australia,cop,,5031,SA,-34.936926,138.570873,postcode_centroid,West Torrens,
+Farda_Group,Farda Group,cop,,5000,SA,-34.92849902,138.600746,postcode_centroid,Adelaide,
+Farda_Group,Farda Group,cop,,5108,SA,-34.761553,138.61884,postcode_centroid,Salisbury,
+Akaal_Sikh_Society_Launceston,Akaal Sikh Society Launceston,cop,,7277,TAS,-41.366416,146.996977,postcode_centroid,Meander Valley,
+Akaal_Sikh_Society_Launceston,Akaal Sikh Society Launceston,cop,,7304,TAS,-41.710417,146.165998,postcode_centroid,West Tamar,
+Shia_Association_of_Ahl-E-Bayt_Tasmania,Shia Association of Ahl-E-Bayt Tasmania,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid,Hobart,
+The_Non-resident_Nepali_Association_Australia,The Non-resident Nepali Association Australia,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid,Hobart,
+Association_of_Colombians_in_Tasmania_(ASSOCOLTAS),Association of Colombians in Tasmania (ASSOCOLTAS),cop,,7000,TAS,-42.878355,147.308002,postcode_centroid,Hobart,
+Australian_Italian_Club,Australian Italian Club,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid,Hobart,
+Be_Hers,Be Hers,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid,Hobart,
+Multicultural_Womens_Council_of_Tasmania,Multicultural Womens Council of Tasmania,cop,,7010,TAS,-42.85913,147.212366,postcode_centroid,Glenorchy,
+Multicultural_Womens_Council_of_Tasmania,Multicultural Womens Council of Tasmania,cop,,7015,TAS,-42.83903,147.360174,postcode_centroid,Clarence,
+Multicultural_Womens_Council_of_Tasmania,Multicultural Womens Council of Tasmania,cop,,7005,TAS,-42.916204,147.3368,postcode_centroid,Hobart,
+Multicultural_Womens_Council_of_Tasmania,Multicultural Womens Council of Tasmania,cop,,7000,TAS,-42.878355,147.308002,postcode_centroid,Hobart,
+Australian_Professionals_of_Colour_(APOC),Australian Professionals of Colour (APOC),cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Sufi_Festival,Sufi Festival,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Cypher_Culture_(Vic),Cypher Culture (Vic),cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Somali_Community,Somali Community,cop,,3040,VIC,-37.751845,144.902556,postcode_centroid,Moonee Valley,
+Somali_Community,Somali Community,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Somali_Community,Somali Community,cop,,3030,VIC,-37.91624,144.64209,postcode_centroid,Wyndham,
+Yarra_Ethnic_Arts_Exchange_Association,Yarra Ethnic Arts Exchange Association,cop,,3067,VIC,-37.803515,144.998203,postcode_centroid,Yarra,
+Somali_Elders_Group_in_Victoria,Somali Elders Group in Victoria,cop,,3084,VIC,-37.744406,145.082685,postcode_centroid,Banyule,
+Walker_Close_&_Brooklyn_Hall_Association,Walker Close & Brooklyn Hall Association,cop,,3015,VIC,-37.838242,144.880556,postcode_centroid,Hobsons Bay,
+Multicultural_Women_Victoria,Multicultural Women Victoria,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Australia-Korea_Business_Council,Australia-Korea Business Council,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+The_Federation_of_Chinese_Associations_(VIC),The Federation of Chinese Associations (VIC),cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Malayalee_Association_of_Victoria,Malayalee Association of Victoria,cop,,3810,VIC,-38.04658,145.472514,postcode_centroid,Cardinia,
+Malayalee_Association_of_Victoria,Malayalee Association of Victoria,cop,,3805,VIC,-38.037026,145.304198,postcode_centroid,Casey,
+Malayalee_Association_of_Victoria,Malayalee Association of Victoria,cop,,3977,VIC,-38.1466398,145.2695101,postcode_centroid,Frankston,
+Malayalee_Association_of_Victoria,Malayalee Association of Victoria,cop,,3175,VIC,-38.016114,145.208504,postcode_centroid,Casey,
+Astha_Nepali_Hindu_Society_of_Victoria_Shree_Pashupatinath_Temple,Astha Nepali Hindu Society of Victoria Shree Pashupatinath Temple,cop,,3977,VIC,-38.1466398,145.2695101,postcode_centroid,Frankston,
+Filipino_Australian_Seniors_Association,Filipino Australian Seniors Association,cop,,3192,VIC,-37.965655,145.0623,postcode_centroid,Bayside (Vic.),
+Diwali_&_Holi_in_West,Diwali & Holi in West,cop,,3337,VIC,-37.65724033,144.5462424,postcode_centroid,Macedon Ranges,
+Indian_Women_in_Australia,Indian Women in Australia,cop,,3337,VIC,-37.65724033,144.5462424,postcode_centroid,Macedon Ranges,
+Nepalese_Neighbourhood_Community,Nepalese Neighbourhood Community,cop,,3757,VIC,-37.469784,145.182221,postcode_centroid,Nillumbik,
+Northern_Melbourne_Marathi_Mandal,Northern Melbourne Marathi Mandal,cop,,3043,VIC,-37.691916,144.888368,postcode_centroid,Brimbank,
+Northern_Melbourne_Marathi_Mandal,Northern Melbourne Marathi Mandal,cop,,3757,VIC,-37.469784,145.182221,postcode_centroid,Nillumbik,
+Asha_Global_Foundation,Asha Global Foundation,cop,,3805,VIC,-38.037026,145.304198,postcode_centroid,Casey,
+Libyan_Women's_Association_Incorporated,Libyan Women's Association Incorporated,cop,,3757,VIC,-37.469784,145.182221,postcode_centroid,Nillumbik,
+Melbourne_Orthodox_Jewish_Community_Centre,Melbourne Orthodox Jewish Community Centre,cop,,3163,VIC,-37.896497,145.057237,postcode_centroid,Glen Eira,
+Melbourne_Orthodox_Jewish_Community_Centre,Melbourne Orthodox Jewish Community Centre,cop,,3182,VIC,-37.865322,144.979478,postcode_centroid,Port Phillip,
+Kaiga_Tuvalu_Victoria_Community_Incorporated,Kaiga Tuvalu Victoria Community Incorporated,cop,,3337,VIC,-37.65724033,144.5462424,postcode_centroid,Macedon Ranges,
+River_Nile_Learning_Centre_Incorporated,River Nile Learning Centre Incorporated,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Help_-_Himalayan_Youth_Foundation,Help - Himalayan Youth Foundation,cop,,3046,VIC,-37.706578,144.927968,postcode_centroid,Moreland,
+Help_-_Himalayan_Youth_Foundation,Help - Himalayan Youth Foundation,cop,,3043,VIC,-37.691916,144.888368,postcode_centroid,Brimbank,
+Help_-_Himalayan_Youth_Foundation,Help - Himalayan Youth Foundation,cop,,3024,VIC,-37.75045631,144.649936,postcode_centroid,Melton,
+Alevi_Community_Council_of_Australia,Alevi Community Council of Australia,cop,,3056,VIC,-37.766292,144.960108,postcode_centroid,Moreland,
+Chabad_of_Rara,Chabad of Rara,cop,,6330,VIC,-34.905438,117.863286,postcode_centroid,Albany,
+Chabad_of_Rara,Chabad of Rara,cop,,2640,VIC,-36.016196,147.026549,postcode_centroid,Snowy Valleys,
+Chabad_of_Rara,Chabad of Rara,cop,,870,VIC,-23.702291,133.86314,postcode_centroid,Alice Springs,
+Chabad_of_Rara,Chabad of Rara,cop,,3350,VIC,-37.571941,143.864505,postcode_centroid,Ballarat,
+Chabad_of_Rara,Chabad of Rara,cop,,3550,VIC,-36.764269,144.285267,postcode_centroid,Greater Bendigo,
+Chabad_of_Rara,Chabad of Rara,cop,,6230,VIC,-33.341076,115.649205,postcode_centroid,Dardanup,
+Chabad_of_Rara,Chabad of Rara,cop,,4670,VIC,-24.88776,152.297855,postcode_centroid,Bundaberg,
+Chabad_of_Rara,Chabad of Rara,cop,,2450,VIC,-30.097726,152.658268,postcode_centroid,Clarence Valley,
+Chabad_of_Rara,Chabad of Rara,cop,,3175,VIC,-38.016114,145.208504,postcode_centroid,Casey,
+Chabad_of_Rara,Chabad of Rara,cop,,800,VIC,-12.458684,130.83668,postcode_centroid,Darwin Waterfront Precinct,
+Chabad_of_Rara,Chabad of Rara,cop,,2830,VIC,-32.24224,148.657282,postcode_centroid,Warrumbungle,
+Chabad_of_Rara,Chabad of Rara,cop,,6450,VIC,-33.401152,122.211127,postcode_centroid,Ravensthorpe,
+Chabad_of_Rara,Chabad of Rara,cop,,4570,VIC,-26.153831,152.616943,postcode_centroid,Fraser Coast,
+Chabad_of_Rara,Chabad of Rara,cop,,7250,VIC,-41.432254,147.077589,postcode_centroid,Meander Valley,
+Chabad_of_Rara,Chabad of Rara,cop,,4740,VIC,-21.33763,149.059737,postcode_centroid,Mackay,
+Chabad_of_Rara,Chabad of Rara,cop,,2320,VIC,-32.741737,151.543675,postcode_centroid,Dungog,
+Chabad_of_Rara,Chabad of Rara,cop,,3500,VIC,-34.1931,142.154161,postcode_centroid,Mildura,
+Chabad_of_Rara,Chabad of Rara,cop,,4567,VIC,-26.408596,153.096957,postcode_centroid,Noosa,
+Chabad_of_Rara,Chabad of Rara,cop,,2444,VIC,-31.439614,152.87253,postcode_centroid,Port Macquarie-Hastings,
+Chabad_of_Rara,Chabad of Rara,cop,,3280,VIC,-38.37884,142.482889,postcode_centroid,Moyne,
+Chabad_of_Rara,Chabad of Rara,cop,,5576,VIC,-35.050773,137.56046,postcode_centroid,Yorke Peninsula,
+Chabad_of_Rara,Chabad of Rara,cop,,6168,VIC,-32.281957,115.75773,postcode_centroid,Rockingham,
+Chabad_of_Rara,Chabad of Rara,cop,,2620,VIC,-35.34172619,149.2104515,postcode_centroid,Snowy Monaro,
+Chabad_of_Rara,Chabad of Rara,cop,,3221,VIC,-38.181608,144.427419,postcode_centroid,Greater Geelong,
+Epping_Wollert_Nepalese_Community,Epping Wollert Nepalese Community,cop,,3757,VIC,-37.469784,145.182221,postcode_centroid,Nillumbik,
+African_Australian_Multicultural_Employment_and_Youth_Services,African Australian Multicultural Employment and Youth Services,cop,,3021,VIC,-37.743361,144.796693,postcode_centroid,Brimbank,
+African_Australian_Multicultural_Employment_and_Youth_Services,African Australian Multicultural Employment and Youth Services,cop,,3032,VIC,-37.774486,144.897221,postcode_centroid,Maribyrnong,
+African_Australian_Multicultural_Employment_and_Youth_Services,African Australian Multicultural Employment and Youth Services,cop,,3337,VIC,-37.65724033,144.5462424,postcode_centroid,Macedon Ranges,
+African_Australian_Multicultural_Employment_and_Youth_Services,African Australian Multicultural Employment and Youth Services,cop,,3029,VIC,-37.837165,144.705831,postcode_centroid,Melton,
+Bosna_and_Hercegovina_Islamic_Society_-_Noble_Park,Bosna and Hercegovina Islamic Society - Noble Park,cop,,3175,VIC,-38.016114,145.208504,postcode_centroid,Casey,
+Islamic_Community_Milli_Gorus_Dandenong,Islamic Community Milli Gorus Dandenong,cop,,3175,VIC,-38.016114,145.208504,postcode_centroid,Casey,
+Indian_Association_of_Bendigo,Indian Association of Bendigo,cop,,3550,VIC,-36.764269,144.285267,postcode_centroid,Greater Bendigo,
+Anand_Ishar,Anand Ishar,cop,,3805,VIC,-38.037026,145.304198,postcode_centroid,Casey,
+Australian_Telangana_State_Association,Australian Telangana State Association,cop,,3021,VIC,-37.743361,144.796693,postcode_centroid,Brimbank,
+Australian_Telangana_State_Association,Australian Telangana State Association,cop,,3220,VIC,-38.157038,144.34652,postcode_centroid,Greater Geelong,
+Australian_Telangana_State_Association,Australian Telangana State Association,cop,,3015,VIC,-37.838242,144.880556,postcode_centroid,Hobsons Bay,
+Australian_Telangana_State_Association,Australian Telangana State Association,cop,,3032,VIC,-37.774486,144.897221,postcode_centroid,Maribyrnong,
+Australian_Telangana_State_Association,Australian Telangana State Association,cop,,3029,VIC,-37.837165,144.705831,postcode_centroid,Melton,
+Future_Foundation_for_Kids,Future Foundation for Kids,cop,,3000,VIC,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Multicultural_Youth_Support_Services,Multicultural Youth Support Services,cop,,3810,VIC,-38.04658,145.472514,postcode_centroid,Cardinia,
+Multicultural_Youth_Support_Services,Multicultural Youth Support Services,cop,,3806,VIC,-38.025018,145.349488,postcode_centroid,Casey,
+Cyprus_Turkish_Islamic_Community_of_Victoria,Cyprus Turkish Islamic Community of Victoria,cop,,3020,VIC,-37.777204,144.829945,postcode_centroid,Brimbank,
+United_Muslim_Migrants_Association_of_Victoria,United Muslim Migrants Association of Victoria,cop,,3105,VIC,-37.772477,145.084806,postcode_centroid,Manningham,
+Regional_Runways,Regional Runways,cop,,3220,VIC,-38.157038,144.34652,postcode_centroid,Greater Geelong,
+Srilankan_Muslim_Community_of_Victoria,Srilankan Muslim Community of Victoria,cop,,3030,VIC,-37.91624,144.64209,postcode_centroid,Wyndham,
+Chinese_Dance_Australia,Chinese Dance Australia,cop,,6104,WA,-31.965498,115.977633,postcode_centroid,Belmont,
+Chinese_Dance_Australia,Chinese Dance Australia,cop,,6150,WA,-32.061682,115.833608,postcode_centroid,Melville,
+Chinese_Dance_Australia,Chinese Dance Australia,cop,,6000,WA,-31.948762,115.859912,postcode_centroid,Vincent,
+Nepali_Association_of_Western_Australia_(NAWA),Nepali Association of Western Australia (NAWA),cop,,6107,WA,-32.017663,115.967142,postcode_centroid,Kalamunda,
+Nepali_Association_of_Western_Australia_(NAWA),Nepali Association of Western Australia (NAWA),cop,,6164,WA,-32.131993,115.854584,postcode_centroid,Cockburn,
+Nepali_Association_of_Western_Australia_(NAWA),Nepali Association of Western Australia (NAWA),cop,,6110,WA,-32.078535,116.008603,postcode_centroid,Gosnells,
+Nepali_Association_of_Western_Australia_(NAWA),Nepali Association of Western Australia (NAWA),cop,,6000,WA,-31.948762,115.859912,postcode_centroid,Vincent,
+Perth_Italian_Festival_WA,Perth Italian Festival WA,cop,,6000,WA,-31.948762,115.859912,postcode_centroid,Vincent,
+Gosnells_Chinese_Association,Gosnells Chinese Association,cop,,6110,WA,-32.078535,116.008603,postcode_centroid,Gosnells,
+Western_Australia_Chongqing_&_Sichuan_Association_(WACSA),Western Australia Chongqing & Sichuan Association (WACSA),cop,,6000,WA,-31.948762,115.859912,postcode_centroid,Vincent,
+Lebanese_Community_Western_Australia,Lebanese Community Western Australia,cop,,6112,WA,-32.158675,115.997934,postcode_centroid,Armadale,
+Lebanese_Community_Western_Australia,Lebanese Community Western Australia,cop,,6053,WA,-31.920863,115.914851,postcode_centroid,Bayswater,
+Lebanese_Community_Western_Australia,Lebanese Community Western Australia,cop,,6000,WA,-31.948762,115.859912,postcode_centroid,Vincent,
+Lebanese_Community_Western_Australia,Lebanese Community Western Australia,cop,,6056,WA,-31.838398,116.0261,postcode_centroid,Kalamunda,
+Midwest_Indian_Cultural_Society,Midwest Indian Cultural Society,cop,,6000,WA,-31.948762,115.859912,postcode_centroid,Vincent,
+Australia_Buddhist_Bliss_Culture_Mission,Australia Buddhist Bliss Culture Mission,cop,,6156,WA,-32.03954,115.800233,postcode_centroid,Melville,
+Estonian_Cultural_Association_of_Western_Australia,Estonian Cultural Association of Western Australia,cop,,6104,WA,-31.965498,115.977633,postcode_centroid,Belmont,
+Estonian_Cultural_Association_of_Western_Australia,Estonian Cultural Association of Western Australia,cop,,6155,WA,-32.061501,115.890779,postcode_centroid,Melville,
+Estonian_Cultural_Association_of_Western_Australia,Estonian Cultural Association of Western Australia,cop,,6076,WA,-32.108961,116.208263,postcode_centroid,Mundaring,
+Perth_African_Nations_Sports_Association_(PANSA),Perth African Nations Sports Association (PANSA),cop,,6054,WA,-31.901801,115.942572,postcode_centroid,Swan,
+Perth_African_Nations_Sports_Association_(PANSA),Perth African Nations Sports Association (PANSA),cop,,6104,WA,-31.965498,115.977633,postcode_centroid,Belmont,
+Perth_African_Nations_Sports_Association_(PANSA),Perth African Nations Sports Association (PANSA),cop,,6151,WA,-31.982199,115.869482,postcode_centroid,Victoria Park,
+Gortankaku_Community_Association_of_WA,Gortankaku Community Association of WA,cop,,6065,WA,-31.69444,115.845329,postcode_centroid,Wanneroo,
+Federation_of_Indian_Associations_of_WA,Federation of Indian Associations of WA,cop,,6112,WA,-32.158675,115.997934,postcode_centroid,Armadale,
+Federation_of_Indian_Associations_of_WA,Federation of Indian Associations of WA,cop,,6155,WA,-32.061501,115.890779,postcode_centroid,Melville,
+Federation_of_Indian_Associations_of_WA,Federation of Indian Associations of WA,cop,,6110,WA,-32.078535,116.008603,postcode_centroid,Gosnells,
+Western_Australia_Kannada_Sangha,Western Australia Kannada Sangha,cop,,6104,WA,-31.965498,115.977633,postcode_centroid,Belmont,
+Western_Australia_Kannada_Sangha,Western Australia Kannada Sangha,cop,,6155,WA,-32.061501,115.890779,postcode_centroid,Melville,
+Cockburn_Chinese_Community_Association,Cockburn Chinese Community Association,cop,,6164,WA,-32.131993,115.854584,postcode_centroid,Cockburn,
+Bunbury_Multicultural_Group,Bunbury Multicultural Group,cop,,6230,WA,-33.341076,115.649205,postcode_centroid,Dardanup,
+Organisation_of_African_Communities_in_Western_Australia,Organisation of African Communities in Western Australia,cop,,6112,WA,-32.158675,115.997934,postcode_centroid,Armadale,
+Organisation_of_African_Communities_in_Western_Australia,Organisation of African Communities in Western Australia,cop,,6155,WA,-32.061501,115.890779,postcode_centroid,Melville,
+Organisation_of_African_Communities_in_Western_Australia,Organisation of African Communities in Western Australia,cop,,6167,WA,-32.223657,115.835308,postcode_centroid,Serpentine-Jarrahdale,
+Organisation_of_African_Communities_in_Western_Australia,Organisation of African Communities in Western Australia,cop,,6000,WA,-31.948762,115.859912,postcode_centroid,Vincent,
+Organisation_of_African_Communities_in_Western_Australia,Organisation of African Communities in Western Australia,cop,,6021,WA,-31.871671,115.811933,postcode_centroid,Stirling,
+Organisation_of_African_Communities_in_Western_Australia,Organisation of African Communities in Western Australia,cop,,6056,WA,-31.838398,116.0261,postcode_centroid,Kalamunda,
+Organisation_of_African_Communities_in_Western_Australia,Organisation of African Communities in Western Australia,cop,,6065,WA,-31.69444,115.845329,postcode_centroid,Wanneroo,
+Rajasthani_Kutumb_-_Australia,Rajasthani Kutumb - Australia,cop,,6155,WA,-32.061501,115.890779,postcode_centroid,Melville,
+Rajasthani_Kutumb_-_Australia,Rajasthani Kutumb - Australia,cop,,6110,WA,-32.078535,116.008603,postcode_centroid,Gosnells,
+Elizabeth_Park_School,Elizabeth Park School,hub,,5113,SA,-34.712542,138.685171,postcode_centroid,Playford,
+Elizabeth_Vale_Primary_School,Elizabeth Vale Primary School,hub,,5112,SA,-34.746911,138.66959,postcode_centroid,Playford,
+Playford_College,Playford College,hub,,5112,SA,-34.710117,138.67335,postcode_centroid,Playford,
+St_Mary_Magdalene's_School,St Mary Magdalene's School,hub,,5112,SA,-34.733933,138.666503,postcode_centroid,Playford,
+St_Brigid's_School,St Brigid's School,hub,,5084,SA,-34.860871,138.587608,postcode_centroid,Port Adelaide Enfield,
+Karrendi_Primary_School,Karrendi Primary School,hub,,5107,SA,-34.790546,138.618712,postcode_centroid,Salisbury,
+Para_Vista_Primary_School,Para Vista Primary School,hub,,5093,SA,-34.830226,138.663594,postcode_centroid,Salisbury,
+Paralowe_R-12_School,Paralowe R-12 School,hub,,5108,SA,-34.758192,138.613433,postcode_centroid,Salisbury,
+Salisbury_Primary_School,Salisbury Primary School,hub,,5108,SA,-34.767988,138.646489,postcode_centroid,Salisbury,
+St_Augustine's_Parish_School,St Augustine's Parish School,hub,,5108,SA,-34.763709,138.650457,postcode_centroid,Salisbury,
+Bert_Oldfield_Public_School,Bert Oldfield Public School,hub,,2146,NSW,-33.789374,150.959508,postcode_centroid,Cumberland,
+Kings_Langley_School,Kings Langley School,hub,,2147,NSW,-33.766075,150.935836,postcode_centroid,Parramatta,
+Banksia_Road_Public_School,Banksia Road Public School,hub,,2190,NSW,-33.89194485,151.0477059,postcode_centroid,Strathfield,
+Bankstown_Public_School,Bankstown Public School,hub,,2200,NSW,-33.926559,151.014937,postcode_centroid,Canterbury-Bankstown,
+Bass_Hill_Public_School,Bass Hill Public School,hub,,2322,NSW,-32.819819,151.65415,postcode_centroid,Cessnock,
+Chester_Hill_North_Public_School,Chester Hill North Public School,hub,,2162,NSW,-33.88349,151.004128,postcode_centroid,Cumberland,
+Chester_Hill_Public_School_Hub,Chester Hill Public School Hub,hub,,2162,NSW,-33.88349,151.004128,postcode_centroid,Cumberland,
+Villawood_East_Public_School,Villawood East Public School,hub,,2163,NSW,-33.887203,150.979458,postcode_centroid,Canterbury-Bankstown,
+Narranga_Public_School,Narranga Public School,hub,,2450,NSW,-30.097726,152.658268,postcode_centroid,Clarence Valley,
+Tyalla_Public_School,Tyalla Public School,hub,,2450,NSW,-30.097726,152.658268,postcode_centroid,Clarence Valley,
+William_Bayldon_Public_School,William Bayldon Public School,hub,,2452,NSW,-30.357168,153.08188,postcode_centroid,Coffs Harbour,
+Granville_Public_School,Granville Public School,hub,,1830,NSW,-33.859289,150.948582,postcode_centroid,Cumberland,
+Hilltop_Road_Public_School,Hilltop Road Public School,hub,,2160,NSW,-33.835883,150.976594,postcode_centroid,Parramatta,
+Westemead_Public_School,Westemead Public School,hub,,2145,NSW,-33.79382308,150.9751544,postcode_centroid,Parramatta,
+Fairfiled_West_Public_School,Fairfiled West Public School,hub,,2165,NSW,-33.872435,150.947496,postcode_centroid,Cumberland,
+Prairievale_Public_School,Prairievale Public School,hub,,2176,NSW,-33.872014,150.88526,postcode_centroid,Fairfield,
+Smithfield_Public_School,Smithfield Public School,hub,,2164,NSW,-33.844153,150.875028,postcode_centroid,Cumberland,
+Austral_Public_School,Austral Public School,hub,,2179,NSW,-33.933109,150.812031,postcode_centroid,Camden,
+Heckenberg_Public_School,Heckenberg Public School,hub,,2168,NSW,-33.915939,150.875345,postcode_centroid,Liverpool,
+Hoxton_Park_Public_School,Hoxton Park Public School,hub,,2171,NSW,-33.93771581,150.8487366,postcode_centroid,Liverpool,
+Parramatta_West_Public_School,Parramatta West Public School,hub,,2150,NSW,-33.814463,151.006506,postcode_centroid,Parramatta,
+Rydelmere_Public_School,Rydelmere Public School,hub,,2116,NSW,-33.814368,151.036941,postcode_centroid,Parramatta,
+Acacia_Ridge_State_School,Acacia Ridge State School,hub,,4110,QLD,-27.612178,153.009526,postcode_centroid,Brisbane,
+Inala_State_School,Inala State School,hub,,4077,QLD,-27.587085,152.976019,postcode_centroid,Brisbane,
+Nundah_State_School,Nundah State School,hub,,4012,QLD,-27.40291,153.058341,postcode_centroid,Brisbane,
+St_Brendan's_Primary_School_Moorooka,St Brendan's Primary School Moorooka,hub,,4105,QLD,-27.537585,153.019065,postcode_centroid,Brisbane,
+Fernbrooke_State_School,Fernbrooke State School,hub,,4301,QLD,-27.662938,152.844072,postcode_centroid,Ipswich,
+Kruger_State_School,Kruger State School,hub,,4300,QLD,-27.62881,152.876589,postcode_centroid,Ipswich,
+Riverview_State_School,Riverview State School,hub,,4303,QLD,-27.604659,152.846631,postcode_centroid,Ipswich,
+Springfield_Lakes_State_School,Springfield Lakes State School,hub,,4300,QLD,-27.682273,152.884999,postcode_centroid,Ipswich,
+Staines_Memorial_College,Staines Memorial College,hub,,4301,QLD,-27.669017,152.849445,postcode_centroid,Ipswich,
+Marsden_State_School,Marsden State School,hub,,4114,QLD,-27.685736,153.105061,postcode_centroid,Logan,
+St_Francis_College,St Francis College,hub,,4132,QLD,-27.691704,153.080443,postcode_centroid,Logan,
+St_Paul's_Catholic_Primary_School,St Paul's Catholic Primary School,hub,,4114,QLD,-27.634955,153.109767,postcode_centroid,Logan,
+Woodridge_North_State_School,Woodridge North State School,hub,,4114,QLD,-27.62653,153.106415,postcode_centroid,Logan,
+Woodridge_State_School,Woodridge State School,hub,,4114,QLD,-27.641647,153.105186,postcode_centroid,Logan,
+Lakes_Creek_State_School,Lakes Creek State School,hub,,4701,QLD,-23.376086,150.560023,postcode_centroid,Livingstone,
+Mount_Archer_State_School,Mount Archer State School,hub,,4701,QLD,-23.359021,150.546409,postcode_centroid,Livingstone,
+Waraburra_State_School,Waraburra State School,hub,,4702,QLD,-23.449043,150.45093,postcode_centroid,Rockhampton,
+Darling_heights_State_School,Darling heights State School,hub,,4350,QLD,-27.590732,151.926157,postcode_centroid,Toowoomba,
+Harlaxton_State_School,Harlaxton State School,hub,,4350,QLD,-27.540063,151.955948,postcode_centroid,Toowoomba,
+Newtown_State_School,Newtown State School,hub,,4350,QLD,-27.559003,151.934708,postcode_centroid,Toowoomba,
+Aitkenvale_State_School,Aitkenvale State School,hub,,4814,QLD,-19.295048,146.7628,postcode_centroid,Townsville,
+Cranbook_State_School,Cranbook State School,hub,,4814,QLD,-19.307623,146.754827,postcode_centroid,Townsville,
+Kelso_State_School,Kelso State School,hub,,4815,QLD,-19.388851,146.727267,postcode_centroid,Townsville,
+Deer_Park_North_Primary_School,Deer Park North Primary School,hub,,3023,VIC,-37.78272,144.770641,postcode_centroid,Brimbank,
+St_Albans_East_primary_School,St Albans East primary School,hub,,3021,VIC,-37.743361,144.796693,postcode_centroid,Brimbank,
+St_Albans_Heights_Primary_School,St Albans Heights Primary School,hub,,3021,VIC,-37.743361,144.796693,postcode_centroid,Brimbank,
+St_Albans_Primary_school,St Albans Primary school,hub,,3021,VIC,-37.743361,144.796693,postcode_centroid,Brimbank,
+Stevensville_Primary_school,Stevensville Primary school,hub,,3021,VIC,-37.743361,144.796693,postcode_centroid,Brimbank,
+Barton_Primary_School,Barton Primary School,hub,,3977,VIC,-38.1466398,145.2695101,postcode_centroid,Frankston,
+Cranbourne_Primary_School,Cranbourne Primary School,hub,,3977,VIC,-38.1466398,145.2695101,postcode_centroid,Frankston,
+Fleetwood_Primary_School,Fleetwood Primary School,hub,,3805,VIC,-38.037026,145.304198,postcode_centroid,Casey,
+Fountain_Gate_Primary_School,Fountain Gate Primary School,hub,,3805,VIC,-38.037026,145.304198,postcode_centroid,Casey,
+Hampton_Park_Primary_School,Hampton Park Primary School,hub,,3976,VIC,-38.043995,145.264296,postcode_centroid,Casey,
+Dandenong_Primary_School,Dandenong Primary School,hub,,3175,VIC,-38.016114,145.208504,postcode_centroid,Casey,
+Dandenong_South_Primary_School,Dandenong South Primary School,hub,,3175,VIC,-38.016114,145.208504,postcode_centroid,Casey,
+Dandenong_West_Primary_School,Dandenong West Primary School,hub,,3175,VIC,-38.016114,145.208504,postcode_centroid,Casey,
+Springvale_Rise_Primary_School,Springvale Rise Primary School,hub,,3171,VIC,-37.944608,145.156783,postcode_centroid,Greater Dandenong,
+St_Anthony's_School_Noble_Park,St Anthony's School Noble Park,hub,,3174,VIC,-37.966218,145.17877,postcode_centroid,Greater Dandenong,
+Bell_Park_North_Primary_School,Bell Park North Primary School,hub,,3215,VIC,-38.111002,144.33452,postcode_centroid,Greater Geelong,
+Northern_bay_College_Family_Cente_(Goldsworthy),Northern bay College Family Cente (Goldsworthy),hub,,3214,VIC,-38.084781,144.352385,postcode_centroid,Greater Geelong,
+St_Thomas_Aquinas_Primary_School,St Thomas Aquinas Primary School,hub,,3214,VIC,-38.084781,144.352385,postcode_centroid,Greater Geelong,
+Mooroopna_Park_Primary_School,Mooroopna Park Primary School,hub,,3629,VIC,-36.287306,145.260653,postcode_centroid,Greater Shepparton,
+St_Georges_Road_Primary_School,St Georges Road Primary School,hub,,3630,VIC,-36.380853,145.403176,postcode_centroid,Greater Shepparton,
+Wilmot_Road_Primary_School,Wilmot Road Primary School,hub,,3630,VIC,-36.380853,145.403176,postcode_centroid,Greater Shepparton,
+Bethal_Primary_School,Bethal Primary School,hub,,3048,VIC,-37.653917,144.923609,postcode_centroid,Hume,
+Broadmeadows_Valley_Primary,Broadmeadows Valley Primary,hub,,3047,VIC,-37.681105,144.930247,postcode_centroid,Hume,
+Campbellfield_Heights_Primary_School,Campbellfield Heights Primary School,hub,,3061,VIC,-37.666265,144.956763,postcode_centroid,Hume,
+Coolaroo_South_Primary_School,Coolaroo South Primary School,hub,,3048,VIC,-37.653917,144.923609,postcode_centroid,Hume,
+Craigieburn_South_Primary_School,Craigieburn South Primary School,hub,,3064,VIC,-37.546522,144.942199,postcode_centroid,Whittlesea,
+Dallas_Brooks_Community_Primary_School,Dallas Brooks Community Primary School,hub,,3047,VIC,-37.681105,144.930247,postcode_centroid,Hume,
+Good_Samarotan_Catholic_Primary_School,Good Samarotan Catholic Primary School,hub,,3064,VIC,-37.546522,144.942199,postcode_centroid,Whittlesea,
+Holy_Child_Primary_School,Holy Child Primary School,hub,,3047,VIC,-37.681105,144.930247,postcode_centroid,Hume,
+Meadow_Heights_Primary_School,Meadow Heights Primary School,hub,,3048,VIC,-37.653917,144.923609,postcode_centroid,Hume,
+Meadows_Primary_School,Meadows Primary School,hub,,3047,VIC,-37.681105,144.930247,postcode_centroid,Hume,
+Mount_Ridley_College,Mount Ridley College,hub,,3064,VIC,-37.546522,144.942199,postcode_centroid,Whittlesea,
+Roxburgh_Park_Primary_School,Roxburgh Park Primary School,hub,,3064,VIC,-37.546522,144.942199,postcode_centroid,Whittlesea,
+Roxburgh_Rise_Primary_School,Roxburgh Rise Primary School,hub,,3064,VIC,-37.546522,144.942199,postcode_centroid,Whittlesea,
+St_Dominic's_Primary_School,St Dominic's Primary School,hub,,3047,VIC,-37.681105,144.930247,postcode_centroid,Hume,
+Sunbury_Heights_Primary_School,Sunbury Heights Primary School,hub,,3429,VIC,-37.56762,144.728973,postcode_centroid,Hume,
+Davis_Creek_primary_School,Davis Creek primary School,hub,,3029,VIC,-37.837165,144.705831,postcode_centroid,Melton,
+Doherty's_Creek_P-9_College,Doherty's Creek P-9 College,hub,,3029,VIC,-37.837165,144.705831,postcode_centroid,Melton,
+Point_Cook_P-9_College,Point Cook P-9 College,hub,,3030,VIC,-37.91624,144.64209,postcode_centroid,Wyndham,
+Truganina_South_Primary_School,Truganina South Primary School,hub,,3029,VIC,-37.837165,144.705831,postcode_centroid,Melton,
+Adamstown_Rosebuds_Football_Club,Adamstown Rosebuds Football Club,club,,2289,,-32.948567,151.71008,postcode_centroid,Lake Macquarie,
+Altona_Gators_Basketball_Association,Altona Gators Basketball Association,club,,3018,,-37.86172,144.812736,postcode_centroid,Hobsons Bay,
+Aspley_Devils_Netball,Aspley Devils Netball,club,,4034,,-27.354711,153.040051,postcode_centroid,Brisbane,
+Australian_Academy_of_Martial_Arts,Australian Academy of Martial Arts,club,,4114,,-27.652812,153.110764,postcode_centroid,Logan,
+Beats_and_Bounce,Beats and Bounce,club,,3175,,-38.016114,145.208504,postcode_centroid,Casey,
+Beenleigh_AFC,Beenleigh AFC,club,,4207,,-27.733991,153.204523,postcode_centroid,Gold Coast,
+Brimbank_Aquatic_Centre,Brimbank Aquatic Centre,club,,3020,,-37.777204,144.829945,postcode_centroid,Brimbank,
+Broadmeadows_(Hume_City_Council_Civic_Centre),Broadmeadows (Hume City Council Civic Centre),club,,3047,,-37.681105,144.930247,postcode_centroid,Hume,
+Broadmeadows_Basketball_Association,Broadmeadows Basketball Association,club,,3047,,-37.681105,144.930247,postcode_centroid,Hume,
+Calamvale_Leopards_AFL,Calamvale Leopards AFL,club,,4116,,-27.633988,153.050793,postcode_centroid,Brisbane,
+Cardinia_Tigers_Netball_Club,Cardinia Tigers Netball Club,club,,3977,,-38.1466398,145.2695101,postcode_centroid,Frankston,
+Carlton_Cricket_Club,Carlton Cricket Club,club,,3053,,-37.803569,144.966112,postcode_centroid,Melbourne,
+Charlestown_Junior_Cricket_Club,Charlestown Junior Cricket Club,club,,2290,,-32.983963,151.707801,postcode_centroid,Lake Macquarie,
+Collingwood_Park_Power_AFC,Collingwood Park Power AFC,club,,4301,,-27.629394,152.858086,postcode_centroid,Ipswich,
+Craigieburn_Hockey_Club,Craigieburn Hockey Club,club,,3064,,-37.546522,144.942199,postcode_centroid,Whittlesea,
+Dallas_Football_Club,Dallas Football Club,club,,3047,,-37.681105,144.930247,postcode_centroid,Hume,
+Dandenong_Saints_Basketball,Dandenong Saints Basketball,club,,3175,,-38.016114,145.208504,postcode_centroid,Casey,
+Dandenong_West_Cricket_Club,Dandenong West Cricket Club,club,,3175,,-38.016114,145.208504,postcode_centroid,Casey,
+Downey_Park_Netball,Downey Park Netball,club,,4006,,-27.36618,153.175242,postcode_centroid,Brisbane,
+Easts_Tigers_Rugby_Union,Easts Tigers Rugby Union,club,,4171,,-27.456031,153.06036,postcode_centroid,Brisbane,
+Fitzroy_Lions_Soccer_Club,Fitzroy Lions Soccer Club,club,,3065,,-37.802608,144.977795,postcode_centroid,Yarra,
+Frankston_and_District_Basketball_Association,Frankston and District Basketball Association,club,,3199,,-38.162578,145.135961,postcode_centroid,Frankston,
+Frankston_Blues,Frankston Blues,club,,3199,,-38.162578,145.135961,postcode_centroid,Frankston,
+Gold_Coast_Basketball,Gold Coast Basketball,club,,4212,,-27.869823,153.360694,postcode_centroid,Gold Coast,
+Greenbank_Giants,Greenbank Giants,club,,4124,,-27.701681,152.967761,postcode_centroid,Ipswich,
+Griffith_Athletics_Club,Griffith Athletics Club,club,,2680,,-34.321422,145.914625,postcode_centroid,Murrumbidgee,
+Hume_Bombers_AFL_Club,Hume Bombers AFL Club,club,,3047,,-37.681105,144.930247,postcode_centroid,Hume,
+Hume_City_FC,Hume City FC,club,,3047,,-37.681105,144.930247,postcode_centroid,Hume,
+Hume_Cricket_Club,Hume Cricket Club,club,,3047,,-37.681105,144.930247,postcode_centroid,Hume,
+Hunter_Valley_Volleyball,Hunter Valley Volleyball,club,,2320,,-32.741737,151.543675,postcode_centroid,Dungog,
+Indians_Baseball_Club,Indians Baseball Club,club,,4110,,-27.612178,153.009526,postcode_centroid,Brisbane,
+Ipswich_Basketball,Ipswich Basketball,club,,4305,,-27.627522,152.753696,postcode_centroid,Scenic Rim,
+Logan_Basketball_Association,Logan Basketball Association,club,,4114,,-27.652812,153.110764,postcode_centroid,Logan,
+Malaysian_Club_QLD,Malaysian Club QLD,club,,4108,,-27.568359,153.020197,postcode_centroid,Brisbane,
+Maryborough_Basketball_QLD,Maryborough Basketball QLD,club,,4650,,-25.640978,152.791302,postcode_centroid,Gympie,
+Moorooka_AFC,Moorooka AFC,club,,4105,,-27.534438,153.018893,postcode_centroid,Brisbane,
+Noble_Park_Aquatic_Centre,Noble Park Aquatic Centre,club,,3174,,-37.966218,145.17877,postcode_centroid,Greater Dandenong,
+Noble_Park_Junior_Football_Club,Noble Park Junior Football Club,club,,3174,,-37.966218,145.17877,postcode_centroid,Greater Dandenong,
+North_Gold_Coast_Seahawks_Basketball,North Gold Coast Seahawks Basketball,club,,4214,,-27.967005,153.365576,postcode_centroid,Gold Coast,
+Northside_Wizards,Northside Wizards,club,,4031,,-27.408542,153.030695,postcode_centroid,Brisbane,
+Pakenham_Tennis_Club,Pakenham Tennis Club,club,,3810,,-38.04658,145.472514,postcode_centroid,Cardinia,
+Queensland_Rugby_League_(HQ),Queensland Rugby League (HQ),club,,4064,,-27.464676,152.999039,postcode_centroid,Brisbane,
+Redcity_Road_(Redlands),Redcity Road (Redlands),club,,4165,,-27.623975,153.263801,postcode_centroid,Redland,
+Sandgate_Tennis_Club,Sandgate Tennis Club,club,,4017,,-27.318074,153.047339,postcode_centroid,Brisbane,
+South_Brisbane_Sailing_Club,South Brisbane Sailing Club,club,,4101,,-27.484254,153.009661,postcode_centroid,Brisbane,
+South_East_Leisure,South East Leisure,club,,3175,,-38.016114,145.208504,postcode_centroid,Casey,
+St_Kilda_Football_Club,St Kilda Football Club,club,,3182,,-37.865322,144.979478,postcode_centroid,Port Phillip,
+Stallions_Netball_Club,Stallions Netball Club,club,,3175,,-38.016114,145.208504,postcode_centroid,Casey,
+Sunbury_United_Football_Club,Sunbury United Football Club,club,,3429,,-37.56762,144.728973,postcode_centroid,Hume,
+Sunshine_Leisure_Centre,Sunshine Leisure Centre,club,,3020,,-37.777204,144.829945,postcode_centroid,Brimbank,
+Tarneit_Basketball_Club,Tarneit Basketball Club,club,,3029,,-37.837165,144.705831,postcode_centroid,Melton,
+Temora_Gliding_Club,Temora Gliding Club,club,,2666,,-34.487779,147.583811,postcode_centroid,Coolamon,
+Temora_Pistol_Club,Temora Pistol Club,club,,2666,,-34.487779,147.583811,postcode_centroid,Coolamon,
+Toowoomba_Basketball,Toowoomba Basketball,club,,4350,,-27.562461,151.940764,postcode_centroid,Toowoomba,
+Tumut_and_District_Hockey_Association,Tumut and District Hockey Association,club,,2720,,-35.379935,148.383619,postcode_centroid,Snowy Valleys,
+United_Khalsa_Hockey_Club,United Khalsa Hockey Club,club,,3064,,-37.546522,144.942199,postcode_centroid,Whittlesea,
+Waverley_Council,Waverley Council,club,,3149,,-37.880748,145.128118,postcode_centroid,Monash,
+Werribee_All_Abilities_Basketball,Werribee All Abilities Basketball,club,,3030,,-37.91624,144.64209,postcode_centroid,Wyndham,
+West_Brunswick_Football_Club,West Brunswick Football Club,club,,3055,,-37.763584,144.942222,postcode_centroid,Moreland,
+Western_Districts_Netball_Association,Western Districts Netball Association,club,,4101,,-27.484254,153.009661,postcode_centroid,Brisbane,
+Wyndham_Basketball_Association,Wyndham Basketball Association,club,,3030,,-37.91624,144.64209,postcode_centroid,Wyndham,
+Youlden_Parkville_Cricket_Club,Youlden Parkville Cricket Club,club,,3052,,-37.788996,144.948903,postcode_centroid,Moreland,
+Active_Schools,Active Schools,club,,3000,,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+African_Women_and_Families_Network,African Women and Families Network,club,,3000,,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Alternatives_to_Violence_Project,Alternatives to Violence Project,club,,2042,,-33.900649,151.175354,postcode_centroid,Sydney,
+Amie_St_Clair_–_Melanoma_Institute_Australia,Amie St Clair – Melanoma Institute Australia,club,,2006,,-33.889219,151.186507,postcode_centroid,Sydney,
+Australian_Red_Cross,Australian Red Cross,club,,3000,,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Baba_Mazari_Foundation,Baba Mazari Foundation,club,,3000,,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Barellan_Working_Clydesdales,Barellan Working Clydesdales,club,,2665,,-34.313241,146.841533,postcode_centroid,Carrathool,
+CALD_Connect,CALD Connect,club,,3000,,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Cohealth,Cohealth,club,,3000,,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Country_University_Centre_Griffith,Country University Centre Griffith,club,,2680,,-34.321422,145.914625,postcode_centroid,Murrumbidgee,
+CWA_(Temora_Branch),CWA (Temora Branch),club,,2666,,-34.487779,147.583811,postcode_centroid,Coolamon,
+Days_for_Girls_Wagga,Days for Girls Wagga,club,,2650,,-35.07459,147.376202,postcode_centroid,Wagga Wagga,
+Demonstration_Gardens_Wagga_Wagga,Demonstration Gardens Wagga Wagga,club,,2650,,-35.07459,147.376202,postcode_centroid,Wagga Wagga,
+Downside_Rural_Fire_Brigade,Downside Rural Fire Brigade,club,,2650,,-35.07459,147.376202,postcode_centroid,Wagga Wagga,
+Foundation_House,Foundation House,club,,3053,,-37.803569,144.966112,postcode_centroid,Melbourne,
+Friends_of_Temora_Shire_Cemeteries,Friends of Temora Shire Cemeteries,club,,2666,,-34.487779,147.583811,postcode_centroid,Coolamon,
+Griffith_Prostate_Cancer_Support_Group,Griffith Prostate Cancer Support Group,club,,2680,,-34.321422,145.914625,postcode_centroid,Murrumbidgee,
+Griffith_Shed_for_Men_Inc,Griffith Shed for Men Inc,club,,2680,,-34.321422,145.914625,postcode_centroid,Murrumbidgee,
+Griffith_Show_Society,Griffith Show Society,club,,2680,,-34.321422,145.914625,postcode_centroid,Murrumbidgee,
+Harden_Murrumburrah_Regional_Development_Corporation,Harden Murrumburrah Regional Development Corporation,club,,2587,,-34.505797,148.360971,postcode_centroid,Hilltops,
+Harvest_Haven_Community_Garden_Tumbarumba,Harvest Haven Community Garden Tumbarumba,club,,2653,,-35.776209,148.041339,postcode_centroid,Snowy Valleys,
+Headspace,Headspace,club,,3000,,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Hume_Leisure,Hume Leisure,club,,3047,,-37.681105,144.930247,postcode_centroid,Hume,
+Intereach,Intereach,club,,2710,,-35.357619,144.984378,postcode_centroid,Hay,
+Islamic_Society_of_Victoria,Islamic Society of Victoria,club,,3031,,-37.79119,144.923403,postcode_centroid,Moonee Valley,
+Kooringal_Rotary,Kooringal Rotary,club,,2650,,-35.07459,147.376202,postcode_centroid,Wagga Wagga,
+Kooringal_Scout_Group,Kooringal Scout Group,club,,2650,,-35.07459,147.376202,postcode_centroid,Wagga Wagga,
+Legacy_Wagga_Wagga,Legacy Wagga Wagga,club,,2650,,-35.07459,147.376202,postcode_centroid,Wagga Wagga,
+Leeton_Connect_Inc,Leeton Connect Inc,club,,2705,,-34.489867,146.373471,postcode_centroid,Leeton,
+Leeton_Shire_Ratepayers_and_Residents,Leeton Shire Ratepayers and Residents,club,,2705,,-34.489867,146.373471,postcode_centroid,Leeton,
+Lions_Club_(Griffith),Lions Club (Griffith),club,,2680,,-34.321422,145.914625,postcode_centroid,Griffith,
+LHAC_Committee,LHAC Committee,club,,2680,,-34.321422,145.914625,postcode_centroid,Murrumbidgee,
+Montreal_Community_Theatre,Montreal Community Theatre,club,,2680,,-34.321422,145.914625,postcode_centroid,Murrumbidgee,
+Mosaic_Multicultural_Ladies_Group,Mosaic Multicultural Ladies Group,club,,2680,,-34.321422,145.914625,postcode_centroid,Murrumbidgee,
+Multicultural_Council_of_Wagga,Multicultural Council of Wagga,club,,2650,,-35.07459,147.376202,postcode_centroid,Wagga Wagga,
+Muslim_Sisters_United_Victoria,Muslim Sisters United Victoria,club,,3000,,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Newcastle_SES,Newcastle SES,club,,2300,,-32.931635,151.778021,postcode_centroid,Newcastle,
+NSW_Health,NSW Health,club,,2000,,-33.86051951,151.2015802,postcode_centroid,Sydney,
+Permaculture_Riverina,Permaculture Riverina,club,,2650,,-35.07459,147.376202,postcode_centroid,Wagga Wagga,
+Riverina_Murray_Regional_Alliance,Riverina Murray Regional Alliance,club,,2650,,-35.07459,147.376202,postcode_centroid,Wagga Wagga,
+Rocky_Hill_Regenerators,Rocky Hill Regenerators,club,,2680,,-34.321422,145.914625,postcode_centroid,Murrumbidgee,
+Rotary_Club_of_Griffith_Avanti,Rotary Club of Griffith Avanti,club,,2680,,-34.321422,145.914625,postcode_centroid,Griffith,
+Rotary_Club_of_Leeton,Rotary Club of Leeton,club,,2705,,-34.489867,146.373471,postcode_centroid,Leeton,
+Rotary_Club_of_Murrumburrah_Harden,Rotary Club of Murrumburrah Harden,club,,2587,,-34.505797,148.360971,postcode_centroid,Hilltops,
+Rotary_Club_of_Tumut,Rotary Club of Tumut,club,,2720,,-35.379935,148.383619,postcode_centroid,Snowy Valleys,
+Rotary_Club_of_Wollundry,Rotary Club of Wollundry,club,,2650,,-35.07459,147.376202,postcode_centroid,Wagga Wagga,
+Rotary_Sunrise_Wagga_Wagga,Rotary Sunrise Wagga Wagga,club,,2650,,-35.07459,147.376202,postcode_centroid,Narrandera,
+Scouts_NSW,Scouts NSW,club,,2011,,-33.873599,151.221626,postcode_centroid,Sydney,
+SCC_Auxiliary,SCC Auxiliary,club,,2680,,-34.321422,145.914625,postcode_centroid,Murrumbidgee,
+SES_NSW_Temora,SES NSW Temora,club,,2666,,-34.487779,147.583811,postcode_centroid,Coolamon,
+Slvation_Army_Leeton,Slvation Army Leeton,club,,2705,,-34.489867,146.373471,postcode_centroid,Narrandera,
+Snowy_Valleys_Heroes_Inc.,Snowy Valleys Heroes Inc.,club,,2720,,-35.379935,148.383619,postcode_centroid,Snowy Valleys,
+Soroptimists_International_Griffith,Soroptimists International Griffith,club,,2680,,-34.321422,145.914625,postcode_centroid,Murrumbidgee,
+Soul_Hub,Soul Hub,club,,2650,,-35.07459,147.376202,postcode_centroid,Wagga Wagga,
+South_Wagga_Rotary,South Wagga Rotary,club,,2650,,-35.07459,147.376202,postcode_centroid,Wagga Wagga,
+St_Vincent_de_Paul_Society,St Vincent de Paul Society,club,,2010,,-33.884119,151.212262,postcode_centroid,Sydney,
+Stories_of_Resilience,Stories of Resilience,club,,2680,,-34.321422,145.914625,postcode_centroid,Murrumbidgee,
+Temora_Aviation_Museum,Temora Aviation Museum,club,,2666,,-34.487779,147.583811,postcode_centroid,Coolamon,
+Temora_Rotary_Club,Temora Rotary Club,club,,2666,,-34.487779,147.583811,postcode_centroid,Coolamon,
+Temora_Town_Hall_Theatre_Film_Club,Temora Town Hall Theatre Film Club,club,,2666,,-34.487779,147.583811,postcode_centroid,Coolamon,
+Townsville_Multicultural_Support_Group,Townsville Multicultural Support Group,club,,4810,,-19.227783,146.764659,postcode_centroid,Townsville,
+Tumbarumba_and_District_Garden_Club,Tumbarumba and District Garden Club,club,,2653,,-35.776209,148.041339,postcode_centroid,Snowy Valleys,
+Tumut_Fijian_Community,Tumut Fijian Community,club,,2720,,-35.379935,148.383619,postcode_centroid,Snowy Valleys,
+Tumut_Hospital_Auxiliary,Tumut Hospital Auxiliary,club,,2720,,-35.379935,148.383619,postcode_centroid,Snowy Valleys,
+UNISONg_Community_Choir,UNISONg Community Choir,club,,2650,,-35.07459,147.376202,postcode_centroid,Wagga Wagga,
+University_of_the_Third_Age,University of the Third Age,club,,3000,,-37.81443733,144.9825846,postcode_centroid,Melbourne,
+Urana_Soldiers'_Memorial_Hall,Urana Soldiers' Memorial Hall,club,,2645,,-35.333843,146.332431,postcode_centroid,Lockhart,
+Wagga_Wagga_Society_of_Model_Engineers,Wagga Wagga Society of Model Engineers,club,,2650,,-35.07459,147.376202,postcode_centroid,Wagga Wagga,
+Wellness_at_Ten_Park_Avenue,Wellness at Ten Park Avenue,club,,2000,,-33.86051951,151.2015802,postcode_centroid,Sydney,
+Wesley_Mission,Wesley Mission,club,,2000,,-33.86051951,151.2015802,postcode_centroid,Sydney,
+Whitton_Town_Improvement_Committee,Whitton Town Improvement Committee,club,,2705,,-34.489867,146.373471,postcode_centroid,Narrandera,
+Griffith_University,Griffith University,uni,,4215,,-33.839,151.147,postcode_centroid,Gold Coast,
+Griffith_University,Griffith University,uni,,4111,,-27.5515001,153.0559687,postcode_centroid,Brisbane,
+Griffith_University,Griffith University,uni,,4101,,-27.47665,153.01667,postcode_centroid,Brisbane,
+Griffith_University,Griffith University,uni,,4131,,-27.676389,153.130833,postcode_centroid,Logan,
+Griffith_University,Griffith University,uni,,4000,,-27.4666186,153.027371,postcode_centroid,Brisbane,
+University_of_New_England,University of New England,uni,,2351,,-30.496064,151.643385,postcode_centroid,Armidale,
+University_of_New_England,University of New England,uni,,2150,,-33.814311,151.002925,postcode_centroid,Parramatta,
+University_of_New_England,University of New England,uni,,2340,,-31.091074,150.931169,postcode_centroid,Tamworth,
+University_of_New_England,University of New England,uni,,2430,,-31.90176,152.521915,postcode_centroid,Mid-Coast,
+Darling_Downs_Tarpaulins,Darling Downs Tarpaulins,workplace,,4350,,-27.501059,151.852006,postcode_centroid,Toowoomba,
+Ningana_Retirement_Village,Ningana Retirement Village,workplace,,4405,,-27.173073,151.271148,postcode_centroid,Western Downs,
+Jimbour_Beef_and_Bacon,Jimbour Beef and Bacon,workplace,,4406,,-26.95951,151.227849,postcode_centroid,Western Downs,
+Carers_Queensland_Toowoomba,Carers Queensland Toowoomba,workplace,,4350,,-27.557749,151.957294,postcode_centroid,Toowoomba,
+MFE_Engineering,MFE Engineering,workplace,,4413,,-26.748277,150.641848,postcode_centroid,Western Downs,
+Runcorn_State_School,Runcorn State School,hub,,4109,QLD,-27.587168,153.061794,postcode_centroid,Brisbane,
