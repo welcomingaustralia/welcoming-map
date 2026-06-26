@@ -362,6 +362,9 @@ Heckenberg_Public_School,Heckenberg Public School,hub,,2168,NSW,-33.908722,-33.9
 Hoxton_Park_Public_School,Hoxton Park Public School,hub,,2171,NSW,-33.932243,150.849268,postcode_centroid,Liverpool,
 Parramatta_West_Public_School,Parramatta West Public School,hub,,2150,NSW,-33.825107,150.992293,postcode_centroid,Parramatta,
 Rydelmere_Public_School,Rydelmere Public School,hub,,2116,NSW,-33.814564,151.04469,postcode_centroid,Parramatta,
+Runcorn_State_School,Runcorn State School,hub,,2502,NSW,-34.50089,150.881481,postcode_centroid,Wollongong,
+Warrawong_Public_School,Warrawong Public School,hub,,2502,NSW,-34.481627,150.877552,postcode_centroid,Wollongong,
+Wollongong_Public_School,Wollongong Public School,hub,,2500,NSW,-34.42286,150.89671,postcode_centroid,Wollongong,
 Acacia_Ridge_State_School,Acacia Ridge State School,hub,,4110,QLD,-27.612178,153.009526,postcode_centroid,Brisbane,
 Inala_State_School,Inala State School,hub,,4077,QLD,-27.587085,152.976019,postcode_centroid,Brisbane,
 Nundah_State_School,Nundah State School,hub,,4012,QLD,-27.40291,153.058341,postcode_centroid,Brisbane,
@@ -573,6 +576,4 @@ Jimbour_Beef_and_Bacon,Jimbour Beef and Bacon,workplace,,4406,,-26.95951,151.227
 Carers_Queensland_Toowoomba,Carers Queensland Toowoomba,workplace,,4350,,-27.557749,151.957294,postcode_centroid,Toowoomba,
 MFE_Engineering,MFE Engineering,workplace,,4413,,-26.748277,150.641848,postcode_centroid,Western Downs,
 Primbee_Public_School,Primbee Public School,hub,,4109,QLD,-27.587168,153.061794,postcode_centroid,Brisbane,
-Runcorn_State_School,Runcorn State School,hub,,2502,NSW,-34.50089,150.881481,postcode_centroid,Wollongong,
-Warrawong_Public_School,Warrawong Public School,hub,,2502,NSW,-34.481627,150.877552,postcode_centroid,Wollongong,
-Wollongong_Public_School,Wollongong Public School,hub,,2500,NSW,-34.42286,150.89671,postcode_centroid,Wollongong,
+
