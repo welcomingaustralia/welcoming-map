@@ -1059,7 +1059,6 @@ Promise.all([
           paddingBottomRight: [20, 80]
         });
         flashLGA(info.layer);
-        highlightLGA(info.layer);
         showLGAPopup(info.displayName, info.layer);
       };
 
@@ -1103,7 +1102,6 @@ mobileLgaInput.addEventListener("input", () => {
       map.setView(centre, 10);
 
       flashLGA(info.layer);
-      highlightLGA(info.layer);
       showLGAPopup(info.displayName, info.layer);
     };
 
