@@ -1302,10 +1302,15 @@ function refreshLGAStyles() {
       
       if (zoomToLGA) {
         const centre = layer.getBounds().getCenter();
+        const currentZoom = map.getZoom();
       
-        const targetZoom = map.getZoom() >= 8
-          ? map.getZoom()
-          : 9;
+        let targetZoom;
+      
+        if (currentZoom >= 7) {
+          targetZoom = currentZoom;
+        } else {
+          targetZoom = 7;
+        }
       
         map.flyTo(centre, targetZoom, {
           duration: 0.8,
