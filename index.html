@@ -1301,18 +1301,10 @@ function refreshLGAStyles() {
       }
       
       if (zoomToLGA) {
-        const centre = layer.getBounds().getCenter();
-        const currentZoom = map.getZoom();
-      
-        let targetZoom;
-      
-        if (currentZoom >= 7) {
-          targetZoom = currentZoom;
-        } else {
-          targetZoom = 7;
-        }
-      
-        map.flyTo(centre, targetZoom, {
+        map.flyToBounds(layer.getBounds(), {
+          maxZoom: 9,
+          paddingTopLeft: [20, 150],
+          paddingBottomRight: [20, 80],
           duration: 0.8,
           easeLinearity: 0.25
         });
