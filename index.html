@@ -1301,13 +1301,29 @@ function refreshLGAStyles() {
       }
       
       if (zoomToLGA) {
-        map.flyToBounds(layer.getBounds(), {
-          maxZoom: 9,
-          paddingTopLeft: [20, 150],
-          paddingBottomRight: [20, 80],
-          duration: 0.8,
-          easeLinearity: 0.25
-        });
+        const bounds = layer.getBounds();
+        const centre = bounds.getCenter();
+        const currentZoom = map.getZoom();
+      
+        const latSpan = Math.abs(bounds.getNorth() - bounds.getSouth());
+        const lngSpan = Math.abs(bounds.getEast() - bounds.getWest());
+      
+        const isTinyLGA = latSpan < 0.25 && lngSpan < 0.25;
+      
+        if (isTinyLGA) {
+          map.flyTo(centre, Math.max(currentZoom, 10), {
+            duration: 0.8,
+            easeLinearity: 0.25
+          });
+        } else if (!map.getBounds().contains(bounds)) {
+          map.flyToBounds(bounds, {
+            maxZoom: 9,
+            paddingTopLeft: [20, 150],
+            paddingBottomRight: [20, 80],
+            duration: 0.8,
+            easeLinearity: 0.25
+          });
+        }
       }
     }
 
