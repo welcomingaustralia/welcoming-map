@@ -396,6 +396,29 @@
     .panelCTAButton:hover {
       background: #b88d23;
     }
+
+    .panelReset {
+      margin-top: 12px;
+    }
+    
+    .resetMapButton {
+      width: 100%;
+      padding: 8px 12px;
+      background: transparent;
+      border: 1px solid #d0d0d0;
+      border-radius: 6px;
+      color: #666;
+      cursor: pointer;
+      transition: all .15s;
+      font-size: 14px;
+    }
+    
+    .resetMapButton:hover {
+      background: #f6f6f6;
+      border-color: #b5b5b5;
+    }
+
+
     
     @media (max-width: 600px) {
       .leaflet-control-layers {
@@ -661,7 +684,13 @@
         <span></span>
       </label>
     </div>
-  </div>
+    </div>
+    
+    <div class="panelReset">
+      <button id="resetMapButton" class="resetMapButton">
+        Reset filters & map
+      </button>
+    </div>
 </div>
   
   <div class="panelSection" id="desktopSummary">
@@ -1682,7 +1711,76 @@ function smartSearchScore(text, query) {
     document.getElementById("toggleAccreditedOnly").checked = e.target.checked;
     refreshAccreditedFilter();
   });
+  
+  document.getElementById("resetMapButton").addEventListener("click", resetMap);
 
+
+  function resetMap() {
+    document.getElementById("lgaSearch").value = "";
+    document.getElementById("orgSearch").value = "";
+    document.getElementById("mobileLgaSearch").value = "";
+    document.getElementById("mobileOrgSearch").value = "";
+  
+    document.querySelectorAll(".clearSearch").forEach(btn => {
+      btn.style.display = "none";
+    });
+  
+    document.querySelectorAll(".searchDropdown").forEach(d => {
+      d.style.display = "none";
+    });
+  
+    document.querySelectorAll(".mobileDropdown").forEach(d => {
+      d.style.display = "none";
+    });
+  
+    stateFilter.value = "ALL";
+    mobileStateFilter.value = "ALL";
+    currentStateFilter = "ALL";
+  
+    map.closePopup();
+  
+    if (selectedLGALayer) {
+      selectedLGALayer.setStyle(lgaStyle(selectedLGALayer.feature));
+      selectedLGALayer = null;
+    }
+  
+    explorerState.selection.lga = null;
+  
+    showWelcomingCities = true;
+    showPalmAlliance = true;
+    showAccreditedOnly = false;
+  
+    document.getElementById("toggleWelcomingCities").checked = true;
+    document.getElementById("togglePalmAlliance").checked = true;
+    document.getElementById("toggleAccreditedOnly").checked = false;
+  
+    document.getElementById("mobileToggleWelcomingCities").checked = true;
+    document.getElementById("mobileTogglePalmAlliance").checked = true;
+    document.getElementById("mobileToggleAccreditedOnly").checked = false;
+  
+    document.querySelectorAll(".desktopLayerToggle").forEach(cb => {
+      cb.checked = true;
+    });
+  
+    document.querySelectorAll(".mobileLayerToggle").forEach(cb => {
+      cb.checked = true;
+    });
+  
+    Object.values(mobileLayerMap).forEach(layer => {
+      if (!map.hasLayer(layer)) {
+        map.addLayer(layer);
+      }
+    });
+  
+    refreshAccreditedFilter();
+    updateExplorerState();
+  
+    map.flyTo([-25.0, 134.0], window.innerWidth <= 600 ? 3 : 5, {
+      duration: 0.8,
+      easeLinearity: 0.25
+    });
+  }
+  
   function applyStateFilter(selectedState) {
     currentStateFilter = selectedState;
     
