@@ -407,6 +407,29 @@
       background: #b88d23;
     }
 
+    .panelFeedback {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #eee;
+      text-align: center;
+    }
+    
+    .panelFeedbackText {
+      font-size: 11px;
+      color: #777;
+      line-height: 1.5;
+    }
+    
+    .panelFeedbackText a {
+      color: #CCA234;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    
+    .panelFeedbackText a:hover {
+      text-decoration: underline;
+    }
+
     .panelReset {
       margin-top: 12px;
       text-align: center;
@@ -727,6 +750,18 @@
         Learn how to get involved
       </a>
     </div>
+
+    <div class="panelFeedback">
+      <div class="panelFeedbackText">
+        Notice something that needs updating?<br>
+        If information about your organisation has changed,
+        <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=e6hleTFTo0e3b5Gtt7nU5EZ6ScBX2pBCobzR4ccDa9pUMkhJUlVWVE9KTTBDQjFVRk02V1FKQ0pHUC4u"
+           target="_blank"
+           rel="noopener noreferrer">
+          submit an update here.
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -833,16 +868,29 @@
   
       <div style="border-top:1px solid #ddd; margin:10px 0 8px 0;"></div>
   
-      <div class="layerRow">
-        <span>Show Accredited Only</span>
-        <label class="switch">
-          <input type="checkbox" id="mobileToggleAccreditedOnly">
-          <span></span>
-        </label>
+            <div class="layerRow">
+              <span>Show Accredited Only</span>
+              <label class="switch">
+                <input type="checkbox" id="mobileToggleAccreditedOnly">
+                <span></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      
+        <div class="panelFeedback">
+          <div class="panelFeedbackText">
+            Notice something that needs updating?<br>
+            If information about your organisation has changed,
+            <a href="YOUR_MICROSOFT_FORM_LINK"
+               target="_blank"
+               rel="noopener noreferrer">
+              submit an update here.
+            </a>
+          </div>
+        </div>
+      
       </div>
-    </div>
-  </div>
-</div>
 
 <div id="map"></div>
 
