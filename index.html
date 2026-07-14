@@ -304,6 +304,27 @@
       border-radius: 8px;
       padding: 10px 12px;
     }
+
+    @keyframes overviewCardFlash {
+      0% {
+        background-color: #f7f7f7;
+        border-color: #ddd;
+      }
+    
+      35% {
+        background-color: #fff4cf;
+        border-color: #CCA234;
+      }
+    
+      100% {
+        background-color: #f7f7f7;
+        border-color: #ddd;
+      }
+    }
+    
+    .overviewCard.flashUpdate {
+      animation: overviewCardFlash 0.9s ease-out;
+    }
     
     .overviewCard h4 {
       margin: 0 0 8px 0;
@@ -2044,6 +2065,20 @@ function updateExplorerState() {
   renderExplorerSummary();
 }
 
+function flashOverviewCard() {
+  const card = document.querySelector(
+    "#desktopSummaryContent .overviewCard"
+  );
+
+  if (!card) return;
+
+  card.classList.remove("flashUpdate");
+
+  void card.offsetWidth;
+
+  card.classList.add("flashUpdate");
+}
+  
 function setExplorerLGA(rawName, layer) {
   const code = layer.feature.properties.LGA_CODE25;
   const key = normaliseName(rawName);
@@ -2208,7 +2243,8 @@ function setExplorerLGA(rawName, layer) {
           </div>
         </div>
       `;
-  
+
+      flashOverviewCard();
       return;
     }
   
@@ -2271,7 +2307,9 @@ function setExplorerLGA(rawName, layer) {
         </div>
       </div>
     `;
+    flashOverviewCard();
   }
+
   updateExplorerState();
 
 
