@@ -1511,6 +1511,7 @@ function refreshLGAStyles() {
       weight: 2,
       title: r.name,
       postcode: r.postcode,
+      lga: (r.lga_name || "").trim(),
       state: (r.state || "").trim().toUpperCase(),
       type: type,
       institutionId: institutionId,
@@ -1677,7 +1678,7 @@ function smartSearchScore(text, query) {
 
     matches.forEach(marker => {
       const item = document.createElement("div");
-      item.innerText = `${marker.options.title} (${marker.options.postcode || ""})`;
+      item.innerText = `${marker.options.title} (${marker.options.lga || ""})`;
 
       item.onclick = () => {
         orgInput.value = marker.options.title;
@@ -2469,7 +2470,7 @@ mobileOrgInput.addEventListener("input", () => {
 
   matches.forEach(marker => {
     const item = document.createElement("div");
-    item.innerText = `${marker.options.title} (${marker.options.postcode || ""})`;
+    item.innerText = `${marker.options.title} (${marker.options.lga || ""})`;
 
     item.onclick = () => {
       mobileOrgInput.value = marker.options.title;
