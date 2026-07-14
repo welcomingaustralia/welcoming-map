@@ -701,7 +701,7 @@
     <div class="layerRow">
       <span><span class="legendDot hubDot"></span> Community Hubs</span>
       <label class="switch">
-        <input type="checkbox" class="desktopLayerToggle" data-layer="hub" checked>
+        <input type="checkbox" class="desktopLayerToggle" data-layer="hub">
         <span></span>
       </label>
     </div>
@@ -709,7 +709,7 @@
     <div class="layerRow">
       <span><span class="legendDot crispDot"></span> CRISP Settlements</span>
       <label class="switch">
-        <input type="checkbox" class="desktopLayerToggle" data-layer="crisp" checked>
+        <input type="checkbox" class="desktopLayerToggle" data-layer="crisp">
         <span></span>
       </label>
     </div>
@@ -850,7 +850,7 @@
       <div class="layerRow">
         <span><span class="legendDot hubDot"></span> Community Hubs</span>
         <label class="switch">
-          <input type="checkbox" class="mobileLayerToggle" data-layer="hub" checked>
+          <input type="checkbox" class="mobileLayerToggle" data-layer="hub">
           <span></span>
         </label>
       </div>
@@ -858,7 +858,7 @@
       <div class="layerRow">
         <span><span class="legendDot crispDot"></span> CRISP Settlements</span>
         <label class="switch">
-          <input type="checkbox" class="mobileLayerToggle" data-layer="crisp" checked>
+          <input type="checkbox" class="mobileLayerToggle" data-layer="crisp">
           <span></span>
         </label>
       </div>
@@ -1537,8 +1537,8 @@ function refreshLGAStyles() {
   workplaceCluster.addTo(map);
   clubCluster.addTo(map);
   copCluster.addTo(map);
-  hubCluster.addTo(map);
-  crispLayer.addTo(map);
+  //hubCluster.addTo(map);
+  //crispLayer.addTo(map);
 
   function applyJitterToMarkers(clusterGroup) {
     clusterGroup.eachLayer(marker => {
@@ -1822,15 +1822,17 @@ function smartSearchScore(text, query) {
     document.getElementById("mobileToggleAccreditedOnly").checked = false;
   
     document.querySelectorAll(".desktopLayerToggle").forEach(cb => {
-      cb.checked = true;
+      cb.checked = !["hub", "crisp"].includes(cb.dataset.layer);
     });
-  
+    
     document.querySelectorAll(".mobileLayerToggle").forEach(cb => {
-      cb.checked = true;
+      cb.checked = !["hub", "crisp"].includes(cb.dataset.layer);
     });
   
-    Object.values(mobileLayerMap).forEach(layer => {
-      if (!map.hasLayer(layer)) {
+    Object.entries(mobileLayerMap).forEach(([key, layer]) => {
+      if (["hub", "crisp"].includes(key)) {
+        map.removeLayer(layer);
+      } else if (!map.hasLayer(layer)) {
         map.addLayer(layer);
       }
     });
