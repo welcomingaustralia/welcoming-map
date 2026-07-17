@@ -24,6 +24,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <style>
     html, body {
@@ -487,6 +488,40 @@
       border-color: #b5b5b5;
     }
 
+    .summaryExport {
+      margin-top: 10px;
+      text-align: center;
+      display: none;
+    }
+    
+    .exportSummaryButton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+    
+      padding: 7px 14px;
+    
+      background: white;
+      color: #666;
+    
+      border: 1px solid #d0d0d0;
+      border-radius: 5px;
+    
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+    
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    
+    .exportSummaryButton:hover {
+      background: #f6f6f6;
+      border-color: #CCA234;
+      color: #444;
+    }
+
 
     
     @media (max-width: 600px) {
@@ -773,6 +808,12 @@
   <div class="panelSection" id="desktopSummary">
     <h3>Overview</h3>
     <div id="desktopSummaryContent"></div>
+    <div id="summaryExport" class="summaryExport">
+      <button id="exportSummaryButton" class="exportSummaryButton">
+        <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+        Download LGA Summary
+      </button>
+    </div>
   
     <div class="panelCTA">
       <div class="panelCTAText">
@@ -1133,6 +1174,14 @@ function refreshLGAStyles() {
   }
 }
 
+  function cleanPDFText(value) {
+    return String(value ?? "")
+      .replace(/[–—]/g, "-")
+      .replace(/[‘’]/g, "'")
+      .replace(/[“”]/g, '"')
+      .trim();
+  }
+
   function refreshAccreditedFilter() {
     refreshLGAStyles();
   
@@ -1443,6 +1492,12 @@ function refreshLGAStyles() {
       selectedLGALayer = null;
     
       explorerState.selection.lga = null;
+    const summaryExport =
+      document.getElementById("summaryExport");
+    
+    if (summaryExport) {
+      summaryExport.style.display = "none";
+    }
       renderExplorerSummary();
     
       map.flyTo([-25.0, 134.0], window.innerWidth <= 600 ? 3 : 5, {
@@ -1855,6 +1910,12 @@ function smartSearchScore(text, query) {
     }
   
     explorerState.selection.lga = null;
+    const summaryExport =
+      document.getElementById("summaryExport");
+    
+    if (summaryExport) {
+      summaryExport.style.display = "none";
+    }
   
     showWelcomingCities = true;
     showPalmAlliance = true;
@@ -1928,6 +1989,12 @@ function smartSearchScore(text, query) {
           selectedLGALayer = null;
       }
       explorerState.selection.lga = null;
+          const summaryExport =
+            document.getElementById("summaryExport");
+          
+          if (summaryExport) {
+            summaryExport.style.display = "none";
+          }
       renderExplorerSummary();
       map.setView([-25.0, 134.0], window.innerWidth <= 600 ? 3 : 5);
     } else if (stateBounds[selectedState]) {
@@ -2079,6 +2146,390 @@ function flashOverviewCard() {
 
   card.classList.add("flashUpdate");
 }
+
+
+function getOrganisationsForLGA(lgaName) {
+  const organisations = new Map();
+
+  points.forEach(row => {
+    if (
+      normaliseName(row.lga_name) !== normaliseName(lgaName)
+    ) {
+      return;
+    }
+
+    const type = (row.type || "").trim().toLowerCase();
+
+    if (!["uni", "workplace", "club", "cop", "hub"].includes(type)) {
+      return;
+    }
+
+    const name = (row.name || "").trim();
+
+    if (!name) return;
+
+    const institutionId =
+      row.institution_id?.trim() ||
+      `${type}-${normaliseName(name)}`;
+
+    const uniqueKey = `${type}-${institutionId}`;
+
+    if (!organisations.has(uniqueKey)) {
+      organisations.set(uniqueKey, {
+        name,
+        type,
+        accreditationLevel:
+          row.accreditation_level?.trim() || ""
+      });
+    }
+  });
+
+  return [...organisations.values()].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
+}
+
+function exportLGASummary() {
+  const selectedLGA = explorerState.selection.lga;
+
+  if (!selectedLGA) {
+    alert("Please select a council area before downloading a summary.");
+    return;
+  }
+
+  if (!window.jspdf?.jsPDF) {
+    alert("The PDF library could not be loaded. Please refresh the page and try again.");
+    return;
+  }
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({
+    orientation: "portrait",
+    unit: "mm",
+    format: "a4"
+  });
+
+  const lgaName = cleanPDFText(selectedLGA.name);
+  const profile = selectedLGA.profile;
+  const organisations = getOrganisationsForLGA(selectedLGA.name);
+
+  const groups = {
+    uni: organisations.filter(org => org.type === "uni"),
+    workplace: organisations.filter(org => org.type === "workplace"),
+    club: organisations.filter(org => org.type === "club"),
+    cop: organisations.filter(org => org.type === "cop"),
+    hub: organisations.filter(org => org.type === "hub")
+  };
+
+  const coreOrganisationCount =
+    groups.uni.length +
+    groups.workplace.length +
+    groups.club.length +
+    groups.cop.length;
+
+  const isWelcoming =
+    profile.welcoming_city_member?.trim().toUpperCase() === "Y";
+
+  const isPalm =
+    profile.palm_alliance?.trim().toUpperCase() === "Y";
+
+  const accreditation =
+    profile.welcoming_city_accreditation?.trim() || "Not accredited";
+
+  const crispSettled = Number(profile.crisp_settled || 0);
+
+  const exportDate = new Intl.DateTimeFormat("en-AU", {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  }).format(new Date());
+
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const pageHeight = doc.internal.pageSize.getHeight();
+
+  const leftMargin = 18;
+  const rightMargin = 18;
+  const contentWidth = pageWidth - leftMargin - rightMargin;
+
+  let y = 18;
+
+  function addPageIfNeeded(requiredHeight = 12) {
+    if (y + requiredHeight <= pageHeight - 18) return;
+
+    addFooter();
+    doc.addPage();
+    y = 20;
+  }
+
+  function addFooter() {
+    const pageNumber = doc.internal.getNumberOfPages();
+
+    doc.setDrawColor(220);
+    doc.line(
+      leftMargin,
+      pageHeight - 14,
+      pageWidth - rightMargin,
+      pageHeight - 14
+    );
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(8);
+    doc.setTextColor(115);
+
+    doc.text(
+      "Generated from the Welcoming Australia Explorer",
+      leftMargin,
+      pageHeight - 9
+    );
+
+    doc.text(
+      `Page ${pageNumber}`,
+      pageWidth - rightMargin,
+      pageHeight - 9,
+      { align: "right" }
+    );
+  }
+
+  function addSectionHeading(text) {
+    addPageIfNeeded(12);
+
+    y += 4;
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    doc.setTextColor(140, 108, 25);
+
+    doc.text(cleanPDFText(text).toUpperCase(), leftMargin, y);
+
+    y += 3;
+
+    doc.setDrawColor(204, 162, 52);
+    doc.line(leftMargin, y, pageWidth - rightMargin, y);
+
+    y += 7;
+  }
+
+  function addKeyValue(label, value) {
+    addPageIfNeeded(8);
+
+    doc.setFontSize(10);
+    doc.setTextColor(50);
+
+    doc.setFont("helvetica", "normal");
+    doc.text(cleanPDFText(label), leftMargin, y);
+
+    doc.setFont("helvetica", "bold");
+    doc.text(
+      cleanPDFText(value),
+      pageWidth - rightMargin,
+      y,
+      { align: "right" }
+    );
+
+    y += 6;
+  }
+  
+  function addParagraph(text) {
+    const lines = doc.splitTextToSize(
+      cleanPDFText(text),
+      contentWidth
+    );
+  
+    addPageIfNeeded(lines.length * 4.5 + 4);
+  
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(9);
+    doc.setTextColor(90);
+  
+    doc.text(lines, leftMargin, y);
+  
+    y += lines.length * 4.5 + 5;
+  }
+  
+  function addOrganisationSection(title, items) {
+    if (!items.length) return;
+
+    addSectionHeading(title);
+
+    items.forEach(org => {
+      const accreditationText = org.accreditationLevel
+        ? ` - ${org.accreditationLevel}`
+        : "";
+
+      const fullText =
+        `• ${cleanPDFText(org.name)}${cleanPDFText(accreditationText)}`;
+
+      const lines = doc.splitTextToSize(
+        fullText,
+        contentWidth - 5
+      );
+
+      addPageIfNeeded(lines.length * 5 + 2);
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(10);
+      doc.setTextColor(50);
+
+      doc.text(lines, leftMargin + 2, y);
+
+      y += lines.length * 5 + 2;
+    });
+  }
+
+  // Header
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(17);
+  doc.setTextColor(65);
+
+  doc.text("Welcoming Australia Explorer", leftMargin, y);
+
+  y += 10;
+
+  doc.setFontSize(20);
+  doc.setTextColor(0);
+  doc.text(lgaName, leftMargin, y);
+
+  y += 7;
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.setTextColor(100);
+  doc.text("LGA Community Summary", leftMargin, y);
+
+  doc.text(
+    `Generated ${exportDate}`,
+    pageWidth - rightMargin,
+    y,
+    { align: "right" }
+  );
+
+  y += 5;
+
+  doc.setDrawColor(204, 162, 52);
+  doc.setLineWidth(0.8);
+  doc.line(leftMargin, y, pageWidth - rightMargin, y);
+
+  y += 8;
+
+  // Community profile
+  addSectionHeading("Community profile");
+
+  addKeyValue(
+    "Born overseas",
+    profile.overseas_born_pct
+      ? `${profile.overseas_born_pct}%`
+      : "Not available"
+  );
+
+  addKeyValue(
+    "Language other than English",
+    profile.language_other_than_english_pct
+      ? `${profile.language_other_than_english_pct}%`
+      : "Not available"
+  );
+
+  // Welcoming presence
+  addSectionHeading("Welcoming Australia presence");
+
+  addKeyValue(
+    "Welcoming City",
+    isWelcoming ? "Yes" : "No"
+  );
+
+  addKeyValue(
+    "Accreditation",
+    accreditation
+  );
+
+  addKeyValue(
+    "PALM Mayoral Alliance",
+    isPalm ? "Yes" : "No"
+  );
+
+  addKeyValue(
+    "Participating organisations",
+    coreOrganisationCount
+  );
+
+  addParagraph(
+  "The organisations listed below are involved in one or more Welcoming Australia initiatives or networks. Their inclusion shows how they are engaging with this work in the selected LGA."
+);
+
+  // Organisation lists
+  addOrganisationSection(
+    "Welcoming Universities",
+    groups.uni
+  );
+
+  addOrganisationSection(
+    "Welcoming Workplaces",
+    groups.workplace
+  );
+
+  addOrganisationSection(
+    "Welcoming Clubs",
+    groups.club
+  );
+
+  addOrganisationSection(
+    "Community Organisations",
+    groups.cop
+  );
+
+  // Additional information
+  if (groups.hub.length || crispSettled > 0) {
+    addSectionHeading("Additional information");
+    addParagraph(
+  "Community Hubs and CRISP are included as connected initiatives within the broader welcoming ecosystem. They are shown to provide a fuller picture of local activity and community connections."
+);
+
+    if (groups.hub.length) {
+      addKeyValue(
+        "Community Hubs",
+        groups.hub.length
+      );
+
+      groups.hub.forEach(org => {
+        const lines = doc.splitTextToSize(
+          `• ${cleanPDFText(org.name)}`,
+          contentWidth - 8
+        );
+
+        addPageIfNeeded(lines.length * 5 + 2);
+
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(9.5);
+        doc.setTextColor(70);
+
+        doc.text(lines, leftMargin + 4, y);
+        y += lines.length * 5 + 1;
+      });
+    }
+
+    if (crispSettled > 0) {
+      y += 2;
+
+      addKeyValue(
+        "People settled through CRISP",
+        publicCountText(crispSettled)
+      );
+    }
+  }
+
+  addFooter();
+
+  const safeFilename = lgaName
+    .replace(/[^a-z0-9]+/gi, "-")
+    .replace(/^-|-$/g, "");
+
+  doc.save(
+    `${safeFilename}-Welcoming-Community-Summary.pdf`
+  );
+}
+  
+  document
+  .getElementById("exportSummaryButton")
+  .addEventListener("click", exportLGASummary);
   
 function setExplorerLGA(rawName, layer) {
   const code = layer.feature.properties.LGA_CODE25;
@@ -2101,10 +2552,17 @@ function setExplorerLGA(rawName, layer) {
     counts
   };
 
-  renderExplorerSummary();
-}
+  const summaryExport =
+    document.getElementById("summaryExport");
 
-  
+  if (summaryExport) {
+    summaryExport.style.display = "block";
+  }
+
+  renderExplorerSummary();
+} 
+
+
   function renderExplorerSummary() {
     const summary = document.getElementById("desktopSummaryContent");
     if (!summary) return;
@@ -2514,6 +2972,12 @@ mobileOrgInput.addEventListener("input", () => {
         }
 
         explorerState.selection.lga = null;
+        const summaryExport =
+          document.getElementById("summaryExport");
+        
+        if (summaryExport) {
+          summaryExport.style.display = "none";
+        }
         renderExplorerSummary();
 
         map.setView([-25.0, 134.0], window.innerWidth <= 600 ? 3 : 5);
