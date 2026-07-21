@@ -1304,10 +1304,16 @@ function refreshLGAStyles() {
   
       group.addLayer(marker);
     });
+    const crispToggle = document.querySelector(
+      '.desktopLayerToggle[data-layer="crisp"]'
+    );
+    
     if (showAccreditedOnly) {
       map.removeLayer(crispLayer);
-    } else {
+    } else if (crispToggle?.checked) {
       map.addLayer(crispLayer);
+    } else {
+      map.removeLayer(crispLayer);
     }
   }
   
