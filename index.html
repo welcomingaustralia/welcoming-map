@@ -281,6 +281,75 @@
       font-size: 13px;
     }
 
+    .layerLabelWithInfo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      
+      .layerInfoButton {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      
+        width: 17px;
+        height: 17px;
+        padding: 0;
+      
+        border: none;
+        background: transparent;
+        color: #777;
+      
+        font-size: 14px;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      
+      .layerInfoButton:hover,
+      .layerInfoButton:focus {
+        color: #CCA234;
+        outline: none;
+      }
+      
+      .layerInfoButton::after {
+        content: attr(data-info);
+      
+        position: absolute;
+        left: 50%;
+        bottom: calc(100% + 8px);
+        transform: translateX(-50%);
+      
+        width: 230px;
+        padding: 8px 10px;
+      
+        background: #333;
+        color: white;
+      
+        border-radius: 5px;
+        box-shadow: 0 2px 7px rgba(0,0,0,0.25);
+      
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 1.4;
+        text-align: left;
+      
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      
+        transition: opacity 0.15s;
+        z-index: 70000;
+      }
+      
+      .layerInfoButton:hover::after,
+      .layerInfoButton:focus::after,
+      .layerInfoButton.infoOpen::after {
+        opacity: 1;
+        visibility: visible;
+      }
+
 
   
     
@@ -760,7 +829,18 @@
     </div>
 
     <div class="layerRow">
-      <span><span class="legendDot copDot"></span> Community Organisations</span>
+      <span class="layerLabelWithInfo">
+        <span class="legendDot copDot"></span>
+        Community Organisations
+      
+        <button
+          type="button"
+          class="layerInfoButton"
+          aria-label="Information about Community Organisations"
+          data-info="These organisations participate in a Community of Practice facilitated by Welcoming Australia and are shown as members of that network.">
+          <i class="fa fa-info-circle" aria-hidden="true"></i>
+        </button>
+      </span>
       <label class="switch">
         <input type="checkbox" class="desktopLayerToggle" data-layer="cop" checked>
         <span></span>
@@ -923,7 +1003,18 @@
       </div>
   
       <div class="layerRow">
-        <span><span class="legendDot copDot"></span> Community Organisations</span>
+        <span class="layerLabelWithInfo">
+          <span class="legendDot copDot"></span>
+          Community Organisations
+        
+          <button
+            type="button"
+            class="layerInfoButton"
+            aria-label="Information about Community Organisations"
+            data-info="These organisations participate in a Community of Practice facilitated by Welcoming Australia and are shown as members of that network.">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+          </button>
+        </span>
         <label class="switch">
           <input type="checkbox" class="mobileLayerToggle" data-layer="cop" checked>
           <span></span>
@@ -1838,6 +1929,29 @@ function smartSearchScore(text, query) {
       } else {
         map.removeLayer(layer);
       }
+    });
+  });
+
+  document.querySelectorAll(".layerInfoButton").forEach(button => {
+    button.addEventListener("click", event => {
+      event.preventDefault();
+      event.stopPropagation();
+  
+      const isOpen = button.classList.contains("infoOpen");
+  
+      document.querySelectorAll(".layerInfoButton").forEach(otherButton => {
+        otherButton.classList.remove("infoOpen");
+      });
+  
+      if (!isOpen) {
+        button.classList.add("infoOpen");
+      }
+    });
+  });
+  
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".layerInfoButton").forEach(button => {
+      button.classList.remove("infoOpen");
     });
   });
 
