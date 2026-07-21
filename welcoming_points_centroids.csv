@@ -38,12 +38,12 @@ University_of_Tasmania,University of Tasmania,uni,,7000,TAS,-42.879801,147.32557
 University_of_Tasmania,University of Tasmania,uni,,7004,TAS,-42.88613,147.335796,postcode_centroid,Hobart,
 University_of_Tasmania,University of Tasmania,uni,,7053,TAS,-42.949453,147.353784,postcode_centroid,Kingborough,
 University_of_Tasmania,University of Tasmania,uni,,7248,TAS,-41.400539,147.12568,postcode_centroid,Launceston,
-Victoria_University,Victoria University,uni,,3011,VIC,-37.793746,144.898585,postcode_centroid,Maribyrnong,Advanced,
-Victoria_University,Victoria University,uni,,3021,VIC,-37.755416,144.799813,postcode_centroid,Brimbank,Advanced,
-Victoria_University,Victoria University,uni,,3022,VIC,-37.777708,144.835794,postcode_centroid,Brimbank,Advanced,
-Victoria_University,Victoria University,uni,,3030,VIC,-37.889445,144.700342,postcode_centroid,Wyndham,Advanced,
-Victoria_University,Victoria University,uni,,4006,QLD,-27.45657,153.035065,postcode_centroid,Brisbane,Advanced,
-Victoria_University,Victoria University,uni,,3000,VIC,-37.8121,144.9585,postcode_centroid,Melbourne,Advanced,
+Victoria_University,Victoria University,uni,,3011,VIC,-37.793746,144.898585,postcode_centroid,Maribyrnong,Advanced
+Victoria_University,Victoria University,uni,,3021,VIC,-37.755416,144.799813,postcode_centroid,Brimbank,Advanced
+Victoria_University,Victoria University,uni,,3022,VIC,-37.777708,144.835794,postcode_centroid,Brimbank,Advanced
+Victoria_University,Victoria University,uni,,3030,VIC,-37.889445,144.700342,postcode_centroid,Wyndham,Advanced
+Victoria_University,Victoria University,uni,,4006,QLD,-27.45657,153.035065,postcode_centroid,Brisbane,Advanced
+Victoria_University,Victoria University,uni,,3000,VIC,-37.8121,144.9585,postcode_centroid,Melbourne,Advanced
 Curtin_University,Curtin University,uni,,6102,WA,-32.001824,115.8875,postcode_centroid,Canning,
 Curtin_University,Curtin University,uni,,6000,WA,-31.954307,115.854592,postcode_centroid,Perth,
 Flinders_University,Flinders University,uni,,5042,SA,-35.016808,138.567884,postcode_centroid,Marion,
