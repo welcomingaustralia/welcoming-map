@@ -1490,6 +1490,11 @@ function refreshLGAStyles() {
           <span>Community profile</span>
           <strong></strong>
         </div>
+
+        <div class="summaryRow">
+          <span>Population</span>
+          <strong>${Number(profile.population).toLocaleString("en-AU")}</strong>
+        </div>
   
         <div class="summaryRow">
           <span>Born overseas</span>
@@ -2533,6 +2538,11 @@ function exportLGASummary() {
 
   // Community profile
   addSectionHeading("Community profile");
+
+  addKeyValue(
+    "Population",
+    Number(profile.population).toLocaleString("en-AU")
+  );
 
   addKeyValue(
     "Born overseas",
