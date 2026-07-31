@@ -1462,6 +1462,28 @@ function refreshLGAStyles() {
                   }
                 </strong>
               </div>
+
+              ${
+          accreditation
+            ? `
+              <div class="summaryRow subSubRow">
+                <span>Accreditation</span>
+                <strong>${accreditation}</strong>
+              </div>
+            `
+            : ""
+        }
+  
+        ${
+          isPalm
+            ? `
+              <div class="summaryRow">
+                <span>PALM Alliance</span>
+                <strong>Yes</strong>
+              </div>
+            `
+            : ""
+        }
   
               ${initiativeRows.map(row => `
                 <div class="summaryRow subRow">
