@@ -1422,79 +1422,58 @@ function refreshLGAStyles() {
       <div class="lgaPopupContent">
         <h4>${publicLGAName(rawName)}</h4>
   
-        <div class="summaryRow">
-          <span>Welcoming Cities</span>
-          <strong>${isWelcoming ? "Yes" : "No"}</strong>
-        </div>
-  
         ${
-          accreditation
-            ? `
-              <div class="summaryRow subSubRow">
-                <span>Accreditation</span>
-                <strong>${accreditation}</strong>
-              </div>
-            `
-            : ""
-        }
-  
-        ${
-          isPalm
-            ? `
-              <div class="summaryRow">
-                <span>PALM Alliance</span>
-                <strong>Yes</strong>
-              </div>
-            `
-            : ""
-        }
-  
-        ${
-          hasAnyInitiative
-            ? `
-             <div class="summaryRow totalRow">
-                <span>Welcoming initiatives</span>
-                <strong>
-                  ${
-                    initiativeRows.reduce((sum, row) => sum + row[1], 0) +
-                    (isWelcoming ? 1 : 0) +
-                    (isPalm ? 1 : 0)
-                  }
-                </strong>
-              </div>
+  hasAnyInitiative
+    ? `
+      <div class="summaryRow totalRow">
+        <span>Welcoming initiatives</span>
+        <strong>
+          ${
+            initiativeRows.reduce((sum, row) => sum + row[1], 0) +
+            (isWelcoming ? 1 : 0) +
+            (isPalm ? 1 : 0)
+          }
+        </strong>
+      </div>
+    `
+    : ""
+}
 
-              ${
-          accreditation
-            ? `
-              <div class="summaryRow subSubRow">
-                <span>Accreditation</span>
-                <strong>${accreditation}</strong>
-              </div>
-            `
-            : ""
-        }
-  
-        ${
-          isPalm
-            ? `
-              <div class="summaryRow">
-                <span>PALM Alliance</span>
-                <strong>Yes</strong>
-              </div>
-            `
-            : ""
-        }
-  
-              ${initiativeRows.map(row => `
-                <div class="summaryRow subRow">
-                  <span>${row[0]}</span>
-                  <strong>${row[1]}</strong>
-                </div>
-              `).join("")}
-            `
-            : ""
-        }
-  
+<div class="summaryRow subRow">
+  <span>Welcoming Cities</span>
+  <strong>${isWelcoming ? "Yes" : "No"}</strong>
+</div>
+
+    ${
+      accreditation
+        ? `
+          <div class="summaryRow subSubRow">
+            <span>Accreditation</span>
+            <strong>${accreditation}</strong>
+          </div>
+        `
+        : ""
+    }
+    
+    ${
+      isPalm
+        ? `
+          <div class="summaryRow subRow">
+            <span>PALM Alliance</span>
+            <strong>Yes</strong>
+          </div>
+        `
+        : ""
+    }
+    
+    ${initiativeRows.map(row => `
+      <div class="summaryRow subRow">
+        <span>${row[0]}</span>
+        <strong>${row[1]}</strong>
+      </div>
+    `).join("")}
+
+
         ${
           !hasAnyInitiative
             ? `
@@ -2749,66 +2728,55 @@ function setExplorerLGA(rawName, layer) {
           <h4>${lga.name}</h4>
   
           ${
-            isWelcoming
-              ? `
-                <div class="summaryRow">
-                  <span>Welcoming Cities</span>
-                  <strong>Yes</strong>
-                </div>
-              `
-              : `
-                <div class="summaryRow">
-                  <span>Welcoming Cities</span>
-                  <strong>No</strong>
-                </div>
-              `
-          }
-  
+  hasAnyInitiative
+    ? `
+      <div class="summaryRow totalRow">
+        <span>Welcoming initiatives</span>
+        <strong>
           ${
-            accreditation
-              ? `
-                <div class="summaryRow subSubRow">
-                  <span>Accreditation</span>
-                  <strong>${accreditation}</strong>
-                </div>
-              `
-              : ""
+            initiativeRows.reduce((sum, row) => sum + row[1], 0) +
+            (isWelcoming ? 1 : 0) +
+            (isPalm ? 1 : 0)
           }
-  
-          ${
-            isPalm
-              ? `
-                <div class="summaryRow">
-                  <span>PALM Alliance</span>
-                  <strong>Yes</strong>
-                </div>
-              `
-              : ""
-          }
-  
-          ${
-            hasAnyInitiative
-              ? `
-                <div class="summaryRow totalRow">
-                  <span>Welcoming initiatives</span>
-                  <strong>
-                    ${
-                      initiativeRows.reduce((sum, row) => sum + row[1], 0) +
-                      (isWelcoming ? 1 : 0) +
-                      (isPalm ? 1 : 0)
-                    }
-                  </strong>
-                </div>
-  
-                ${initiativeRows.map(row => `
-                  <div class="summaryRow subRow">
-                    <span>${row[0]}</span>
-                    <strong>${row[1]}</strong>
-                  </div>
-                `).join("")}
-              `
-              : ""
-          }
+        </strong>
+      </div>
+    `
+    : ""
+}
+
+<div class="summaryRow subRow">
+  <span>Welcoming Cities</span>
+  <strong>${isWelcoming ? "Yes" : "No"}</strong>
+</div>
+
+${
+  accreditation
+    ? `
+      <div class="summaryRow subSubRow">
+        <span>Accreditation</span>
+        <strong>${accreditation}</strong>
+      </div>
+    `
+    : ""
+}
+
+${
+  isPalm
+    ? `
+      <div class="summaryRow subRow">
+        <span>PALM Alliance</span>
+        <strong>Yes</strong>
+      </div>
+    `
+    : ""
+}
+
+${initiativeRows.map(row => `
+  <div class="summaryRow subRow">
+    <span>${row[0]}</span>
+    <strong>${row[1]}</strong>
+  </div>
+`).join("")}
   
           ${
             !hasAnyInitiative
