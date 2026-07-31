@@ -1450,11 +1450,17 @@ function refreshLGAStyles() {
         }
   
         ${
-          initiativeRows.length
+          hasAnyInitiative
             ? `
-              <div class="summaryRow totalRow">
+             <div class="summaryRow totalRow">
                 <span>Welcoming initiatives</span>
-                <strong>${initiativeRows.reduce((sum, row) => sum + row[1], 0)}</strong>
+                <strong>
+                  ${
+                    initiativeRows.reduce((sum, row) => sum + row[1], 0) +
+                    (isWelcoming ? 1 : 0) +
+                    (isPalm ? 1 : 0)
+                  }
+                </strong>
               </div>
   
               ${initiativeRows.map(row => `
@@ -2759,11 +2765,17 @@ function setExplorerLGA(rawName, layer) {
           }
   
           ${
-            initiativeRows.length
+            hasAnyInitiative
               ? `
                 <div class="summaryRow totalRow">
                   <span>Welcoming initiatives</span>
-                  <strong>${initiativeRows.reduce((sum, row) => sum + row[1], 0)}</strong>
+                  <strong>
+                    ${
+                      initiativeRows.reduce((sum, row) => sum + row[1], 0) +
+                      (isWelcoming ? 1 : 0) +
+                      (isPalm ? 1 : 0)
+                    }
+                  </strong>
                 </div>
   
                 ${initiativeRows.map(row => `
