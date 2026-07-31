@@ -2820,6 +2820,17 @@ function setExplorerLGA(rawName, layer) {
             <span>Community profile</span>
             <strong></strong>
           </div>
+
+          <div class="summaryRow">
+            <span>Population</span>
+            <strong>
+              ${
+                profile.population
+                  ? Number(profile.population).toLocaleString("en-AU")
+                  : "Not available"
+              }
+            </strong>
+          </div>
   
           <div class="summaryRow">
             <span>Born overseas</span>
