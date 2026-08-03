@@ -1589,21 +1589,29 @@ function refreshLGAStyles() {
   }).addTo(map);
 
   map.on("click", () => {
+    
+      if (window.innerWidth <= 600) {
+        map.closePopup();
+        return;
+      }
+    
       if (!selectedLGALayer) return;
     
       selectedLGALayer.setStyle(lgaStyle(selectedLGALayer.feature));
       selectedLGALayer = null;
     
       explorerState.selection.lga = null;
-    const summaryExport =
-      document.getElementById("summaryExport");
     
-    if (summaryExport) {
-      summaryExport.style.display = "none";
-    }
+      const summaryExport =
+        document.getElementById("summaryExport");
+    
+      if (summaryExport) {
+        summaryExport.style.display = "none";
+      }
+    
       renderExplorerSummary();
     
-      map.flyTo([-25.0, 134.0], window.innerWidth <= 600 ? 3 : 5, {
+      map.flyTo([-25.0, 134.0], 5, {
         duration: 0.8,
         easeLinearity: 0.25
       });
@@ -1662,7 +1670,7 @@ function refreshLGAStyles() {
     const jitterLon = (Math.random() - 0.5) * 0.0015;
 
     const marker = L.circleMarker([+r.lat + jitterLat, +r.lon + jitterLon], {
-      radius: 7,
+      radius: isMobile ? 11 : 7,
       color: markerColor,
       fillColor: markerColor,
       fillOpacity: 0.75,
