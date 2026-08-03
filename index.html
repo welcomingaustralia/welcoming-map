@@ -1670,7 +1670,7 @@ function refreshLGAStyles() {
     const jitterLon = (Math.random() - 0.5) * 0.0015;
 
     const marker = L.circleMarker([+r.lat + jitterLat, +r.lon + jitterLon], {
-      radius: isMobile ? 11 : 7,
+      radius: 7,
       color: markerColor,
       fillColor: markerColor,
       fillOpacity: 0.75,
