@@ -1199,8 +1199,13 @@ let explorerState = {
     clubs: 0,
     communityOrganisations: 0,
     communityHubs: 0,
+  
+    accreditedUniversities: 0,
+    accreditedWorkplaces: 0,
+    accreditedClubs: 0,
+  
     total: 0
-  },
+},
   accreditation: {
     established: 0,
     advanced: 0,
@@ -1405,11 +1410,26 @@ function refreshLGAStyles() {
       profile.palm_alliance?.trim().toUpperCase() === "Y";
   
     const accreditation = profile.welcoming_city_accreditation?.trim();
+
+    const accreditedOrganisations =
+      accreditedOrgsByLGA[key] || new Map();
+    
+    const accreditedCounts = {
+      uni: 0,
+      workplace: 0,
+      club: 0
+    };
+    
+    accreditedOrganisations.forEach(org => {
+      if (accreditedCounts[org.type] !== undefined) {
+        accreditedCounts[org.type]++;
+      }
+    });
   
     const initiativeRows = [
-      ["Universities", counts.uni.size],
-      ["Workplaces", counts.workplace.size],
-      ["Clubs", counts.club.size],
+      ["Welcoming Universities", counts.uni.size],
+      ["Welcoming Workplaces", counts.workplace.size],
+      ["Welcoming Clubs", counts.club.size],
       ["Community Organisations", counts.cop.size]
     ].filter(row => row[1] > 0);
   
@@ -1440,7 +1460,7 @@ function refreshLGAStyles() {
 }
 
 <div class="summaryRow subRow">
-  <span>Welcoming Cities</span>
+  <span>• Welcoming Cities</span>
   <strong>${isWelcoming ? "Yes" : "No"}</strong>
 </div>
 
@@ -1459,19 +1479,42 @@ function refreshLGAStyles() {
       isPalm
         ? `
           <div class="summaryRow subRow">
-            <span>PALM Alliance</span>
+            <span>• PALM Alliance</span>
             <strong>Yes</strong>
           </div>
         `
         : ""
     }
     
-    ${initiativeRows.map(row => `
-      <div class="summaryRow subRow">
-        <span>${row[0]}</span>
-        <strong>${row[1]}</strong>
-      </div>
-    `).join("")}
+    ${initiativeRows.map(row => {
+      const typeMap = {
+        "Welcoming Universities": "uni",
+        "Welcoming Workplaces": "workplace",
+        "Welcoming Clubs": "club",
+        "Community Organisations": "cop"
+      };
+    
+      const type = typeMap[row[0]];
+      const accreditedCount = accreditedCounts[type] || 0;
+    
+      return `
+        <div class="summaryRow subRow">
+          <span>• ${row[0]}</span>
+          <strong>${row[1]}</strong>
+        </div>
+    
+        ${
+          accreditedCount > 0
+            ? `
+              <div class="summaryRow subSubRow">
+                <span>Accredited</span>
+                <strong>${accreditedCount}</strong>
+              </div>
+            `
+            : ""
+        }
+      `;
+    }).join("")}
 
 
         ${
@@ -1659,6 +1702,7 @@ function refreshLGAStyles() {
 
         accreditedOrgsByLGA[lgaKey].set(institutionId, {
           name: r.name,
+          type: type,
           level: accreditationLevel
         });
       }
@@ -2165,6 +2209,11 @@ function updateExplorerState() {
       clubs: 0,
       communityOrganisations: 0,
       communityHubs: 0,
+    
+      accreditedUniversities: 0,
+      accreditedWorkplaces: 0,
+      accreditedClubs: 0,
+    
       total: 0
     },
     accreditation: {
@@ -2212,6 +2261,11 @@ function updateExplorerState() {
     cop: new Set(),
     hub: new Set()
   };
+  const accreditedInitiativeIds = {
+    uni: new Set(),
+    workplace: new Set(),
+    club: new Set()
+  };
 
   initiativeMarkers.forEach(marker => {
     const markerState = marker.options.state;
@@ -2220,16 +2274,26 @@ function updateExplorerState() {
   
     const type = marker.options.type;
     const id = marker.options.institutionId || marker.options.title;
-  
+    
     if (initiativeIds[type]) {
       initiativeIds[type].add(id);
+    }
+    
+    const accreditationLevel =
+      marker.options.accreditationLevel?.trim();
+    
+    if (
+      accreditationLevel &&
+      accreditedInitiativeIds[type]
+    ) {
+      accreditedInitiativeIds[type].add(id);
     }
   
     explorerState.organisations.push({
       name: marker.options.title,
       type: marker.options.type,
       state: marker.options.state,
-      accreditation: marker.options.accreditation || ""
+      accreditation: marker.options.accreditationLevel || ""
     });
   });
   explorerState.initiatives.universities = initiativeIds.uni.size;
@@ -2237,6 +2301,15 @@ function updateExplorerState() {
   explorerState.initiatives.clubs = initiativeIds.club.size;
   explorerState.initiatives.communityOrganisations = initiativeIds.cop.size;
   explorerState.initiatives.communityHubs = initiativeIds.hub.size;
+
+  explorerState.initiatives.accreditedUniversities =
+    accreditedInitiativeIds.uni.size;
+  
+  explorerState.initiatives.accreditedWorkplaces =
+    accreditedInitiativeIds.workplace.size;
+  
+  explorerState.initiatives.accreditedClubs =
+    accreditedInitiativeIds.club.size;
   
   const cityOrPalmLgas = new Set();
 
@@ -2718,11 +2791,28 @@ function setExplorerLGA(rawName, layer) {
         profile.palm_alliance?.trim().toUpperCase() === "Y";
   
       const accreditation = profile.welcoming_city_accreditation?.trim();
+
+      const lgaKey = normaliseName(lga.name);
+
+      const accreditedOrganisations =
+        accreditedOrgsByLGA[lgaKey] || new Map();
+      
+      const accreditedCounts = {
+        uni: 0,
+        workplace: 0,
+        club: 0
+      };
+      
+      accreditedOrganisations.forEach(org => {
+        if (accreditedCounts[org.type] !== undefined) {
+          accreditedCounts[org.type]++;
+        }
+      });
   
       const initiativeRows = [
-        ["Universities", counts.uni.size],
-        ["Workplaces", counts.workplace.size],
-        ["Clubs", counts.club.size],
+        ["Welcoming Universities", counts.uni.size],
+        ["Welcoming Workplaces", counts.workplace.size],
+        ["Welcoming Clubs", counts.club.size],
         ["Community Organisations", counts.cop.size]
       ].filter(row => row[1] > 0);
   
@@ -2753,7 +2843,7 @@ function setExplorerLGA(rawName, layer) {
 }
 
 <div class="summaryRow subRow">
-  <span>Welcoming Cities</span>
+  <span>• Welcoming Cities</span>
   <strong>${isWelcoming ? "Yes" : "No"}</strong>
 </div>
 
@@ -2772,19 +2862,42 @@ ${
   isPalm
     ? `
       <div class="summaryRow subRow">
-        <span>PALM Alliance</span>
+        <span>• PALM Alliance</span>
         <strong>Yes</strong>
       </div>
     `
     : ""
 }
 
-${initiativeRows.map(row => `
-  <div class="summaryRow subRow">
-    <span>${row[0]}</span>
-    <strong>${row[1]}</strong>
-  </div>
-`).join("")}
+${initiativeRows.map(row => {
+  const typeMap = {
+    "Welcoming Universities": "uni",
+    "Welcoming Workplaces": "workplace",
+    "Welcoming Clubs": "club",
+    "Community Organisations": "cop"
+  };
+
+  const type = typeMap[row[0]];
+  const accreditedCount = accreditedCounts[type] || 0;
+
+  return `
+    <div class="summaryRow subRow">
+      <span>• ${row[0]}</span>
+      <strong>${row[1]}</strong>
+    </div>
+
+    ${
+      accreditedCount > 0
+        ? `
+          <div class="summaryRow subSubRow">
+            <span>Accredited</span>
+            <strong>${accreditedCount}</strong>
+          </div>
+        `
+        : ""
+    }
+  `;
+}).join("")}
   
           ${
             !hasAnyInitiative
@@ -2866,37 +2979,70 @@ ${initiativeRows.map(row => `
         </div>
   
         <div class="summaryRow subRow">
-          <span>Welcoming Cities</span>
+          <span>• Welcoming Cities</span>
           <strong>${explorerState.welcomingCities.members}</strong>
         </div>
   
         <div class="summaryRow subSubRow">
-          <span>Accredited Cities</span>
+          <span>Accredited</span>
           <strong>${explorerState.welcomingCities.accredited}</strong>
         </div>
   
         <div class="summaryRow subRow">
-          <span>PALM Alliance</span>
+          <span>• PALM Alliance</span>
           <strong>${explorerState.palmAlliance.members}</strong>
         </div>
   
         <div class="summaryRow subRow">
-          <span>Welcoming Universities</span>
+          <span>• Welcoming Universities</span>
           <strong>${explorerState.initiatives.universities}</strong>
         </div>
-  
+        
+        ${
+          explorerState.initiatives.accreditedUniversities > 0
+            ? `
+              <div class="summaryRow subSubRow">
+                <span>Accredited</span>
+                <strong>${explorerState.initiatives.accreditedUniversities}</strong>
+              </div>
+            `
+            : ""
+        }
+        
         <div class="summaryRow subRow">
-          <span>Welcoming Workplaces</span>
+          <span>• Welcoming Workplaces</span>
           <strong>${explorerState.initiatives.workplaces}</strong>
         </div>
-  
+        
+        ${
+          explorerState.initiatives.accreditedWorkplaces > 0
+            ? `
+              <div class="summaryRow subSubRow">
+                <span>Accredited</span>
+                <strong>${explorerState.initiatives.accreditedWorkplaces}</strong>
+              </div>
+            `
+            : ""
+        }
+        
         <div class="summaryRow subRow">
-          <span>Welcoming Clubs</span>
+          <span>• Welcoming Clubs</span>
           <strong>${explorerState.initiatives.clubs}</strong>
         </div>
+        
+        ${
+          explorerState.initiatives.accreditedClubs > 0
+            ? `
+              <div class="summaryRow subSubRow">
+                <span>Accredited</span>
+                <strong>${explorerState.initiatives.accreditedClubs}</strong>
+              </div>
+            `
+            : ""
+        }
   
         <div class="summaryRow subRow">
-          <span>Community Organisations</span>
+          <span>• Community Organisations</span>
           <strong>${explorerState.initiatives.communityOrganisations}</strong>
         </div>
   
