@@ -1459,10 +1459,16 @@ function refreshLGAStyles() {
     : ""
 }
 
-<div class="summaryRow subRow">
-  <span>• Welcoming Cities</span>
-  <strong>${isWelcoming ? "Yes" : "No"}</strong>
-</div>
+${
+  isWelcoming
+    ? `
+      <div class="summaryRow subRow">
+        <span>• Welcoming Cities</span>
+        <strong>Yes</strong>
+      </div>
+    `
+    : ""
+}
 
     ${
       accreditation
@@ -2842,10 +2848,16 @@ function setExplorerLGA(rawName, layer) {
     : ""
 }
 
-<div class="summaryRow subRow">
-  <span>• Welcoming Cities</span>
-  <strong>${isWelcoming ? "Yes" : "No"}</strong>
-</div>
+${
+  isWelcoming
+    ? `
+      <div class="summaryRow subRow">
+        <span>• Welcoming Cities</span>
+        <strong>Yes</strong>
+      </div>
+    `
+    : ""
+}
 
 ${
   accreditation
