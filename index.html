@@ -1446,7 +1446,13 @@ function refreshLGAStyles() {
   hasAnyInitiative
     ? `
       <div class="summaryRow totalRow">
-        <span>Welcoming initiatives</span>
+         <span>
+    Welcoming initiatives
+    <span class="infoIcon"
+          title="Represents the total number of unique organisations and initiatives participating in Welcoming Australia initiatives, including Welcoming Cities, Universities, Workplaces and Clubs, as well as community organisations engaged in Communities of Practice facilitated by Welcoming Australia. Each organisation or initiative is counted once, even if it has multiple locations.">
+      ⓘ
+    </span>
+  </span>
         <strong>
           ${
             initiativeRows.reduce((sum, row) => sum + row[1], 0) +
@@ -2829,7 +2835,13 @@ function setExplorerLGA(rawName, layer) {
   hasAnyInitiative
     ? `
       <div class="summaryRow totalRow">
-        <span>Welcoming initiatives</span>
+        <span>
+  Welcoming initiatives
+  <span class="infoIcon"
+        title="Represents the total number of unique organisations and initiatives participating in Welcoming Australia initiatives within this local government area. Each organisation or initiative is counted once, even if it has multiple locations.">
+    ⓘ
+  </span>
+</span>
         <strong>
           ${
             initiativeRows.reduce((sum, row) => sum + row[1], 0) +
@@ -2974,7 +2986,13 @@ ${initiativeRows.map(row => {
         <h4>${regionName}</h4>
   
         <div class="summaryRow totalRow">
-          <span>Welcoming initiatives</span>
+          <span>
+  Welcoming initiatives
+  <span class="infoIcon"
+        title="Represents the total number of unique organisations and initiatives participating in Welcoming Australia initiatives within this local government area. Each organisation or initiative is counted once, even if it has multiple locations.">
+    ⓘ
+  </span>
+</span>
           <strong>${explorerState.initiatives.total}</strong>
         </div>
   
