@@ -85,7 +85,7 @@ lga_code,lga_name,state,welcoming_city_member,welcoming_city_accreditation,palm_
 15850,Narromine,NSW,,,,0,4,1.9,6360,
 15900,Newcastle,NSW,Y,,,3,14.8,10.4,168873,
 15950,North Sydney,NSW,Y,,,3,39.9,23.7,68950,
-15990,Northern Beaches,NSW,,,,10,30.2,15.5,263554,
+15990,Northern Beaches,NSW,Y,,,10,30.2,15.5,263554,
 16100,Oberon,NSW,,,,0,10.3,4.6,5580,
 16150,Orange,NSW,,,,0,10.6,7.1,43512,
 16200,Parkes,NSW,,,,0,5.6,3.4,14361,
