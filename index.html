@@ -860,7 +860,7 @@
     </div>
 
     <div class="layerRow">
-      <span><span class="legendDot crispDot"></span> CRISP Settlements</span>
+      <span><span class="legendDot crispDot"></span> CRISP group members</span>
       <label class="switch">
         <input type="checkbox" class="desktopLayerToggle" data-layer="crisp">
         <span></span>
@@ -1034,7 +1034,7 @@
       </div>
   
       <div class="layerRow">
-        <span><span class="legendDot crispDot"></span> CRISP Settlements</span>
+        <span><span class="legendDot crispDot"></span> CRISP group members</span>
         <label class="switch">
           <input type="checkbox" class="mobileLayerToggle" data-layer="crisp">
           <span></span>
@@ -1551,7 +1551,7 @@ ${
           Number(profile.crisp_settled || 0) > 0
             ? `
               <div class="summaryRow">
-                <span>CRISP settled</span>
+                <span>CRISP Group Members</span>
                 <strong>${publicCountText(Number(profile.crisp_settled || 0))}</strong>
               </div>
             `
@@ -1784,14 +1784,14 @@ ${
       weight: 2
     });
   
-    circle.bindTooltip(`${displayName}: ${displayCount} people settled`, {
+    circle.bindTooltip(`${displayName}: ${displayCount} group members`, {
       direction: "top",
       opacity: 0.9
     });
   
     circle.bindPopup(`
       <b>${displayName}</b><br>
-      ${displayCount} people settled through CRISP
+      ${displayCount} CRISP group members
     `);
   
     crispLayer.addLayer(circle);
@@ -1919,7 +1919,7 @@ function smartSearchScore(text, query) {
         "Welcoming Clubs": clubCluster,
         "Community Organisations": copCluster,
         "Community Hubs": hubCluster,
-        "CRISP Settlements": crispLayer
+        "CRISP Group Members": crispLayer
       },
       { collapsed: false }
     ).addTo(map);
@@ -1945,7 +1945,7 @@ function smartSearchScore(text, query) {
       <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#02006C; opacity:0.75; margin-right:6px;"></span>
   Community Hubs<br>
       <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#d98ca3; opacity:0.75; margin-right:6px;"></span>
-        CRISP Settlements<br>
+        CRISP Group Members<br>
     `;
     return div;
   };
@@ -2730,7 +2730,7 @@ function exportLGASummary() {
       y += 2;
 
       addKeyValue(
-        "People settled through CRISP",
+        "Ttoal group members of CRISP",
         publicCountText(crispSettled)
       );
     }
@@ -3066,7 +3066,7 @@ ${initiativeRows.map(row => {
         </div>
   
         <div class="summaryRow">
-          <span>CRISP settled</span>
+          <span>CRISP Group Members</span>
           <strong>${explorerState.crisp.peopleSettled}</strong>
         </div>
       </div>
