@@ -1166,6 +1166,12 @@ function crispRadius(count) {
   return Math.max(8, Math.sqrt(count) * 2.5);
 }
 
+  function trackExplorerEvent(eventName, parameters = {}) {
+  if (typeof gtag !== "function") return;
+
+  gtag("event", eventName, parameters);
+}
+
 const stateCodeMap = {
   "1": "NSW",
   "2": "VIC",
@@ -1591,6 +1597,11 @@ ${
     `;
   }
   function selectLGA(rawName, layer, zoomToLGA = true) {
+
+    trackExplorerEvent("lga_selected", {
+      lga_name: publicLGAName(rawName),
+      state: lgaLayers[normaliseName(rawName)]?.state || ""
+    });
     
       highlightLGA(layer);
 
@@ -2051,6 +2062,11 @@ function smartSearchScore(text, query) {
   document.getElementById("toggleAccreditedOnly").addEventListener("change", e => {
     showAccreditedOnly = e.target.checked;
     document.getElementById("mobileToggleAccreditedOnly").checked = e.target.checked;
+  
+    if (e.target.checked) {
+      trackExplorerEvent("accredited_only_used");
+    }
+  
     refreshAccreditedFilter();
   });
 
@@ -2069,11 +2085,23 @@ function smartSearchScore(text, query) {
   document.getElementById("mobileToggleAccreditedOnly").addEventListener("change", e => {
     showAccreditedOnly = e.target.checked;
     document.getElementById("toggleAccreditedOnly").checked = e.target.checked;
+  
+    if (e.target.checked) {
+      trackExplorerEvent("accredited_only_used");
+    }
+  
     refreshAccreditedFilter();
   });
   
   document.getElementById("resetMapButton").addEventListener("click", resetMap);
 
+  document.querySelectorAll(".panelCTAButton").forEach(button => {
+    button.addEventListener("click", () => {
+      trackExplorerEvent("cta_clicked", {
+        cta_name: "learn_how_to_get_involved"
+      });
+    });
+  });
 
   function resetMap() {
     document.getElementById("lgaSearch").value = "";
@@ -2421,6 +2449,10 @@ function exportLGASummary() {
     alert("Please select a council area before downloading a summary.");
     return;
   }
+
+  trackExplorerEvent("lga_summary_download", {
+    lga_name: selectedLGA.name
+  });
 
   if (!window.jspdf?.jsPDF) {
     alert("The PDF library could not be loaded. Please refresh the page and try again.");
