@@ -24,7 +24,7 @@ lga_code,lga_name,state,welcoming_city_member,welcoming_city_accreditation,palm_
 11520,Canada Bay,NSW,Y,,,5,40.1,39.3,89177,
 11570,Canterbury-Bankstown,NSW,Y,,,11,44.6,58.8,371006,
 11600,Carrathool,NSW,,,,0,14.1,9.6,2866,
-11650,Central Coast (NSW),NSW,Y,,41,16.1,7,346596,
+11650,Central Coast (NSW),NSW,Y,,,41,16.1,7,346596,
 11700,Central Darling,NSW,,,,0,3.9,1.9,1725,
 11720,Cessnock,NSW,,,,6,7.2,2.7,63632,
 11730,Clarence Valley,NSW,,,,3,8.2,2.7,54115,
