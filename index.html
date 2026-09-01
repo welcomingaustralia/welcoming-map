@@ -1257,6 +1257,7 @@ let explorerState = {
     clubs: 0,
     communityOrganisations: 0,
     communityHubs: 0,
+    fassttAgencies: 0,
   
     accreditedUniversities: 0,
     accreditedWorkplaces: 0,
@@ -1460,7 +1461,8 @@ function refreshLGAStyles() {
       workplace: new Set(),
       club: new Set(),
       cop: new Set(),
-      hub: new Set()
+      hub: new Set(),
+      fasstt: new Set()
     };
   
     const isWelcoming =
@@ -1601,6 +1603,17 @@ ${
               <div class="summaryRow">
                 <span>Community Hubs</span>
                 <strong>${counts.hub.size}</strong>
+              </div>
+            `
+            : ""
+        }
+
+        ${
+          counts.fasstt.size > 0
+            ? `
+              <div class="summaryRow">
+                <span>FASSTT Agencies</span>
+                <strong>${counts.fasstt.size}</strong>
               </div>
             `
             : ""
@@ -1759,7 +1772,8 @@ ${
           workplace: new Set(),
           club: new Set(),
           cop: new Set(),
-          hub: new Set()
+          hub: new Set(),
+          fasstt: new Set()
         };
       }
 
@@ -2335,6 +2349,7 @@ function updateExplorerState() {
       clubs: 0,
       communityOrganisations: 0,
       communityHubs: 0,
+      fassttAgencies: 0,
     
       accreditedUniversities: 0,
       accreditedWorkplaces: 0,
@@ -2386,7 +2401,8 @@ function updateExplorerState() {
     workplace: new Set(),
     club: new Set(),
     cop: new Set(),
-    hub: new Set()
+    hub: new Set(),
+    fasstt: new Set()
   };
   const accreditedInitiativeIds = {
     uni: new Set(),
@@ -2428,6 +2444,7 @@ function updateExplorerState() {
   explorerState.initiatives.clubs = initiativeIds.club.size;
   explorerState.initiatives.communityOrganisations = initiativeIds.cop.size;
   explorerState.initiatives.communityHubs = initiativeIds.hub.size;
+  explorerState.initiatives.fassttAgencies = initiativeIds.fasstt.size;
 
   explorerState.initiatives.accreditedUniversities =
     accreditedInitiativeIds.uni.size;
@@ -2886,7 +2903,8 @@ function setExplorerLGA(rawName, layer) {
     workplace: new Set(),
     club: new Set(),
     cop: new Set(),
-    hub: new Set()
+    hub: new Set(),
+    fasstt: new Set()
   };
 
   explorerState.selection.lga = {
@@ -3058,6 +3076,17 @@ ${initiativeRows.map(row => {
               `
               : ""
           }
+
+          ${
+            counts.fasstt.size > 0
+              ? `
+                <div class="summaryRow">
+                  <span>FASSTT Agencies</span>
+                  <strong>${counts.fasstt.size}</strong>
+                </div>
+              `
+              : ""
+          }
           
           ${
             Number(profile.crisp_settled || 0) > 0
@@ -3186,6 +3215,11 @@ ${initiativeRows.map(row => {
         <div class="summaryRow">
           <span>Community Hubs</span>
           <strong>${explorerState.initiatives.communityHubs}</strong>
+        </div>
+
+        <div class="summaryRow">
+          <span>FASSTT Agencies</span>
+          <strong>${explorerState.initiatives.fassttAgencies}</strong>
         </div>
   
         <div class="summaryRow">
