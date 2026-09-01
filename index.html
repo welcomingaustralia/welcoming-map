@@ -469,6 +469,7 @@
     .clubDot { background:#228B22; }
     .copDot { background:#ff8800; }
     .hubDot { background:#02006C; }
+    .fassttDot { background:#7B61A8; }
     .crispDot { background:#E85D9E; }
 
     .lgaPopupContent {
@@ -870,6 +871,26 @@
     </div>
 
     <div class="layerRow">
+      <span class="layerLabelWithInfo">
+        <span class="legendDot fassttDot"></span>
+        FASSTT Agencies
+    
+        <button
+          type="button"
+          class="layerInfoButton"
+          aria-label="Information about FASSTT Agencies"
+          data-info="FASSTT is a national network of eight specialised agencies supporting survivors of refugee-related torture and trauma. One agency operates in each Australian state and territory, providing counselling, programs, community support and training.">
+          <i class="fa fa-info-circle" aria-hidden="true"></i>
+        </button>
+      </span>
+    
+      <label class="switch">
+        <input type="checkbox" class="desktopLayerToggle" data-layer="fasstt">
+        <span></span>
+      </label>
+    </div>
+
+    <div class="layerRow">
       <span><span class="legendDot crispDot"></span> CRISP Group Members</span>
       <label class="switch">
         <input type="checkbox" class="desktopLayerToggle" data-layer="crisp">
@@ -1042,6 +1063,26 @@
           <span></span>
         </label>
       </div>
+
+      <div class="layerRow">
+        <span class="layerLabelWithInfo">
+          <span class="legendDot fassttDot"></span>
+          FASSTT Agencies
+      
+          <button
+            type="button"
+            class="layerInfoButton"
+            aria-label="Information about FASSTT Agencies"
+            data-info="FASSTT is a national network of eight specialised agencies supporting survivors of refugee-related torture and trauma. One agency operates in each Australian state and territory, providing counselling, programs, community support and training.">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+          </button>
+        </span>
+      
+        <label class="switch">
+          <input type="checkbox" class="mobileLayerToggle" data-layer="fasstt">
+          <span></span>
+        </label>
+      </div>
   
       <div class="layerRow">
         <span><span class="legendDot crispDot"></span> CRISP Group Members</span>
@@ -1124,6 +1165,7 @@ const workplaceCluster = L.markerClusterGroup(clusterOptions);
 const clubCluster      = L.markerClusterGroup(clusterOptions);
 const copCluster       = L.markerClusterGroup(clusterOptions);
 const hubCluster       = L.markerClusterGroup(clusterOptions);
+const fassttCluster    = L.markerClusterGroup(clusterOptions);
 const crispLayer       = L.layerGroup();
 
 document.head.insertAdjacentHTML("beforeend", `
@@ -1318,7 +1360,8 @@ function refreshLGAStyles() {
       workplace: workplaceCluster,
       club: clubCluster,
       cop: copCluster,
-      hub: hubCluster
+      hub: hubCluster,
+      fasstt: fassttCluster
     };
   
     Object.values(groups).forEach(group => group.clearLayers());
@@ -1693,7 +1736,8 @@ ${
     workplace: "#FD4731",
     club: "#228B22",
     cop: "#ff8800",
-    hub: "#02006C"
+    hub: "#02006C",
+    fasstt: "#7B61A8"
   };
 
   const initiativeMarkers = [];
@@ -1762,20 +1806,44 @@ ${
       opacity: 0.9
     });
 
-    marker.bindPopup(`
-      <b>${r.name}</b>
-      ${
-        accreditationLevel
-          ? `<br>Accreditation: ${accreditationLevel}`
-          : ""
-      }
-    `);
+    const popupText = (r.popup_text || "").trim();
+const website = (r.website || "").trim();
+
+marker.bindPopup(`
+  <b>${r.name}</b>
+
+  ${
+    accreditationLevel
+      ? `<br>Accreditation: ${accreditationLevel}`
+      : ""
+  }
+
+  ${
+    popupText
+      ? `<br><br>${popupText}`
+      : ""
+  }
+
+  ${
+    website
+      ? `
+        <br><br>
+        <a href="${website}"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visit website
+        </a>
+      `
+      : ""
+  }
+`);
 
     if (type === "uni")       uniCluster.addLayer(marker);
     if (type === "workplace") workplaceCluster.addLayer(marker);
     if (type === "club")      clubCluster.addLayer(marker);
     if (type === "cop")       copCluster.addLayer(marker);
     if (type === "hub")       hubCluster.addLayer(marker);
+    if (type === "fasstt")    fassttCluster.addLayer(marker);
 
     initiativeMarkers.push(marker);
   });
@@ -1829,6 +1897,7 @@ ${
   copCluster.addTo(map);
   //hubCluster.addTo(map);
   //crispLayer.addTo(map);
+  //fassttLayer.addTo(map);
 
   function applyJitterToMarkers(clusterGroup) {
     clusterGroup.eachLayer(marker => {
@@ -1856,6 +1925,7 @@ ${
     applyJitterToMarkers(clubCluster);
     applyJitterToMarkers(copCluster);
     applyJitterToMarkers(hubCluster);
+    applyJitterToMarkers(fassttCluster);
   });
 
 function smartSearchScore(text, query) {
@@ -1885,6 +1955,7 @@ function smartSearchScore(text, query) {
   collectMarkers(clubCluster);
   collectMarkers(copCluster);
   collectMarkers(hubCluster);
+  collectMarkers(fassttCluster);
 
   const orgDropdown = document.createElement("div");
   orgDropdown.className = "searchDropdown";
@@ -1945,6 +2016,7 @@ function smartSearchScore(text, query) {
         "Welcoming Clubs": clubCluster,
         "Community Organisations": copCluster,
         "Community Hubs": hubCluster,
+        "FASSTT Agencies": fassttCluster,
         "CRISP Group Members": crispLayer
       },
       { collapsed: false }
@@ -1970,8 +2042,10 @@ function smartSearchScore(text, query) {
   Community Organisations<br>
       <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#02006C; opacity:0.75; margin-right:6px;"></span>
   Community Hubs<br>
+      <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#7B61A8; opacity:0.75; margin-right:6px;"></span>
+  FASSTT Agencies<br>
       <span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#E85D9E; opacity:0.75; margin-right:6px;"></span>
-        CRISP Group Members<br>
+  CRISP Group Members<br>
     `;
     return div;
   };
@@ -1998,6 +2072,7 @@ function smartSearchScore(text, query) {
     club: clubCluster,
     cop: copCluster,
     hub: hubCluster,
+    fasstt: fassttCluster,
     crisp: crispLayer
   };
 
@@ -2158,15 +2233,15 @@ function smartSearchScore(text, query) {
     document.getElementById("mobileToggleAccreditedOnly").checked = false;
   
     document.querySelectorAll(".desktopLayerToggle").forEach(cb => {
-      cb.checked = !["hub", "crisp"].includes(cb.dataset.layer);
+      cb.checked = !["hub", "fasstt", "crisp"].includes(cb.dataset.layer);
     });
     
     document.querySelectorAll(".mobileLayerToggle").forEach(cb => {
-      cb.checked = !["hub", "crisp"].includes(cb.dataset.layer);
+      cb.checked = !["hub", "fasstt", "crisp"].includes(cb.dataset.layer);
     });
   
     Object.entries(mobileLayerMap).forEach(([key, layer]) => {
-      if (["hub", "crisp"].includes(key)) {
+      if (["hub", "fasstt", "crisp"].includes(key)) {
         map.removeLayer(layer);
       } else if (!map.hasLayer(layer)) {
         map.addLayer(layer);
@@ -2190,7 +2265,8 @@ function smartSearchScore(text, query) {
       workplace: workplaceCluster,
       club: clubCluster,
       cop: copCluster,
-      hub: hubCluster
+      hub: hubCluster,
+      fasstt: fassttCluster
     };
   
     Object.values(groups).forEach(group => {
