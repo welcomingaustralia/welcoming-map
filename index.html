@@ -2511,7 +2511,7 @@ function getOrganisationsForLGA(lgaName) {
 
     const type = (row.type || "").trim().toLowerCase();
 
-    if (!["uni", "workplace", "club", "cop", "hub"].includes(type)) {
+    if (!["uni", "workplace", "club", "cop", "hub", "fasstt"].includes(type)) {
       return;
     }
 
@@ -2573,7 +2573,8 @@ function exportLGASummary() {
     workplace: organisations.filter(org => org.type === "workplace"),
     club: organisations.filter(org => org.type === "club"),
     cop: organisations.filter(org => org.type === "cop"),
-    hub: organisations.filter(org => org.type === "hub")
+    hub: organisations.filter(org => org.type === "hub"),
+    fasstt: organisations.filter(org => org.type === "fasstt")
   };
 
   const coreOrganisationCount =
@@ -2837,11 +2838,11 @@ function exportLGASummary() {
   );
 
   // Additional information
-  if (groups.hub.length || crispSettled > 0) {
+  if (groups.hub.length || groups.fasstt.length || crispSettled > 0) {
     addSectionHeading("Additional information");
     addParagraph(
-  "Community Hubs and CRISP are included as connected initiatives within the broader welcoming ecosystem. They are shown to provide a fuller picture of local activity and community connections."
-);
+      "Community Hubs, FASSTT agency offices and CRISP are shown as additional layers to provide a fuller picture of local services, activity and community connections."
+    );
 
     if (groups.hub.length) {
       addKeyValue(
@@ -2861,6 +2862,31 @@ function exportLGASummary() {
         doc.setFontSize(9.5);
         doc.setTextColor(70);
 
+        doc.text(lines, leftMargin + 4, y);
+        y += lines.length * 5 + 1;
+      });
+    }
+
+    if (groups.fasstt.length) {
+      y += 2;
+    
+      addKeyValue(
+        "FASSTT Agency Offices",
+        groups.fasstt.length
+      );
+    
+      groups.fasstt.forEach(org => {
+        const lines = doc.splitTextToSize(
+          `• ${cleanPDFText(org.name)}`,
+          contentWidth - 8
+        );
+    
+        addPageIfNeeded(lines.length * 5 + 2);
+    
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(9.5);
+        doc.setTextColor(70);
+    
         doc.text(lines, leftMargin + 4, y);
         y += lines.length * 5 + 1;
       });
