@@ -138,7 +138,7 @@ lga_code,lga_name,state,welcoming_city_member,welcoming_city_accreditation,palm_
 20830,Baw Baw,VIC,,,,4,12,4.8,57626,
 20910,Bayside (Vic.),VIC,,,,35,27.1,15.3,101306,
 21010,Benalla,VIC,,,,0,9.3,3.5,14528,
-21110,Boroondara,VIC,,,,41,32.5,28.6,167900,
+21110,Boroondara,VIC,Y,,,41,32.5,28.6,167900,
 21180,Brimbank,VIC,Y,,,1,48.2,57,194618,
 21270,Buloke,VIC,,,,0,6.5,3.2,6178,
 21370,Campaspe,VIC,,,,0,7.6,3.9,38735,
