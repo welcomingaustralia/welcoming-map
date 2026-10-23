@@ -187,7 +187,7 @@ lga_code,lga_name,state,welcoming_city_member,welcoming_city_accreditation,palm_
 25490,Moyne,VIC,,,,15,7.4,2.1,17374,
 25620,Murrindindi,VIC,,,,0,11.2,3.6,15197,
 25710,Nillumbik,VIC,,,,12,16.4,9.5,62895,
-25810,Northern Grampians,VIC,,,,0,9.2,5.3,11948,
+25810,Northern Grampians,VIC,Y,,,0,9.2,5.3,11948,
 25900,Port Phillip,VIC,Y,,,24,33.1,20.9,101942,
 25990,Pyrenees,VIC,,,,0,9.5,2,7671,
 26080,Queenscliffe,VIC,,,,0,10.8,3.5,3276,
